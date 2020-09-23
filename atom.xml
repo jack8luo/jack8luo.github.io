@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>骆皓的blog</title>
   
+  <subtitle>小紫玲</subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
   
-  <link href="http://example.com/atom.xml" rel="self"/>
-  
-  <link href="http://example.com/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2020-09-22T13:36:07.206Z</updated>
-  <id>http://example.com/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>骆皓</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>OS</title>
-    <link href="http://example.com/2020/09/22/OS/"/>
-    <id>http://example.com/2020/09/22/OS/</id>
+    <link href="http://yoursite.com/2020/09/22/OS/"/>
+    <id>http://yoursite.com/2020/09/22/OS/</id>
     <published>2020-09-22T12:49:31.000Z</published>
     <updated>2020-09-22T13:36:07.206Z</updated>
     
@@ -38,17 +38,17 @@
     
     
     
-    <category term="OS" scheme="http://example.com/categories/OS/"/>
+    <category term="OS" scheme="http://yoursite.com/categories/OS/"/>
     
     
-    <category term="OS" scheme="http://example.com/tags/OS/"/>
+    <category term="OS" scheme="http://yoursite.com/tags/OS/"/>
     
   </entry>
   
   <entry>
     <title>HTML5</title>
-    <link href="http://example.com/2020/09/22/HTML5/"/>
-    <id>http://example.com/2020/09/22/HTML5/</id>
+    <link href="http://yoursite.com/2020/09/22/HTML5/"/>
+    <id>http://yoursite.com/2020/09/22/HTML5/</id>
     <published>2020-09-22T06:13:27.000Z</published>
     <updated>2020-09-23T00:06:19.562Z</updated>
     
@@ -62,10 +62,10 @@
     
     
     
-    <category term="HTML5" scheme="http://example.com/categories/HTML5/"/>
+    <category term="HTML5" scheme="http://yoursite.com/categories/HTML5/"/>
     
     
-    <category term="HTML5" scheme="http://example.com/tags/HTML5/"/>
+    <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
     
   </entry>
   
