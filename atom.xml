@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-23T12:21:08.319Z</updated>
+  <updated>2020-09-23T12:29:18.951Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/09/22/OS/"/>
     <id>http://yoursite.com/2020/09/22/OS/</id>
     <published>2020-09-22T12:49:31.000Z</published>
-    <updated>2020-09-23T12:21:08.319Z</updated>
+    <updated>2020-09-23T12:29:18.951Z</updated>
     
-    <content type="html"><![CDATA[<div class="note info"><p>📖操作系统第一章</p><p>📚操作系统引论</p></div><hr><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul><li>目标和作用：</li><li>发展过程：</li><li>基本特征</li><li>主要功能</li><li>OS结构设计</li></ul><hr><p><strong>操作系统的目标</strong></p><img src= "/img/loading.gif" data-lazy-src="file:///http://lc-ySstfNx3.cn-n1.lcfile.com/cbe113ff91326d85a0b6.png/W6WQ%40%60II%7E9KU1%5BE%5D5%5D%60%7EJ%24U.png" align = 'left' /><h5 id="操作系统的发展过程"><a href="#操作系统的发展过程" class="headerlink" title="操作系统的发展过程"></a>操作系统的发展过程</h5><ul><li><p>单道批处理系统</p><ul><li>纸片机</li></ul></li><li><p>多道批处理系统</p><ul><li>优缺点<ul><li>资源利用率高</li><li>系统吞吐量大</li><li>平均周期长</li><li>无交互能力</li></ul></li></ul></li><li><p>分时系统</p><ul><li>人机交互： 不停调试和修改</li><li>共享主机： 共享一台主机</li><li>关键问题： 及时接收 及时处理</li><li>特征：多路性，独立性，交互性，及时性</li></ul></li><li><p>实时系统</p><ul><li>周期性实时任务和非周期性实时任务</li><li>硬实时任务和软实时任务</li></ul></li><li><p>实时和分时系统特征的比较</p><ul><li>多路性</li><li>独立性</li><li>及时性</li><li>交互性</li><li>可靠性</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<div class="note info"><p>📖操作系统第一章</p><p>📚操作系统引论</p></div><hr><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul><li>目标和作用：</li><li>发展过程：</li><li>基本特征</li><li>主要功能</li><li>OS结构设计</li></ul><hr><p><strong>操作系统的目标</strong></p><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/cbe113ff91326d85a0b6.png/W6WQ%40%60II%7E9KU1%5BE%5D5%5D%60%7EJ%24U.png" align = 'left' /><h5 id="操作系统的发展过程"><a href="#操作系统的发展过程" class="headerlink" title="操作系统的发展过程"></a>操作系统的发展过程</h5><ul><li><p>单道批处理系统</p><ul><li>纸片机</li></ul></li><li><p>多道批处理系统</p><ul><li>优缺点<ul><li>资源利用率高</li><li>系统吞吐量大</li><li>平均周期长</li><li>无交互能力</li></ul></li></ul></li><li><p>分时系统</p><ul><li>人机交互： 不停调试和修改</li><li>共享主机： 共享一台主机</li><li>关键问题： 及时接收 及时处理</li><li>特征：多路性，独立性，交互性，及时性</li></ul></li><li><p>实时系统</p><ul><li>周期性实时任务和非周期性实时任务</li><li>硬实时任务和软实时任务</li></ul></li><li><p>实时和分时系统特征的比较</p><ul><li>多路性</li><li>独立性</li><li>及时性</li><li>交互性</li><li>可靠性</li></ul></li></ul>]]></content>
     
     
       
