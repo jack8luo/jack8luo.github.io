@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/movies/index.html</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/09/22/HTML5/</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/09/22/OS/</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2020-09-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2020-09-23</lastmod>
@@ -16,28 +51,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/09/22/OS/</loc>
-    
-    <lastmod>2020-09-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2020-09-23</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/music/index.html</loc>
-    
-    <lastmod>2020-09-23</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/movies/index.html</loc>
     
     <lastmod>2020-09-23</lastmod>
     
@@ -64,17 +78,10 @@
     
   </url>
   
-  <url>
-    <loc>http://yoursite.com/2020/09/22/HTML5/</loc>
-    
-    <lastmod>2020-09-23</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2020-09-23</lastmod>
+    <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,14 +89,14 @@
   
   <url>
     <loc>http://yoursite.com/tags/HTML5/</loc>
-    <lastmod>2020-09-23</lastmod>
+    <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/OS/</loc>
-    <lastmod>2020-09-23</lastmod>
+    <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -98,14 +105,14 @@
   
   <url>
     <loc>http://yoursite.com/categories/HTML5/</loc>
-    <lastmod>2020-09-23</lastmod>
+    <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/OS/</loc>
-    <lastmod>2020-09-23</lastmod>
+    <lastmod>2020-09-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
