@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-25T00:51:28.039Z</updated>
+  <updated>2020-09-25T00:55:12.778Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/09/24/javaWeb/"/>
     <id>http://yoursite.com/2020/09/24/javaWeb/</id>
     <published>2020-09-24T12:52:55.000Z</published>
-    <updated>2020-09-25T00:51:28.039Z</updated>
+    <updated>2020-09-25T00:55:12.778Z</updated>
     
     <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><div class="note success"><p>📚更新于9.24</p></div><hr><h1 id="第一章-web程序概述"><a href="#第一章-web程序概述" class="headerlink" title="第一章 web程序概述"></a>第一章 web程序概述</h1><h3 id="网页分类"><a href="#网页分类" class="headerlink" title="网页分类"></a>网页分类</h3><ul><li>静态页面：<code>纯HTML标记语言编写</code>的。只需要浏览器执行就好。</li><li>动态页面：与用户有交互的。需要web服务器对其做解析。</li></ul><h3 id="web消息生命周期"><a href="#web消息生命周期" class="headerlink" title="web消息生命周期"></a>web消息生命周期</h3><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/f8202fe08baefcdbe44c.png/4WH%7D3WZB_%5BDHYZP%7EXB%40Q_EU.png" align = 'left' /><h3 id="web应用程序类型"><a href="#web应用程序类型" class="headerlink" title="web应用程序类型"></a>web应用程序类型</h3><ul><li>C/S(客户端/服务器)<ul><li>优点：基于浏览器访问，速度快，安全性高，客户端强</li><li>缺点：需要下载安装升级，部署维护困难</li></ul></li><li>B/S(浏览器/服务器)<ul><li>优点：维护容易，只需要维护服务器</li><li>缺点：速度慢，安全性低，客户端能力弱</li></ul></li></ul><h3 id="web程序工作原理"><a href="#web程序工作原理" class="headerlink" title="web程序工作原理"></a>web程序工作原理</h3><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/e1cc4b15a80ca8fd8cfc.png/J9V%28AN%40%404BFY55VO%5B9KB8A6.png" align = 'left' />]]></content>
     
