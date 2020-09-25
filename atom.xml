@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-25T04:57:40.118Z</updated>
+  <updated>2020-09-25T08:42:18.551Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>javaWeb</title>
+    <title>javaWeb环境搭配</title>
+    <link href="http://yoursite.com/2020/09/25/%E5%AE%9E%E9%AA%8C%E4%B8%80%20%20JSP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C/"/>
+    <id>http://yoursite.com/2020/09/25/%E5%AE%9E%E9%AA%8C%E4%B8%80%20%20JSP%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E9%85%8D%E7%BD%AE%E8%BF%90%E8%A1%8C/</id>
+    <published>2020-09-25T07:44:46.000Z</published>
+    <updated>2020-09-25T08:42:18.551Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="实验一-JSP开发环境的配置运行"><a href="#实验一-JSP开发环境的配置运行" class="headerlink" title="实验一 JSP开发环境的配置运行"></a>实验一 JSP开发环境的配置运行</h2><p>一、实验目的</p><p>1．掌握设置JDK环境。</p><p>2．掌握设置Tomcat环境。</p><p>3．安装、掌握Eclipse、MyEclipse、IntelliJ IDEA软件，为学习 JSP和进行<br>JSP的实验做好准备工作。</p><p>4．浏览JSP 程序并运行JSP页面。</p><p>二、实验项目内容</p><p>（一）JDK安装与配置</p><p>略</p><p>（二）Tomcat安装与配置</p><p>略</p><p>（三）IDE（Eclipse、MyEclipse或IntelliJ IDEA）的安装与配置</p><p>略</p><p>（四）在IDE上建立一个项目（javaweb）在项目中一个JSP （first.jsp）</p><p>以intelliJ IDEA为例</p><p><img src= "/img/loading.gif" data-lazy-src="media/195443c4d887f92c8c3e4736d11715b7.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/c024ff78114c58bdf129838ad3bef1e9.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/dd610eb95051fbcb72372201de767ecb.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/78fef6257f1f8b76b9af53fe7ea0d7bb.png"></p><p>（五）部署JSP工程文件</p><p><img src= "/img/loading.gif" data-lazy-src="media/322d4836e417e0ea859a4471e74f0114.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/448a015f52c65fd90de86c54c8cd1477.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/3d8fe250d0166343fb41715b3326afe4.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/2a022e382c248275ed7e848de5a4c7ee.png"></p><p>（六）启动Tomcat服务器（IDE方式）</p><p><img src= "/img/loading.gif" data-lazy-src="media/10eb21b70c21d22df5e4a0911dc48139.png"></p><p>（七）浏览JSP</p><p><img src= "/img/loading.gif" data-lazy-src="media/f804136a1b1b511ecf376c9694ad8b35.png"></p><p>（八）发布WAR包</p><p><img src= "/img/loading.gif" data-lazy-src="media/902076ec3de1fd330eacb5e31db1e9ab.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/41fa326c4d0b272dce723e68172f69bb.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/cd027d3c2ac62249d752cdcd3e109af9.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/f4e29149b67840f46951c8be81798891.png"></p><p>编译生成war包</p><p><img src= "/img/loading.gif" data-lazy-src="media/3e5ffcc15ddf64428de95102eb0692e1.png"></p><p><img src= "/img/loading.gif" data-lazy-src="media/4640cc49528c558819d2bffe3b5b4f82.png"></p><p>访问之前设定的文件目录路径，可看到生成的war包文件。</p><p>将项目生成war包，放置tomcat/webapps下，</p><p><img src= "/img/loading.gif" data-lazy-src="media/9737280c30a930550c51fc868aef329d.png"></p><p>通过命令或tomcat控制台启动tomcat，访问项目。</p><p><img src= "/img/loading.gif" data-lazy-src="media/cbc7fcf033be3d2c8e76fb19f3107100.png"></p><p>访问地址：<a href="http://localhost:8080/javaweb">http://localhost:8080/javaweb</a>（注意：先停止IDE的web服务）</p><p>（九）修改tomcat发布端口</p><p>将tomcat访问端口修改为8088，重新启动tomcat，访问<a href="http://localhost:8088/javaweb/first.jsp">http://localhost:8088/javaweb</a></p><p>修改文件为：tomcat/conf/server.xml</p><p><img src= "/img/loading.gif" data-lazy-src="media/c5dc9b7b21a421b4cc35b66bab38133e.png"></p><p>四、思考题</p><p>1、为什么访问项目时不需要输入全路径，如：<a href="http://localhost:8080/javaweb/index.jsp">http://localhost:8080/javaweb/index.jsp</a></p><p>因为在浏览器访问路径时，默认的访问页面文件是index.jsp。</p><p>2、如何将项目发布在其他目录下（非/tomcat/webapps目录）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;实验一-JSP开发环境的配置运行&quot;&gt;&lt;a href=&quot;#实验一-JSP开发环境的配置运行&quot; class=&quot;headerlink&quot; title=&quot;实验一 JSP开发环境的配置运行&quot;&gt;&lt;/a&gt;实验一 JSP开发环境的配置运行&lt;/h2&gt;&lt;p&gt;一、实验目的&lt;/p&gt;
+&lt;p&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javaWeb概述</title>
     <link href="http://yoursite.com/2020/09/24/javaWeb/"/>
     <id>http://yoursite.com/2020/09/24/javaWeb/</id>
     <published>2020-09-24T12:52:55.000Z</published>
-    <updated>2020-09-25T04:57:40.118Z</updated>
+    <updated>2020-09-25T07:44:34.177Z</updated>
     
     <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><div class="note success"><p>📚更新于9.24</p></div><hr><h1 id="第一章-web程序概述"><a href="#第一章-web程序概述" class="headerlink" title="第一章 web程序概述"></a>第一章 web程序概述</h1><h3 id="网页分类"><a href="#网页分类" class="headerlink" title="网页分类"></a>网页分类</h3><ul><li>静态页面：<code>纯HTML标记语言编写</code>的。只需要浏览器执行就好。</li><li>动态页面：与用户有交互的。需要web服务器对其做解析。</li></ul><h3 id="web消息生命周期"><a href="#web消息生命周期" class="headerlink" title="web消息生命周期"></a>web消息生命周期</h3><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/f8202fe08baefcdbe44c.png/4WH%7D3WZB_%5BDHYZP%7EXB%40Q_EU.png" align = 'left' /><h3 id="web应用程序类型"><a href="#web应用程序类型" class="headerlink" title="web应用程序类型"></a>web应用程序类型</h3><ul><li>C/S(客户端/服务器)<ul><li>优点：基于浏览器访问，速度快，安全性高，客户端强</li><li>缺点：需要下载安装升级，部署维护困难</li></ul></li><li>B/S(浏览器/服务器)<ul><li>优点：维护容易，只需要维护服务器</li><li>缺点：速度慢，安全性低，客户端能力弱</li></ul></li></ul><h3 id="web程序工作原理"><a href="#web程序工作原理" class="headerlink" title="web程序工作原理"></a>web程序工作原理</h3><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/e1cc4b15a80ca8fd8cfc.png/J9V%28AN%40%404BFY55VO%5B9KB8A6.png" align = 'left' />]]></content>
     
@@ -83,9 +106,9 @@
     <link href="http://yoursite.com/2020/09/22/OS/"/>
     <id>http://yoursite.com/2020/09/22/OS/</id>
     <published>2020-09-22T12:49:31.000Z</published>
-    <updated>2020-09-24T04:32:24.128Z</updated>
+    <updated>2020-09-25T07:33:23.597Z</updated>
     
-    <content type="html"><![CDATA[<div class="note info"><p>📖操作系统第一章</p><p>📚操作系统引论</p></div><hr><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul><li>目标和作用：</li><li>发展过程：</li><li>基本特征</li><li>主要功能</li><li>OS结构设计</li></ul><hr><p><strong>操作系统的目标</strong></p><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/cbe113ff91326d85a0b6.png/W6WQ%40%60II%7E9KU1%5BE%5D5%5D%60%7EJ%24U.png" align = 'left' /><h5 id="操作系统的发展过程"><a href="#操作系统的发展过程" class="headerlink" title="操作系统的发展过程"></a>操作系统的发展过程</h5><ul><li><p>单道批处理系统</p><ul><li>纸片机</li></ul></li><li><p>多道批处理系统</p><ul><li>优缺点<ul><li>资源利用率高</li><li>系统吞吐量大</li><li>平均周期长</li><li>无交互能力</li></ul></li></ul></li><li><p>分时系统</p><ul><li>人机交互： 不停调试和修改</li><li>共享主机： 共享一台主机</li><li>关键问题： 及时接收 及时处理</li><li>特征：多路性，独立性，交互性，及时性</li></ul></li><li><p>实时系统</p><ul><li>周期性实时任务和非周期性实时任务</li><li>硬实时任务和软实时任务</li></ul></li><li><p>实时和分时系统特征的比较</p><ul><li>多路性</li><li>独立性</li><li>及时性</li><li>交互性</li><li>可靠性</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<div class="note info"><p>📖操作系统第一章</p><p>📚操作系统引论</p></div><hr><h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul><li>目标和作用：</li><li>发展过程：</li><li>基本特征</li><li>主要功能</li><li>OS结构设计</li></ul><hr><p>:star:<strong>操作系统的目标</strong></p><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/cbe113ff91326d85a0b6.png/W6WQ%40%60II%7E9KU1%5BE%5D5%5D%60%7EJ%24U.png" align = 'left' /><h5 id="star-操作系统的发展过程"><a href="#star-操作系统的发展过程" class="headerlink" title=":star:操作系统的发展过程"></a>:star:操作系统的发展过程</h5><ul><li><p>单道批处理系统</p><ul><li>纸片机</li></ul></li><li><p>多道批处理系统</p><ul><li>优缺点<ul><li>资源利用率高</li><li>系统吞吐量大</li><li>平均周期长</li><li>无交互能力</li></ul></li></ul></li><li><p>分时系统</p><ul><li>人机交互： 不停调试和修改</li><li>共享主机： 共享一台主机</li><li>关键问题： 及时接收 及时处理</li><li>特征：多路性，独立性，交互性，及时性</li></ul></li><li><p>实时系统</p><ul><li>周期性实时任务和非周期性实时任务</li><li>硬实时任务和软实时任务</li></ul></li><li><p>实时和分时系统特征的比较</p><ul><li>多路性</li><li>独立性</li><li>及时性</li><li>交互性</li><li>可靠性</li></ul></li></ul><h5 id="star-操作系统的基本特征"><a href="#star-操作系统的基本特征" class="headerlink" title=":star:操作系统的基本特征"></a>:star:操作系统的基本特征</h5><p><code>并发</code>，<code>共享</code>，<code>虚拟</code>，<code>异步</code> </p><p>:star: 并行和并发：</p><ul><li>并行是同时刻</li><li>并发是时间段</li></ul><p>:star: 共享：</p><ul><li>互斥共享：轮流使用</li><li>同时访问：宏观上同时使用，微观轮流使用</li></ul><p>:star:虚拟：</p><ul><li><p>时分复用技术</p><ul><li>虚拟处理机</li><li>虚拟设备</li></ul></li><li><p>空分复用技术</p></li></ul><p>:star:异步：</p><ul><li>并发时，进程不按照顺序进行</li></ul><h5 id="star-操作系统的主要功能"><a href="#star-操作系统的主要功能" class="headerlink" title=":star:操作系统的主要功能"></a>:star:操作系统的主要功能</h5><ul><li><p>处理机管理功能（2，3章节）：进程控制，进程同步，进程通信，调度（作业调度和进程调度）</p></li><li><p>存储器管理功能：内存分配；内存保护；地址映射；内存扩充</p></li><li><p>作用：</p><ul><li>为每道程序分配内存空间</li><li>提高存储器的利用率</li><li>允许正在运行的程序申请内存空间</li></ul></li><li><p>方式</p><ul><li>静态分配</li><li>动态分配</li></ul></li><li><p>设备管理功能</p><ul><li>完成用户进程提出的I/O请求</li><li>提高CPU和I/O设备的利用率</li></ul></li></ul><h5 id="star-文件管理功能"><a href="#star-文件管理功能" class="headerlink" title=":star:文件管理功能"></a>:star:文件管理功能</h5><ul><li>文件存储空间的管理</li><li>目录管理</li><li>文件的读/写管理和保护</li></ul><h5 id="star-操作系统与用户之间的接口"><a href="#star-操作系统与用户之间的接口" class="headerlink" title=":star:操作系统与用户之间的接口"></a>:star:操作系统与用户之间的接口</h5><ul><li>用户接口<ul><li>联机用户接口</li><li>脱机用户接口</li><li>图形用户接口</li></ul></li><li>程序接口</li></ul><h5 id="star-OS结构设计"><a href="#star-OS结构设计" class="headerlink" title=":star: OS结构设计"></a>:star: OS结构设计</h5><ul><li>传统操作系统结构</li><li>客户/服务器模式</li><li>面向对象的程序设计</li><li>微内核OS结构</li></ul><p>都存在优缺点，但是这小节不是重点，是软工学习的方向，如何设计一个操作系统。</p>]]></content>
     
     
       
