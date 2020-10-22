@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-22T12:11:21.969Z</updated>
+  <updated>2020-10-22T13:23:18.567Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>web-Servlet</title>
+    <link href="http://yoursite.com/2020/10/22/web-Servlet/"/>
+    <id>http://yoursite.com/2020/10/22/web-Servlet/</id>
+    <published>2020-10-22T12:11:18.000Z</published>
+    <updated>2020-10-22T13:23:18.567Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><hr><h1 id="Servlet介绍"><a href="#Servlet介绍" class="headerlink" title="Servlet介绍"></a>Servlet介绍</h1><p>Servlet是运行在服务器端的java应用程序。可以生成动态的web页面。实际上jsp的底层就是servlet。</p><h2 id="新建Servlet"><a href="#新建Servlet" class="headerlink" title="新建Servlet"></a>新建Servlet</h2><p><img src= "/img/loading.gif" data-lazy-src="http://lc-ysstfnx3.cn-n1.lcfile.com/70fd674289e3cde57f9c.png/%7D_25K%292FA%28ZWAK%5B%25Q8%6026%29A.png"></p><h2 id="重写doGet（）"><a href="#重写doGet（）" class="headerlink" title="重写doGet（）"></a>重写doGet（）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package servlets;</span><br><span class="line"></span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.annotation.WebServlet;</span><br><span class="line">import javax.servlet.http.HttpServlet;</span><br><span class="line">import javax.servlet.http.HttpServletRequest;</span><br><span class="line">import javax.servlet.http.HttpServletResponse;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line">@WebServlet(name &#x3D; &quot;WelcomeServlet&quot;)</span><br><span class="line">public class WelcomeServlet extends HttpServlet &#123;</span><br><span class="line">    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException &#123;</span><br><span class="line">        response.setContentType(&quot;text&#x2F;html;charset &#x3D; gb2312&quot;);</span><br><span class="line">        PrintWriter out &#x3D; response.getWriter();</span><br><span class="line">        out.println(&quot;欢迎&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="配置Servlet"><a href="#配置Servlet" class="headerlink" title="配置Servlet"></a>配置Servlet</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line"> &lt;servlet-name&gt;WelcomeServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line"> &lt;servlet-class&gt;servlets.WelcomeServlet&lt;&#x2F;servlet-class&gt;</span><br><span class="line">&lt;&#x2F;servlet&gt;</span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line">  &lt;servlet-name&gt;WelcomeServlet&lt;&#x2F;servlet-name&gt;</span><br><span class="line">  &lt;url-pattern&gt;&#x2F;servlets&#x2F;WelcomeServlet</span><br><span class="line"> &lt;&#x2F;url-pattern&gt;</span><br></pre></td></tr></table></figure><h2 id="部署Servlet"><a href="#部署Servlet" class="headerlink" title="部署Servlet"></a>部署Servlet</h2><p>复制war包到tomcat启动。</p><p>访问<a href="http://localhost:8088/mysql_war/servlets/WelcomeServlet">http://localhost:8088/mysql_war/servlets/WelcomeServlet</a></p><p>结果：欢迎。</p><h2 id="Servlet-与-JSP内置对象"><a href="#Servlet-与-JSP内置对象" class="headerlink" title="Servlet 与 JSP内置对象"></a>Servlet 与 JSP内置对象</h2><p>1.获取out对象</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PrintWriter out &#x3D; response.getWriter();</span><br></pre></td></tr></table></figure><p>2.request和response</p><p>函数体中的参数当作对象用</p><p>3.session对象</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HttpSession session &#x3D; request.getSession();</span><br></pre></td></tr></table></figure><p>4.application对象</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ServletContext application &#x3D; this.get ServletContext();</span><br></pre></td></tr></table></figure><p>使用application实现Servlet内服务器内的跳转</p><p>1.重定向</p><p>response.sendRedirect(“URL 地址”)</p><p>2.服务器内跳转</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ServletContext application &#x3D; this.get ServletContext();</span><br><span class="line">RequestDispatcher rd &#x3D; application.getRequestDispatcher(&quot;URL地址&quot;)；</span><br><span class="line">rd.forward(request,response);</span><br></pre></td></tr></table></figure><h2 id="获取参数"><a href="#获取参数" class="headerlink" title="获取参数"></a>获取参数</h2><p>全局</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ServletContext application &#x3D; this.getServletContext();</span><br><span class="line">String encoding &#x3D; application.getInitParameter(&quot;encoding&quot;);</span><br></pre></td></tr></table></figure><p>局部</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String driverClassName &#x3D; this.getInitParameter(&quot;driverClassName&quot;);</span><br></pre></td></tr></table></figure><h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p>以前都是在Servlet中设置编码，在前面已经讲过不利因素，下面用添加过滤器的方法解决乱码问题。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">package filter;</span><br><span class="line"></span><br><span class="line">import java.io.IOException;</span><br><span class="line">import javax.servlet.Filter;</span><br><span class="line">import javax.servlet.FilterChain;</span><br><span class="line">import javax.servlet.FilterConfig;</span><br><span class="line">import javax.servlet.ServletException;</span><br><span class="line">import javax.servlet.ServletRequest;</span><br><span class="line">import javax.servlet.ServletResponse;</span><br><span class="line"></span><br><span class="line">public class EncodingFilter implements Filter &#123;</span><br><span class="line">   public void init(FilterConfig config) throws ServletException &#123;&#125;</span><br><span class="line">   public void destroy() &#123;&#125;</span><br><span class="line">   public void doFilter(ServletRequest request, ServletResponse response,</span><br><span class="line">         FilterChain chain) throws IOException, ServletException &#123;</span><br><span class="line">      request.setCharacterEncoding(&quot;gb2312&quot;);</span><br><span class="line">      chain.doFilter(request, response);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>配置</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> &lt;filter&gt;</span><br><span class="line"> &lt;filter-name&gt;EncodingFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line"> &lt;filter-class&gt;filter.EncodingFilter&lt;&#x2F;filter-class&gt;</span><br><span class="line">&lt;&#x2F;filter&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line"> &lt;filter-name&gt;EncodingFilter&lt;&#x2F;filter-name&gt;</span><br><span class="line"> &lt;url-pattern&gt;&#x2F;*&lt;&#x2F;url-pattern&gt;</span><br></pre></td></tr></table></figure><h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>创建error.jsp</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language&#x3D;&quot;java&quot; pageEncoding&#x3D;&quot;gb2312&quot; isErrorPage&#x3D;&quot;true&quot;%&gt;</span><br><span class="line">&lt;html&gt;  </span><br><span class="line">&lt;body&gt;</span><br><span class="line">          对不起，您操作错误         </span><br><span class="line"> &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure><p>配置：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> &lt;error-page&gt;</span><br><span class="line">   &lt;exception-type&gt;java.lang.Exception&lt;&#x2F;exception-type&gt;</span><br><span class="line">   &lt;location&gt;&#x2F;error.jsp&lt;&#x2F;location&gt;</span><br><span class="line">&lt;&#x2F;error-page&gt;</span><br></pre></td></tr></table></figure><p>这样exception都被error.jsp统一处理了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1 id=&quot;Servlet介绍&quot;&gt;&lt;a href=&quot;#Servlet介绍&quot; class=&quot;headerlink&quot; title=&quot;Servle</summary>
+      
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
   
   <entry>
     <title>web-内置对象</title>
@@ -90,6 +118,35 @@
 
 &lt;hr&gt;
 &lt;h1 id=&quot;介绍：&quot;&gt;&lt;a href=&quot;#介绍：&quot; class=&quot;headerlink&quot; title=&quot;介绍：&quot;&gt;&lt;/a&gt;介绍：&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web-mysql</title>
+    <link href="http://yoursite.com/2020/10/22/web-mysql/"/>
+    <id>http://yoursite.com/2020/10/22/web-mysql/</id>
+    <published>2020-10-22T10:21:23.000Z</published>
+    <updated>2020-10-22T13:24:08.680Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><hr><h1 id="用JSP访问数据库"><a href="#用JSP访问数据库" class="headerlink" title="用JSP访问数据库"></a>用JSP访问数据库</h1><p>Java技术访问数据库叫作jdbc。与jdbc有关的接口存放在java.sql包中。主要包括：</p><p>Connection：负责连接数据库</p><p>Statement：负责执行数据库语句</p><p>ResultSet：负责存放查询结果</p><h2 id="数据库厂商驱动连接："><a href="#数据库厂商驱动连接：" class="headerlink" title="数据库厂商驱动连接："></a>数据库厂商驱动连接：</h2><p>第一步：安装数据库，选择的是mysql。</p><p>第二步：为了简化mysql的使用，选择破解版的navicteformysql</p><p>第三步：新建本地数据库，新建表。</p><p>第四步：将数据库厂商下载的jdbc驱动包，复制到WEB-INF/lib下。</p><p>第五步：连接数据库</p><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//star</span></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>);</span><br><span class="line">String url = <span class="string">&quot;jdbc:mysql://localhost:3306/school&quot;</span>;</span><br><span class="line"><span class="comment">//    8.0以前版本加载驱动方式</span></span><br><span class="line"><span class="comment">//end</span></span><br><span class="line">Connection con = DriverManager.getConnection(url, <span class="string">&quot;root&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">Statement stat = con.createStatement();</span><br></pre></td></tr></table></figure><p>使用Statement接口运行SQL语句：</p><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">Statement stat = con.createStatement();<span class="comment">//创建statement实例</span></span><br><span class="line">String sql = <span class="string">&quot;select * from school&quot;</span>;</span><br><span class="line">ResultSet rs = stat.executeQuery(sql);<span class="comment">//执行sql操作，返回SQL更改的内容或修改的次数</span></span><br></pre></td></tr></table></figure><p>接下来可以进行SQL的增删改查操作。这里不一一介绍。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;hr&gt;
+&lt;h1 id=&quot;用JSP访问数据库&quot;&gt;&lt;a href=&quot;#用JSP访问数据库&quot; class=&quot;headerlink&quot; title=&quot;用JSP访</summary>
       
     
     
