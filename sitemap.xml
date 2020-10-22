@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/09/24/JavaWeb-html5/</loc>
+    <loc>http://yoursite.com/2020/10/22/web-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</loc>
     
     <lastmod>2020-10-22</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/09/25/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</loc>
+    <loc>http://yoursite.com/2020/10/14/JavaWeb-html5/</loc>
+    
+    <lastmod>2020-10-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/10/22/web-form/</loc>
+    
+    <lastmod>2020-10-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/10/22/web-JSP/</loc>
     
     <lastmod>2020-10-22</lastmod>
     
@@ -24,6 +38,13 @@
   
   <url>
     <loc>http://yoursite.com/2020/09/24/javaWeb/</loc>
+    
+    <lastmod>2020-10-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/10/15/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</loc>
     
     <lastmod>2020-10-22</lastmod>
     

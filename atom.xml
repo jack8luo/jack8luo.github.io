@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-22T04:13:44.423Z</updated>
+  <updated>2020-10-22T12:11:21.969Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,96 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>web-内置对象</title>
+    <link href="http://yoursite.com/2020/10/22/web-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2020/10/22/web-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/</id>
+    <published>2020-10-22T11:56:29.000Z</published>
+    <updated>2020-10-22T12:11:21.969Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><hr><p>九个常用内置对象，看看书就能理解。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;p&gt;九个常用内置对象，看看书就能理解。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web-form</title>
+    <link href="http://yoursite.com/2020/10/22/web-form/"/>
+    <id>http://yoursite.com/2020/10/22/web-form/</id>
+    <published>2020-10-22T10:30:19.000Z</published>
+    <updated>2020-10-22T11:27:25.356Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><hr><h1 id="表单的性质"><a href="#表单的性质" class="headerlink" title="表单的性质"></a>表单的性质</h1><ul><li>在表单中可以输入一些内容，这些输入功能由控件提供，叫作表单元素。</li><li>在表单中一般会有一个按钮负责提交。</li><li>单击提交按钮，表单元素中的内容会提交给服务器。</li><li>表单元素放在<form> </form>之间。</li></ul><h1 id="表单元素的获取"><a href="#表单元素的获取" class="headerlink" title="表单元素的获取"></a>表单元素的获取</h1><p>表单元素有：文本框，密码框，多行文本框，单选按钮，下拉菜单等。</p><h3 id="文本框："><a href="#文本框：" class="headerlink" title="文本框："></a>文本框：</h3><p>表单：</p><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;textForm_result.jsp&quot;</span> method=<span class="string">&quot;post&quot;</span> &gt;</span><br><span class="line">请您输入学生的资料：&lt;BR&gt;</span><br><span class="line">&lt;input name=<span class="string">&quot;stuname&quot;</span> type=<span class="string">&quot;text&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;提交&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p>获取：</p><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   <span class="comment">//request.setCharacterEncoding(&quot;gb2312&quot;);</span></span><br><span class="line"></span><br><span class="line">   String stuname = request.getParameter(<span class="string">&quot;stuname&quot;</span>);</span><br><span class="line">   out.println(<span class="string">&quot;输入的查询关键字为:&quot;</span> + stuname);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><h3 id="密码框"><a href="#密码框" class="headerlink" title="密码框"></a>密码框</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;textForm_result.jsp&quot;</span> method=<span class="string">&quot;post&quot;</span> &gt;</span><br><span class="line">   请您输入学生的资料：&lt;BR&gt;</span><br><span class="line">   &lt;input name=<span class="string">&quot;stuname&quot;</span> type=<span class="string">&quot;text&quot;</span>&gt;</span><br><span class="line">   &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;提交&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">String password = request.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">out.println(<span class="string">&quot;密码为:&quot;</span> + password);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><h3 id="多行文本框"><a href="#多行文本框" class="headerlink" title="多行文本框"></a>多行文本框</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;textareaForm_result.jsp&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">   请您输入账号：&lt;input name=<span class="string">&quot;account&quot;</span> type=<span class="string">&quot;text&quot;</span>&gt;&lt;BR&gt;</span><br><span class="line">   请您输入密码：&lt;input name=<span class="string">&quot;password&quot;</span> type=<span class="string">&quot;password&quot;</span>&gt;&lt;BR&gt;</span><br><span class="line">   请您输入个人信息：&lt;BR&gt;</span><br><span class="line">   &lt;textarea name=&quot;info&quot; rows=&quot;5&quot; cols=&quot;30&quot;&gt;&lt;/textarea&gt;</span><br><span class="line">   &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   String info = request.getParameter(<span class="string">&quot;info&quot;</span>);</span><br><span class="line">   out.println(<span class="string">&quot;个人信息为:&quot;</span> + info);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><h3 id="单击按钮"><a href="#单击按钮" class="headerlink" title="单击按钮"></a>单击按钮</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;radioForm_result.jsp&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">   请您输入账号：&lt;input name=<span class="string">&quot;account&quot;</span> type=<span class="string">&quot;text&quot;</span>&gt;&lt;BR&gt;</span><br><span class="line">   请您输入密码：&lt;input name=<span class="string">&quot;password&quot;</span> type=<span class="string">&quot;password&quot;</span>&gt;&lt;BR&gt;</span><br><span class="line">   请您选择性别：</span><br><span class="line">   &lt;input name=<span class="string">&quot;sex&quot;</span> type=<span class="string">&quot;radio&quot;</span> value=<span class="string">&quot;boy&quot;</span> checked&gt;男</span><br><span class="line">   &lt;input name=<span class="string">&quot;sex&quot;</span> type=<span class="string">&quot;radio&quot;</span> value=<span class="string">&quot;girl&quot;</span>&gt;女&lt;BR&gt;</span><br><span class="line">   &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   String sex = request.getParameter(<span class="string">&quot;sex&quot;</span>);</span><br><span class="line">   out.println(<span class="string">&quot;性别为:&quot;</span> + sex);</span><br><span class="line"></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><h3 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;selectForm_result.jsp&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">   请您输入账号：&lt;input name=<span class="string">&quot;account&quot;</span> type=<span class="string">&quot;text&quot;</span>&gt;&lt;BR&gt;</span><br><span class="line">   请您输入密码：&lt;input name=<span class="string">&quot;password&quot;</span> type=<span class="string">&quot;password&quot;</span>&gt;&lt;BR&gt;</span><br><span class="line">   请您选择家乡：</span><br><span class="line">   &lt;select name=<span class="string">&quot;home&quot;</span>&gt;</span><br><span class="line">      &lt;option value=&quot;beijing&quot;&gt;北京&lt;/option&gt;</span><br><span class="line">      &lt;option value=&quot;shanghai&quot;&gt;上海&lt;/option&gt;</span><br><span class="line">      &lt;option value=&quot;guangdong&quot;&gt;广东&lt;/option&gt;</span><br><span class="line">   &lt;/select&gt;  </span><br><span class="line">   &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   String home = request.getParameter(<span class="string">&quot;home&quot;</span>);</span><br><span class="line">   out.println(<span class="string">&quot;家乡为:&quot;</span> + home);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure><p>还有很多表单元素，不一一举例。</p><h1 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h1><h3 id="中文无法显示"><a href="#中文无法显示" class="headerlink" title="中文无法显示"></a>中文无法显示</h3><p>在文件头上加</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language&#x3D;&quot;java&quot; contentType&#x3D;&quot;text&#x2F;html; charset&#x3D;gb2312&quot;%&gt;</span><br></pre></td></tr></table></figure><p>或者</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language&#x3D;&quot;java&quot;  pageEncoding&#x3D;gb2312&quot;%&gt;</span><br></pre></td></tr></table></figure><h3 id="提交过程显示乱码"><a href="#提交过程显示乱码" class="headerlink" title="提交过程显示乱码"></a>提交过程显示乱码</h3><p>直接修改request的编码。</p><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">request.setCharacterEncoding(<span class="string">&quot;gb2312&quot;</span>);</span><br><span class="line">String flower = request.getParameter(<span class="string">&quot;flower&quot;</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1 id=&quot;表单的性质&quot;&gt;&lt;a href=&quot;#表单的性质&quot; class=&quot;headerlink&quot; title=&quot;表单的性质&quot;&gt;&lt;/a&gt;表单的</summary>
+      
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web-JSP</title>
+    <link href="http://yoursite.com/2020/10/22/web-JSP/"/>
+    <id>http://yoursite.com/2020/10/22/web-JSP/</id>
+    <published>2020-10-22T10:29:32.000Z</published>
+    <updated>2020-10-22T11:11:27.328Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><hr><h1 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h1><p>JSP就是嵌入了java代码的网页。</p><p>JSP属于动态网页</p><p>创建JSP：</p><p>在IDEA左上角点击File-New-Project,选择java-javaweb.确定。</p><p>在创建好的项目下的 WEB-INF目录下右击点击New-JSP.</p><p>如图:</p><p><img src= "/img/loading.gif" data-lazy-src="http://lc-ysstfnx3.cn-n1.lcfile.com/a23027934dab66f577d0.png/6%7BS%7EVHJ%7B2SHD9B%60F%7B6%60YVOL.png"></p><p>其中，</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;</span><br></pre></td></tr></table></figure><p>是文件的page指令，作用是：定义输出格式是HTML。编码UTF-8.语言是java语言。</p><h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><p>编程时用到JDK类，或者自行定义的类这个时候需要用import导入。</p><p>&lt;%@ page import = “包名.类名”%&gt;</p><p>例如导入java.util.Date包实现时间的显示：</p><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> <span class="keyword">import</span>=<span class="string">&quot;java.util.Date&quot;</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">你的时间是&lt;%= <span class="keyword">new</span> Date() %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><p>效果：</p><p>你的时间是Thu Oct 22 18:57:16 CST 2020</p><h2 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h2><p>pageEncoding属性可以设置页面的字符集，常见的有ISO-8859-1,gb2312和GBK。</p><h2 id="设置错误页面"><a href="#设置错误页面" class="headerlink" title="设置错误页面"></a>设置错误页面</h2><p>发生异常的页面用：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%@ page errorPage &#x3D; &quot;***.jsp&quot;</span><br></pre></td></tr></table></figure><p>跳转到的***.jsp页面用：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;%@ page isErrorPage &#x3D; &quot;true&quot; %&gt; </span><br></pre></td></tr></table></figure><h2 id="JSP动作"><a href="#JSP动作" class="headerlink" title="JSP动作"></a>JSP动作</h2><p>jsp:forward : 执行页面转向，将请求的处理转发到下一个页面。</p><p>jsp:include : 用于动态引入一个JSP页面。</p><p>jsp:useBeam : 创建一个JavaBean的实例（初始化）。</p><p>jsp:setProperty : 设置JavaBean实例的属性值。</p><p>jsp:getProperty : 输出JavaBean实例的属性值。</p><p>jsp:plugin : 用于下载JavaBean或Applet到客户端。</p><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>&lt;% – 注释内容 – %&gt;</p><p>//</p><p>/*   */</p><h1 id="JSP表达式"><a href="#JSP表达式" class="headerlink" title="JSP表达式"></a>JSP表达式</h1><p>&lt;% =变量/返回值/表达式 %&gt;</p><p>例如&lt;%=msg%&gt;,表示把msg内容输出给客户端。等价于&lt;%out.print(msg);%&gt;</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1 id=&quot;介绍：&quot;&gt;&lt;a href=&quot;#介绍：&quot; class=&quot;headerlink&quot; title=&quot;介绍：&quot;&gt;&lt;/a&gt;介绍：&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>javaWeb环境搭配</title>
-    <link href="http://yoursite.com/2020/09/25/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/"/>
-    <id>http://yoursite.com/2020/09/25/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</id>
-    <published>2020-09-25T07:44:46.000Z</published>
-    <updated>2020-10-22T04:13:44.423Z</updated>
+    <link href="http://yoursite.com/2020/10/15/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/"/>
+    <id>http://yoursite.com/2020/10/15/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/</id>
+    <published>2020-10-15T07:44:46.000Z</published>
+    <updated>2020-10-22T04:16:59.856Z</updated>
     
     <content type="html"><![CDATA[<h2 id="实验一-JSP开发环境的配置运行"><a href="#实验一-JSP开发环境的配置运行" class="headerlink" title="实验一 JSP开发环境的配置运行"></a>实验一 JSP开发环境的配置运行</h2><p>一、实验目的</p><p>1．掌握设置JDK环境。</p><p>2．掌握设置Tomcat环境。</p><p>3．安装、掌握Eclipse、MyEclipse、IntelliJ IDEA软件，为学习 JSP和进行<br>JSP的实验做好准备工作。</p><p>4．浏览JSP 程序并运行JSP页面。</p><p>二、实验项目内容</p><p>（一）JDK安装与配置</p><p>略</p><p>（二）Tomcat安装与配置</p><p>略</p><p>（三）IDE（Eclipse、MyEclipse或IntelliJ IDEA）的安装与配置</p><p>略</p><p>（四）在IDE上建立一个项目（javaweb）在项目中一个JSP （first.jsp）</p><p>以intelliJ IDEA为例</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/195443c4d887f92c8c3e4736d11715b7.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/902076ec3de1fd330eacb5e31db1e9ab.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/dd610eb95051fbcb72372201de767ecb.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/78fef6257f1f8b76b9af53fe7ea0d7bb.png"></p><p>（五）部署JSP工程文件</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/322d4836e417e0ea859a4471e74f0114.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/448a015f52c65fd90de86c54c8cd1477.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/3d8fe250d0166343fb41715b3326afe4.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/2a022e382c248275ed7e848de5a4c7ee.png"></p><p>（六）启动Tomcat服务器（IDE方式）</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/10eb21b70c21d22df5e4a0911dc48139.png"></p><p>（七）浏览JSP</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/f804136a1b1b511ecf376c9694ad8b35.png"></p><p>（八）发布WAR包</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/902076ec3de1fd330eacb5e31db1e9ab.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/41fa326c4d0b272dce723e68172f69bb.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/cd027d3c2ac62249d752cdcd3e109af9.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/f4e29149b67840f46951c8be81798891.png"></p><p>编译生成war包</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/3e5ffcc15ddf64428de95102eb0692e1.png"></p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/4640cc49528c558819d2bffe3b5b4f82.png"></p><p>访问之前设定的文件目录路径，可看到生成的war包文件。</p><p>将项目生成war包，放置tomcat/webapps下，</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/9737280c30a930550c51fc868aef329d.png"></p><p>通过命令或tomcat控制台启动tomcat，访问项目。</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/cbc7fcf033be3d2c8e76fb19f3107100.png"></p><p>访问地址：<a href="http://localhost:8080/javaweb">http://localhost:8080/javaweb</a>（注意：先停止IDE的web服务）</p><p>（九）修改tomcat发布端口</p><p>将tomcat访问端口修改为8088，重新启动tomcat，访问<a href="http://localhost:8088/javaweb/first.jsp">http://localhost:8088/javaweb</a></p><p>修改文件为：tomcat/conf/server.xml</p><p><img src= "/img/loading.gif" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/c5dc9b7b21a421b4cc35b66bab38133e.png"></p><p>四、思考题</p><p>1、为什么访问项目时不需要输入全路径，如：<a href="http://localhost:8080/javaweb/index.jsp">http://localhost:8080/javaweb/index.jsp</a></p><p>因为在浏览器访问路径时，默认的访问页面文件是index.jsp。</p><p>2、如何将项目发布在其他目录下（非/tomcat/webapps目录）</p>]]></content>
     
@@ -42,11 +127,42 @@
   </entry>
   
   <entry>
+    <title>javaWeb—html5</title>
+    <link href="http://yoursite.com/2020/10/14/JavaWeb-html5/"/>
+    <id>http://yoursite.com/2020/10/14/JavaWeb-html5/</id>
+    <published>2020-10-14T12:52:55.000Z</published>
+    <updated>2020-10-22T12:02:39.612Z</updated>
+    
+    <content type="html"><![CDATA[<hr><div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><div class="note success"><p>📚更新于9.24</p></div><h1 id="第二章-HTML5"><a href="#第二章-HTML5" class="headerlink" title="第二章 HTML5"></a>第二章 HTML5</h1><ul><li><p>静态网页制作</p></li><li><p>HTML中的常见标签</p></li><li><p>表格标签</p></li><li><p>链接和图片标签</p></li><li><p>表单标签</p></li><li><p>框架</p></li></ul><hr><h2 id="静态网页制作"><a href="#静态网页制作" class="headerlink" title="静态网页制作"></a>静态网页制作</h2><ul><li><p><input disabled="" type="checkbox">  HTML 有’两种’类型的标签，一类是单标签   &lt; br &gt;就是一种单标签，它只需要单独一组符号就可以表示完整的功能。另一种是双标签，形如&lt; B &gt;内容&lt; /B&gt;，表示将”内容”显示为粗体，这种标签所围绕的内容就是标签作用的作用域.</p></li><li><p><input disabled="" type="checkbox">  标签还有属性，如： &lt; a href=page.html/&gt;，其中的“href”就是一个属性名称，“page.html”是属性值。</p></li><li><p><input disabled="" type="checkbox">  HTML 语言对于大小写不敏感</p></li></ul><h2 id="文字标签"><a href="#文字标签" class="headerlink" title="文字标签"></a>文字标签</h2><p>标题标签：&lt; hn&gt;…&lt; /hn&gt;</p><p>换行标签：&lt; br&gt;</p><p>段落标签：&lt; p&gt;为段落标签，一个段落开始由&lt; p&gt;来标记，结束用&lt; /p&gt;表示。&lt; p&gt;有一个常用属性align，用来指明内容显示时的对齐方式，常用的有left、center和right，分别表示左对齐、居中对齐和右对齐。</p><p>&lt;  font&gt;&lt;/ font&gt;:用于标记字体。属性：size:设置字体大小。face：设置字体类型。color：设置字体颜色。</p><h2 id="HTML常见标签"><a href="#HTML常见标签" class="headerlink" title="HTML常见标签"></a>HTML常见标签</h2><p><strong>常见的设置文字风格的标签有：</strong> </p><ul><li><p>&lt; b&gt;内容&lt; /b&gt;：将内容设置为粗体。</p></li><li><p>&lt; u&gt;内容&lt; /u&gt;：将内容设置下划线。</p></li><li><p>&lt; i&gt;内容&lt; /i&gt;：将内容设置为斜体。</p></li><li><p>&lt; sup&gt;内容&lt; /sup&gt;：将内容设置为上标。</p></li><li><p>&lt; sub&gt;内容&lt; /sub&gt;：将内容设置为下标</p></li><li><p>&lt; blink&gt;内容&lt; /blink&gt;：将内容设置为闪烁（非标准元素）。</p></li></ul><h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><p>•&lt; ul&gt;内容&lt; /ul&gt;，表示它所包围的内容是无序列表标签，即列表 中每一项目前不会加上序号，而是会加上●、○、■等符号。其中列表的每一项用&lt; li&gt;列表项&lt; /li&gt;标示。</p><p>• &lt; ol&gt;内容&lt; /ol&gt;表示有序标签，意义与使用方法和无序列表标签大致相同，不同点为它会在每个列表项前加上数字</p><h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><ul><li>编写表格所用到的标签如下：</li></ul><p>&lt; table&gt; &lt; /table&gt;：定义表格，表格的所有内容都写在这个标签之内</p><p>&lt; caption&gt;&lt; /caption&gt;：定义标题，标题会自动出现在整张表格的上方</p><p>&lt; tr&gt;&lt; /tr&gt;：定义表行</p><p>&lt; th&gt;&lt; /th&gt;：定义表头，包含在&lt; tr&gt;&lt;/ tr&gt;之间，表头中的文字会自动变成粗体</p><p>&lt; td&gt;&lt;/ td&gt;：定义表元(表格的具体数据)，包含在&lt; tr&gt;&lt;/t r&gt;之间</p><ul><li>以下为制作表格的标签中大多拥有的公共属性： </li></ul><p><strong>align：水平布局方式，常用属性值有 left，right，center，表示左对齐，右对齐和居中对齐，&lt; table&gt;的该属性表示表格在页面的布局方式，&lt; tr&gt;、&lt; td&gt;的该属性表示该行和该表元内的内容的布局方式。默认布局方式为左对齐</strong></p><p>ü<strong>bgcolor：设置背景颜色</strong> </p><p>ü<strong>border：设置边框的宽度，属性值为整数，为 0 时表格没有边框，默认值为 0</strong> </p><p>ü<strong>width：宽度，默认单位为像素，也可以使用百分制单位</strong> </p><p>ü<strong>height：高度，默认单位为像素；也可以使用百分制单位</strong></p><ul><li>对于整张表格，<table>标签常用的属性有以下几个：</li></ul><p>ü<strong>bordercolor：表格边框的颜色，默认为黑色</strong> </p><p>ü<strong>cellpadding：表元边框的宽度</strong> </p><p>ü<strong>cellspacing：表元的边框与表格边框之间的宽度</strong></p><ul><li>合并单元格</li></ul><p>合并单元格必须对&lt; td&gt;标签中的 rowspan、colspan 进行设置，属性值都为整数，默认为 1，表示没有合并。这两个属性的意思分别为：从该表元起，该表元在行或者列上占有的单 元格数，比如设置某个&lt; td&gt;标签rowspan=2，表示该表元及其下面的表元合并成一个。</p><h2 id="链接和图片标签"><a href="#链接和图片标签" class="headerlink" title="链接和图片标签"></a>链接和图片标签</h2><p>&lt; a&gt;…&lt; /a&gt; 此标签的一个重要属性是：href，它的值表示链接所指向的资源地址.</p><p>图片标签比较重要和常用的标签有以下几个： </p><p><strong>src：表示图片储存的位置</strong> </p><p><strong>width，height，border，align：作用与前文所提到属性相同</strong> </p><p><strong>alt：当图片未载入或者载入失败时提供的替代性的文字说明</strong></p><h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>很多网页上，可以让用户在一些控件中输入一些内容，如文本框、密码框等，输入之后，提交，这些控件所在的区域叫做表单(form)。</p><p>一个表单是这样组成的：</p><p><strong>&lt; form action=”提交地址”&gt;</strong></p><p> <strong>表单内容（包括按钮、输入框、选择框等）</strong></p><p><strong>&lt; /form&gt;</strong></p><ul><li>表单最基本的标签是&lt; input&gt;标签，该标签可以用来显示输入框和按钮等表单元素。它的属性type决定了表单元素的类型，可以为以下的值：</li></ul><p><strong>text：文本框，text 也为 type 的默认属性</strong></p><p><strong>password：密码框</strong> </p><p><strong>radio：单选按钮，可以将多个单选按钮的 name 属性设置相同，使其成为一组。checked属性可设置默认被选</strong> </p><p><strong>checkbox：复选框，checked 属性可设置默认被选</strong></p><p><strong>reset：重置按钮，按下之后，所有的表单元素内容变为默认值</strong> </p><p><strong>button：普通按钮</strong> </p><p><strong>submit：提交按钮，按下之后，网页会将表单的内容提交给 action 设定的网页，action的值为空时提交给本页</strong> </p><p><strong>image：图片，但是点击它的效果与提交按钮一样，都会提交表单</strong></p><ul><li><p>表单中其他类型的表单元素还包括多行文本框和选择菜单等。</p><p><strong>&lt;**textarea&gt;&lt; /textarea&gt; 表示多行文本框，可用rows属性表示其行数，cols属性表示其列数</strong>。</p><p><strong>&lt; select&gt;&lt; /select&gt;</strong> <strong>表示下拉菜单，其中的选项使用</strong><option><strong>选项内容</strong>&lt; /option&gt;**表示，multiple属性可将其设置为可多选，size属性的值为下拉菜单的显示的项目数。</p></li></ul><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>框架的写法如下： </p><p> &lt; frameset cols=”30%,70%”&gt; </p><p> &lt; frame src=”left.html” noresize scrolling=”no” name=”left”&gt;&lt; /frame&gt; </p><p> &lt; frame src=”right.html” noresize scrolling=”no” name=”right”&gt;&lt; /frame&gt; </p><p> &lt; /frameset&gt;</p><hr><p>&lt; frameset&gt;&lt; /frameset&gt;的属性有：</p><p><strong>rows</strong>：横向分割网页。属性值决定了分割页面之间的宽度的比值。</p><p><strong>cols</strong>：纵向分割网页。属性值决定了分割页面之间的长度的比值。</p><p><strong>border</strong>：框架边框的宽度。当值为<strong>0</strong>时，表示没有边框</p><p>**&lt; frameset&gt;&lt; /frameset&gt;**是可以嵌套使用的</p><p>&lt; frame&gt;&lt; /frame&gt;的属性有：</p><p><strong>src</strong>：表示框架内容的地址。</p><p><strong>noresize</strong>：表示该框架不可被用户改变大小。</p><p><strong>scrolling</strong>：表示是否有滚动条。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;📚更新于9.24&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;第二章-HTML5&quot;&gt;&lt;a</summary>
+      
+    
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
+    
+    
+    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>javaWeb概述</title>
     <link href="http://yoursite.com/2020/09/24/javaWeb/"/>
     <id>http://yoursite.com/2020/09/24/javaWeb/</id>
     <published>2020-09-24T12:52:55.000Z</published>
-    <updated>2020-10-22T03:44:52.670Z</updated>
+    <updated>2020-10-22T10:14:37.409Z</updated>
     
     <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><div class="note success"><p>📚更新于9.24</p></div><hr><h1 id="第一章-web程序概述"><a href="#第一章-web程序概述" class="headerlink" title="第一章 web程序概述"></a>第一章 web程序概述</h1><h3 id="网页分类"><a href="#网页分类" class="headerlink" title="网页分类"></a>网页分类</h3><ul><li>静态页面：<code>纯HTML标记语言编写</code>的。只需要浏览器执行就好。</li><li>动态页面：与用户有交互的。需要web服务器对其做解析。</li></ul><h3 id="web消息生命周期"><a href="#web消息生命周期" class="headerlink" title="web消息生命周期"></a>web消息生命周期</h3><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/f8202fe08baefcdbe44c.png/4WH%7D3WZB_%5BDHYZP%7EXB%40Q_EU.png" align = 'left' /><h3 id="web应用程序类型"><a href="#web应用程序类型" class="headerlink" title="web应用程序类型"></a>web应用程序类型</h3><ul><li>C/S(客户端/服务器)<ul><li>优点：基于浏览器访问，速度快，安全性高，客户端强</li><li>缺点：需要下载安装升级，部署维护困难</li></ul></li><li>B/S(浏览器/服务器)<ul><li>优点：维护容易，只需要维护服务器</li><li>缺点：速度慢，安全性低，客户端能力弱</li></ul></li></ul><h3 id="web程序工作原理"><a href="#web程序工作原理" class="headerlink" title="web程序工作原理"></a>web程序工作原理</h3><img src= "/img/loading.gif" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/e1cc4b15a80ca8fd8cfc.png/J9V%28AN%40%404BFY55VO%5B9KB8A6.png" align = 'left' />]]></content>
     
@@ -73,42 +189,11 @@
   </entry>
   
   <entry>
-    <title>javaWeb—html5</title>
-    <link href="http://yoursite.com/2020/09/24/JavaWeb-html5/"/>
-    <id>http://yoursite.com/2020/09/24/JavaWeb-html5/</id>
-    <published>2020-09-24T12:52:55.000Z</published>
-    <updated>2020-10-22T04:13:54.438Z</updated>
-    
-    <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><div class="note success"><p>📚更新于9.24</p></div><hr><h1 id="第二章-HTML5"><a href="#第二章-HTML5" class="headerlink" title="第二章 HTML5"></a>第二章 HTML5</h1><ul><li><p>静态网页制作</p></li><li><p>HTML中的常见标签</p></li><li><p>表格标签</p></li><li><p>链接和图片标签</p></li><li><p>表单标签</p></li><li><p>框架</p></li></ul><hr><h2 id="静态网页制作"><a href="#静态网页制作" class="headerlink" title="静态网页制作"></a>静态网页制作</h2><ul><li><p><input disabled="" type="checkbox">  HTML 有’两种’类型的标签，一类是单标签   &lt; br &gt;就是一种单标签，它只需要单独一组符号就可以表示完整的功能。另一种是双标签，形如&lt; B &gt;内容&lt; /B&gt;，表示将”内容”显示为粗体，这种标签所围绕的内容就是标签作用的作用域.</p></li><li><p><input disabled="" type="checkbox">  标签还有属性，如： &lt; a href=page.html/&gt;，其中的“href”就是一个属性名称，“page.html”是属性值。</p></li><li><p><input disabled="" type="checkbox">  HTML 语言对于大小写不敏感</p></li></ul><h2 id="文字标签"><a href="#文字标签" class="headerlink" title="文字标签"></a>文字标签</h2><p>标题标签：&lt; hn&gt;…&lt; /hn&gt;</p><p>换行标签：&lt; br&gt;</p><p>段落标签：&lt; p&gt;为段落标签，一个段落开始由&lt; p&gt;来标记，结束用&lt; /p&gt;表示。&lt; p&gt;有一个常用属性align，用来指明内容显示时的对齐方式，常用的有left、center和right，分别表示左对齐、居中对齐和右对齐。</p><p>&lt;  font&gt;&lt;/ font&gt;:用于标记字体。属性：size:设置字体大小。face：设置字体类型。color：设置字体颜色。</p><h2 id="HTML常见标签"><a href="#HTML常见标签" class="headerlink" title="HTML常见标签"></a>HTML常见标签</h2><p><strong>常见的设置文字风格的标签有：</strong> </p><ul><li><p>&lt; b&gt;内容&lt; /b&gt;：将内容设置为粗体。</p></li><li><p>&lt; u&gt;内容&lt; /u&gt;：将内容设置下划线。</p></li><li><p>&lt; i&gt;内容&lt; /i&gt;：将内容设置为斜体。</p></li><li><p>&lt; sup&gt;内容&lt; /sup&gt;：将内容设置为上标。</p></li><li><p>&lt; sub&gt;内容&lt; /sub&gt;：将内容设置为下标</p></li><li><p>&lt; blink&gt;内容&lt; /blink&gt;：将内容设置为闪烁（非标准元素）。</p></li></ul><h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><p>•&lt; ul&gt;内容&lt; /ul&gt;，表示它所包围的内容是无序列表标签，即列表 中每一项目前不会加上序号，而是会加上●、○、■等符号。其中列表的每一项用&lt; li&gt;列表项&lt; /li&gt;标示。</p><p>• &lt; ol&gt;内容&lt; /ol&gt;表示有序标签，意义与使用方法和无序列表标签大致相同，不同点为它会在每个列表项前加上数字</p><h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><ul><li>编写表格所用到的标签如下：</li></ul><p>&lt; table&gt; &lt; /table&gt;：定义表格，表格的所有内容都写在这个标签之内</p><p>&lt; caption&gt;&lt; /caption&gt;：定义标题，标题会自动出现在整张表格的上方</p><p>&lt; tr&gt;&lt; /tr&gt;：定义表行</p><p>&lt; th&gt;&lt; /th&gt;：定义表头，包含在&lt; tr&gt;&lt;/ tr&gt;之间，表头中的文字会自动变成粗体</p><p>&lt; td&gt;&lt;/ td&gt;：定义表元(表格的具体数据)，包含在&lt; tr&gt;&lt;/t r&gt;之间</p><ul><li>以下为制作表格的标签中大多拥有的公共属性： </li></ul><p><strong>align：水平布局方式，常用属性值有 left，right，center，表示左对齐，右对齐和居中对齐，&lt; table&gt;的该属性表示表格在页面的布局方式，&lt; tr&gt;、&lt; td&gt;的该属性表示该行和该表元内的内容的布局方式。默认布局方式为左对齐</strong></p><p>ü<strong>bgcolor：设置背景颜色</strong> </p><p>ü<strong>border：设置边框的宽度，属性值为整数，为 0 时表格没有边框，默认值为 0</strong> </p><p>ü<strong>width：宽度，默认单位为像素，也可以使用百分制单位</strong> </p><p>ü<strong>height：高度，默认单位为像素；也可以使用百分制单位</strong></p><ul><li>对于整张表格，<table>标签常用的属性有以下几个：</li></ul><p>ü<strong>bordercolor：表格边框的颜色，默认为黑色</strong> </p><p>ü<strong>cellpadding：表元边框的宽度</strong> </p><p>ü<strong>cellspacing：表元的边框与表格边框之间的宽度</strong></p><ul><li>合并单元格</li></ul><p>合并单元格必须对&lt; td&gt;标签中的 rowspan、colspan 进行设置，属性值都为整数，默认为 1，表示没有合并。这两个属性的意思分别为：从该表元起，该表元在行或者列上占有的单 元格数，比如设置某个&lt; td&gt;标签rowspan=2，表示该表元及其下面的表元合并成一个。</p><h2 id="链接和图片标签"><a href="#链接和图片标签" class="headerlink" title="链接和图片标签"></a>链接和图片标签</h2><p>&lt; a&gt;…&lt; /a&gt; 此标签的一个重要属性是：href，它的值表示链接所指向的资源地址.</p><p>图片标签比较重要和常用的标签有以下几个： </p><p><strong>src：表示图片储存的位置</strong> </p><p><strong>width，height，border，align：作用与前文所提到属性相同</strong> </p><p><strong>alt：当图片未载入或者载入失败时提供的替代性的文字说明</strong></p><h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>很多网页上，可以让用户在一些控件中输入一些内容，如文本框、密码框等，输入之后，提交，这些控件所在的区域叫做表单(form)。</p><p>一个表单是这样组成的：</p><p><strong>&lt; form action=”提交地址”&gt;</strong></p><p> <strong>表单内容（包括按钮、输入框、选择框等）</strong></p><p><strong>&lt; /form&gt;</strong></p><ul><li>表单最基本的标签是&lt; input&gt;标签，该标签可以用来显示输入框和按钮等表单元素。它的属性type决定了表单元素的类型，可以为以下的值：</li></ul><p><strong>text：文本框，text 也为 type 的默认属性</strong></p><p><strong>password：密码框</strong> </p><p><strong>radio：单选按钮，可以将多个单选按钮的 name 属性设置相同，使其成为一组。checked属性可设置默认被选</strong> </p><p><strong>checkbox：复选框，checked 属性可设置默认被选</strong></p><p><strong>reset：重置按钮，按下之后，所有的表单元素内容变为默认值</strong> </p><p><strong>button：普通按钮</strong> </p><p><strong>submit：提交按钮，按下之后，网页会将表单的内容提交给 action 设定的网页，action的值为空时提交给本页</strong> </p><p><strong>image：图片，但是点击它的效果与提交按钮一样，都会提交表单</strong></p><ul><li><p>表单中其他类型的表单元素还包括多行文本框和选择菜单等。</p><p><strong>&lt;**textarea&gt;&lt; /textarea&gt; 表示多行文本框，可用rows属性表示其行数，cols属性表示其列数</strong>。</p><p><strong>&lt; select&gt;&lt; /select&gt;</strong> <strong>表示下拉菜单，其中的选项使用</strong><option><strong>选项内容</strong>&lt; /option&gt;**表示，multiple属性可将其设置为可多选，size属性的值为下拉菜单的显示的项目数。</p></li></ul><h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>框架的写法如下： </p><p> &lt; frameset cols=”30%,70%”&gt; </p><p> &lt; frame src=”left.html” noresize scrolling=”no” name=”left”&gt;&lt; /frame&gt; </p><p> &lt; frame src=”right.html” noresize scrolling=”no” name=”right”&gt;&lt; /frame&gt; </p><p> &lt; /frameset&gt;</p><hr><p>&lt; frameset&gt;&lt; /frameset&gt;的属性有：</p><p><strong>rows</strong>：横向分割网页。属性值决定了分割页面之间的宽度的比值。</p><p><strong>cols</strong>：纵向分割网页。属性值决定了分割页面之间的长度的比值。</p><p><strong>border</strong>：框架边框的宽度。当值为<strong>0</strong>时，表示没有边框</p><p>**&lt; frameset&gt;&lt; /frameset&gt;**是可以嵌套使用的</p><p>&lt; frame&gt;&lt; /frame&gt;的属性有：</p><p><strong>src</strong>：表示框架内容的地址。</p><p><strong>noresize</strong>：表示该框架不可被用户改变大小。</p><p><strong>scrolling</strong>：表示是否有滚动条。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;📖这是大三上学期学的javaweb知识记录总汇&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;📚更新于9.24&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;hr&gt;
-&lt;h1 id=&quot;第二章-HTML5&quot;&gt;&lt;a</summary>
-      
-    
-    
-    
-    <category term="javaWeb" scheme="http://yoursite.com/categories/javaWeb/"/>
-    
-    
-    <category term="javaWeb" scheme="http://yoursite.com/tags/javaWeb/"/>
-    
-  </entry>
-  
-  <entry>
     <title>javaWebjavascript</title>
     <link href="http://yoursite.com/2020/09/24/javascript/"/>
     <id>http://yoursite.com/2020/09/24/javascript/</id>
     <published>2020-09-24T12:52:55.000Z</published>
-    <updated>2020-10-22T03:53:37.474Z</updated>
+    <updated>2020-10-22T10:30:54.407Z</updated>
     
     <content type="html"><![CDATA[<div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p></div><div class="note success"><p>📚更新于9.24</p></div><hr><ul><li><p>JavaScript简介</p></li><li><p>JavaScript内置对象</p></li></ul><hr><ul><li>JavaScript简介<ul><li>JavaScript 与 Java 一样，对大小写是敏感的 </li><li>在 JavaScript 中，注释有三种写法：一种是 HTML 注释的写法：&lt; !–注释内容– &gt;，还有两种和 Java 语言相同，分别为：”//单行注释”和”/ * 多行注释 * /“</li><li>除了可以将 JavaScript 代码嵌入 HTML 中之外，还可以专门将 JavaScript 代码写在单独 的文件中</li><li>弱类型变量</li><li>需要注意的是，JavaScript中变量未声明就使用是不会报错的。</li></ul></li></ul><p><strong>JavaScript 中定义一个函数的基本格式是：</strong>  </p><p><strong>function 函数名(参数列表){</strong> </p><p>   <strong>return 值;</strong> </p><p>   <strong>}</strong> </p><p>  <strong>也可以在使用中直接匿名定义：</strong> </p><p>   <strong>var arg1 = function(参数列表){</strong> </p><p>   <strong>return 值;</strong> </p><p>   <strong>}</strong> </p><p>使用最多的内置对象（内置对象由浏览器提供）有四个，并且之后的学习也将主要围绕着四个对象展开：</p><p><strong>window：负责操作浏览器窗口，负责窗口状态，开闭等</strong> </p><p><strong>document：负责操作浏览器载入的文档(HTML 文件)。它从属于 window</strong></p><p><strong>history：可以代替后退(前进)按钮访问历史记录，从属于 window</strong>  <strong>location：访问地址栏，也是从属于 window</strong></p><ul><li><p>window 对象可以跳出提示框。主要有如下功能： </p><p>window.alert(“内容”)：出现消息框</p><p>window.confirm(“内容”)：出现确认框</p><p>window.prompt(“内容”)：出现输入框</p></li></ul><p><strong>打开、关闭窗口</strong> </p><p> window.open()在网页制作中使用非常广泛，参数有 3 个，第 1 个是新窗口的地址，第 2 个是新窗口名称，第 3 个是新窗口状态，其中新窗口状态的属性可设置的有： </p><p> toolbar：是否有工具栏，可选 1 和 0 </p><p> location：是否有地址栏，可选 1 和 0 </p><p> status：是否有状态栏，可选 1 和 0 </p><p>menubar：是否有菜单条，可选 1 和 0 </p><p> scrollbars:：是否有滚动条，可选 1 和 0 </p><p> resizable:：是否有可改变大小，可选 1 和 0 </p><p> width,height：窗口的宽度和高度，用像素表示 </p><p> left，top：窗口左上角相对于桌面左上角的 x 和 y 坐标。 </p><p> 各属性值用逗号隔开。如： </p><p> newWindow = window.open(“window1.html”,”new1”, </p><p> “toolbar=0,width=300,height=300,top=500,left=500”); </p><p><strong>定时器</strong> </p><p>window 对象负责管理和控制页面的定时器，定时器的作用是让某个函数隔一段时间之后运行一次，格式为： </p><p> timer = window.setTimeout(“需要运行的函数”,”时间(用毫秒计)”); </p><p>如果要清除定时器，则可以：</p><p>​      clearTimeout(timer);</p><ul><li>history 对象</li></ul><p>history 对象包含用户的浏览历史等信息，用到这个对象的原因，是因为它可以代替后退 (前进)按钮访问历史记录，该对象从属于 window。</p><p>whistory 最常用的函数为： </p><p><strong>history.back()：返回上一页，相当于点了浏览器上的后退按钮</strong> </p><p><strong>history.forward()：返回下一页，相当于点了浏览器上的前进按钮</strong> </p><p><strong>window.history.go(n)：n 为整数，正数表示向前进 n 格页面，负数表示向后退 n 格页面</strong></p><ul><li>document 对象</li></ul><p>wdocument 对象从属于 window，其功能如下：</p><p><strong>在网页上输出</strong></p><p> writeln()函数为输出一些简单却重复的代码提供很大的便利</p><p><strong>设置网页的属性</strong></p><p>document 可以进行一些简单网页属性的设置，如网页标题、颜色等，并且可以得到网页的某些属性，如当前地址。比较常用的有：通过 document.title 来访问标题，通过document.location 来获取网页当前的地址</p><p><strong>访问文档元素，特别是表单元素</strong></p><p>document 可以访问文档中的元素(如图片、表单、表单中的控件等)，前提是元素的 name属性是确定的。访问方法为：document.元素名.子元素名….。比如，名为 form1 的表单中有一个文本框 account，其中的内容可以用如下代码获得： </p><p> var account = document.form1.account.value;</p><ul><li>location 对象</li></ul><p>location 对象可以访问浏览器地址栏，也是从属于 window，最常见功能就是跳转到另一个网页。跳转的方法就是修改location的href属性。</p><p>location 对象另一个比较常见的应用是定时跳转。需要结合window的定时器使用。</p><p>eg:</p><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line"><span class="built_in">window</span>.setTimeout(<span class="string">&quot;toIndex()&quot;</span>,<span class="string">&quot;3000&quot;</span>); <span class="comment">/*3秒后运行toindex*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">toIndex</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="built_in">window</span>.location.href = <span class="string">&quot;image.jpg&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
