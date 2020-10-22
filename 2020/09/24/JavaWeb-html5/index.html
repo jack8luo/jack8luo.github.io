@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>javaWeb—html5 | 骆皓的blog</title><meta name="description" content="📖这是大三上学期学的javaweb知识记录总汇   📚更新于9.24    第二章 HTML5 静态网页制作  HTML中的常见标签  表格标签  链接和图片标签  表单标签  框架    静态网页制作   HTML 有’两种’类型的标签，一类是单标签   &lt; br &gt;就是一种单标签，它只需要单独一组符号就可以表示完整的功能。另一种是双标签，形如&lt; B &gt;内容&lt;"><meta name="keywords" content="javaWeb"><meta name="author" content="骆皓"><meta name="copyright" content="骆皓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="http://lc-ySstfNx3.cn-n1.lcfile.com/cff636dc7dfb9e768757.png/favicon1.png"><link rel="canonical" href="http://yoursite.com/2020/09/24/JavaWeb-html5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="javaWeb—html5"><meta property="og:url" content="http://yoursite.com/2020/09/24/JavaWeb-html5/"><meta property="og:site_name" content="骆皓的blog"><meta property="og:description" content="📖这是大三上学期学的javaweb知识记录总汇   📚更新于9.24    第二章 HTML5 静态网页制作  HTML中的常见标签  表格标签  链接和图片标签  表单标签  框架    静态网页制作   HTML 有’两种’类型的标签，一类是单标签   &lt; br &gt;就是一种单标签，它只需要单独一组符号就可以表示完整的功能。另一种是双标签，形如&lt; B &gt;内容&lt;"><meta property="og:image" content="http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg"><meta property="article:published_time" content="2020-09-24T12:52:55.000Z"><meta property="article:modified_time" content="2020-10-22T03:50:40.773Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '天',
+  date_suffix: {"one_hour":"刚刚","hours":"小时前","day":"天前"},
+  copyright: {"limitCount":100,"languages":{"author":"作者: 骆皓","link":"链接: ","source":"来源: 骆皓的blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"✪ω✪","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-10-22 11:50:40'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/gh/radium-bit/res@master/live2d/autoload.js" async></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel = "stylesheet" href = "/css/mouse.css"><link rel = "stylesheet" href = "//at.alicdn.com/t/font_2091520_1nquea0g9um.css"><link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/hideCategory.min.css"><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="骆皓的blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/d1ac79ad2ca1bd6445f1.jpg/78801182_p0.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">7</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">4</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-kecheng"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-fanxiaoka"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-book"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-HTML5"><span class="toc-number">1.</span> <span class="toc-text">第二章 HTML5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">静态网页制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%A0%87%E7%AD%BE"><span class="toc-number">1.2.</span> <span class="toc-text">文字标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%E5%B8%B8%E8%A7%81%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.</span> <span class="toc-text">HTML常见标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">1.4.</span> <span class="toc-text">列表标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="toc-number">1.5.</span> <span class="toc-text">表格标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%92%8C%E5%9B%BE%E7%89%87%E6%A0%87%E7%AD%BE"><span class="toc-number">1.6.</span> <span class="toc-text">链接和图片标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="toc-number">1.7.</span> <span class="toc-text">表单标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6"><span class="toc-number">1.8.</span> <span class="toc-text">框架</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">骆皓的blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-kecheng"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-fanxiaoka"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-book"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">javaWeb—html5</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-24T12:52:55.000Z" title="发表于 2020-09-24 20:52:55">2020-09-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-22T03:50:40.773Z" title="更新于 2020-10-22 11:50:40">2020-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/javaWeb/">javaWeb</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><div class="note info"><p>📖这是大三上学期学的javaweb知识记录总汇</p>
+</div>
+
+<div class="note success"><p>📚更新于9.24</p>
+</div>
+
+<hr>
+<h1 id="第二章-HTML5"><a href="#第二章-HTML5" class="headerlink" title="第二章 HTML5"></a>第二章 HTML5</h1><ul>
+<li><p>静态网页制作</p>
+</li>
+<li><p>HTML中的常见标签</p>
+</li>
+<li><p>表格标签</p>
+</li>
+<li><p>链接和图片标签</p>
+</li>
+<li><p>表单标签</p>
+</li>
+<li><p>框架</p>
+</li>
+</ul>
+<hr>
+<h2 id="静态网页制作"><a href="#静态网页制作" class="headerlink" title="静态网页制作"></a>静态网页制作</h2><ul>
+<li><p><input disabled="" type="checkbox">  HTML 有’两种’类型的标签，一类是单标签   &lt; br &gt;就是一种单标签，它只需要单独一组符号就可以表示完整的功能。另一种是双标签，形如&lt; B &gt;内容&lt; /B&gt;，表示将”内容”显示为粗体，这种标签所围绕的内容就是标签作用的作用域.</p>
+</li>
+<li><p><input disabled="" type="checkbox">  标签还有属性，如： &lt; a href=page.html/&gt;，其中的“href”就是一个属性名称，“page.html”是属性值。</p>
+</li>
+<li><p><input disabled="" type="checkbox">  HTML 语言对于大小写不敏感</p>
+</li>
+</ul>
+<h2 id="文字标签"><a href="#文字标签" class="headerlink" title="文字标签"></a>文字标签</h2><p>标题标签：&lt; hn&gt;…&lt; /hn&gt;</p>
+<p>换行标签：&lt; br&gt;</p>
+<p>段落标签：&lt; p&gt;为段落标签，一个段落开始由&lt; p&gt;来标记，结束用&lt; /p&gt;表示。&lt; p&gt;有一个常用属性align，用来指明内容显示时的对齐方式，常用的有left、center和right，分别表示左对齐、居中对齐和右对齐。</p>
+<p>&lt;  font&gt;&lt;/ font&gt;:用于标记字体。属性：size:设置字体大小。face：设置字体类型。color：设置字体颜色。</p>
+<h2 id="HTML常见标签"><a href="#HTML常见标签" class="headerlink" title="HTML常见标签"></a>HTML常见标签</h2><p><strong>常见的设置文字风格的标签有：</strong> </p>
+<ul>
+<li><p>&lt; b&gt;内容&lt; /b&gt;：将内容设置为粗体。</p>
+</li>
+<li><p>&lt; u&gt;内容&lt; /u&gt;：将内容设置下划线。</p>
+</li>
+<li><p>&lt; i&gt;内容&lt; /i&gt;：将内容设置为斜体。</p>
+</li>
+<li><p>&lt; sup&gt;内容&lt; /sup&gt;：将内容设置为上标。</p>
+</li>
+<li><p>&lt; sub&gt;内容&lt; /sub&gt;：将内容设置为下标</p>
+</li>
+<li><p>&lt; blink&gt;内容&lt; /blink&gt;：将内容设置为闪烁（非标准元素）。</p>
+</li>
+</ul>
+<h2 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h2><p>•&lt; ul&gt;内容&lt; /ul&gt;，表示它所包围的内容是无序列表标签，即列表 中每一项目前不会加上序号，而是会加上●、○、■等符号。其中列表的每一项用&lt; li&gt;列表项&lt; /li&gt;标示。</p>
+<p>• &lt; ol&gt;内容&lt; /ol&gt;表示有序标签，意义与使用方法和无序列表标签大致相同，不同点为它会在每个列表项前加上数字</p>
+<h2 id="表格标签"><a href="#表格标签" class="headerlink" title="表格标签"></a>表格标签</h2><ul>
+<li>编写表格所用到的标签如下：</li>
+</ul>
+<p>&lt; table&gt; &lt; /table&gt;：定义表格，表格的所有内容都写在这个标签之内</p>
+<p>&lt; caption&gt;&lt; /caption&gt;：定义标题，标题会自动出现在整张表格的上方</p>
+<p>&lt; tr&gt;&lt; /tr&gt;：定义表行</p>
+<p>&lt; th&gt;&lt; /th&gt;：定义表头，包含在&lt; tr&gt;&lt;/ tr&gt;之间，表头中的文字会自动变成粗体</p>
+<p>&lt; td&gt;&lt;/ td&gt;：定义表元(表格的具体数据)，包含在&lt; tr&gt;&lt;/t r&gt;之间</p>
+<ul>
+<li>以下为制作表格的标签中大多拥有的公共属性： </li>
+</ul>
+<p><strong>align：水平布局方式，常用属性值有 left，right，center，表示左对齐，右对齐和居中对齐，&lt; table&gt;的该属性表示表格在页面的布局方式，&lt; tr&gt;、&lt; td&gt;的该属性表示该行和该表元内的内容的布局方式。默认布局方式为左对齐</strong></p>
+<p>ü<strong>bgcolor：设置背景颜色</strong> </p>
+<p>ü<strong>border：设置边框的宽度，属性值为整数，为 0 时表格没有边框，默认值为 0</strong> </p>
+<p>ü<strong>width：宽度，默认单位为像素，也可以使用百分制单位</strong> </p>
+<p>ü<strong>height：高度，默认单位为像素；也可以使用百分制单位</strong></p>
+<ul>
+<li>对于整张表格，<table>标签常用的属性有以下几个：</li>
+</ul>
+<p>ü<strong>bordercolor：表格边框的颜色，默认为黑色</strong> </p>
+<p>ü<strong>cellpadding：表元边框的宽度</strong> </p>
+<p>ü<strong>cellspacing：表元的边框与表格边框之间的宽度</strong></p>
+<ul>
+<li>合并单元格</li>
+</ul>
+<p>合并单元格必须对&lt; td&gt;标签中的 rowspan、colspan 进行设置，属性值都为整数，默认为 1，表示没有合并。这两个属性的意思分别为：从该表元起，该表元在行或者列上占有的单 元格数，比如设置某个&lt; td&gt;标签rowspan=2，表示该表元及其下面的表元合并成一个。</p>
+<h2 id="链接和图片标签"><a href="#链接和图片标签" class="headerlink" title="链接和图片标签"></a>链接和图片标签</h2><p>&lt; a&gt;…&lt; /a&gt; 此标签的一个重要属性是：href，它的值表示链接所指向的资源地址.</p>
+<p>图片标签比较重要和常用的标签有以下几个： </p>
+<p><strong>src：表示图片储存的位置</strong> </p>
+<p><strong>width，height，border，align：作用与前文所提到属性相同</strong> </p>
+<p><strong>alt：当图片未载入或者载入失败时提供的替代性的文字说明</strong></p>
+<h2 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h2><p>很多网页上，可以让用户在一些控件中输入一些内容，如文本框、密码框等，输入之后，提交，这些控件所在的区域叫做表单(form)。</p>
+<p>一个表单是这样组成的：</p>
+<p><strong>&lt; form action=”提交地址”&gt;</strong></p>
+<p> <strong>表单内容（包括按钮、输入框、选择框等）</strong></p>
+<p><strong>&lt; /form&gt;</strong></p>
+<ul>
+<li>表单最基本的标签是&lt; input&gt;标签，该标签可以用来显示输入框和按钮等表单元素。它的属性type决定了表单元素的类型，可以为以下的值：</li>
+</ul>
+<p><strong>text：文本框，text 也为 type 的默认属性</strong></p>
+<p><strong>password：密码框</strong> </p>
+<p><strong>radio：单选按钮，可以将多个单选按钮的 name 属性设置相同，使其成为一组。checked属性可设置默认被选</strong> </p>
+<p><strong>checkbox：复选框，checked 属性可设置默认被选</strong></p>
+<p><strong>reset：重置按钮，按下之后，所有的表单元素内容变为默认值</strong> </p>
+<p><strong>button：普通按钮</strong> </p>
+<p><strong>submit：提交按钮，按下之后，网页会将表单的内容提交给 action 设定的网页，action的值为空时提交给本页</strong> </p>
+<p><strong>image：图片，但是点击它的效果与提交按钮一样，都会提交表单</strong></p>
+<ul>
+<li><p>表单中其他类型的表单元素还包括多行文本框和选择菜单等。</p>
+<p><strong>&lt;**textarea&gt;&lt; /textarea&gt; 表示多行文本框，可用rows属性表示其行数，cols属性表示其列数</strong>。</p>
+<p><strong>&lt; select&gt;&lt; /select&gt;</strong> <strong>表示下拉菜单，其中的选项使用</strong><option><strong>选项内容</strong>&lt; /option&gt;**表示，multiple属性可将其设置为可多选，size属性的值为下拉菜单的显示的项目数。</p>
+</li>
+</ul>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>框架的写法如下： </p>
+<p> &lt; frameset cols=”30%,70%”&gt; </p>
+<p> &lt; frame src=”left.html” noresize scrolling=”no” name=”left”&gt;&lt; /frame&gt; </p>
+<p> &lt; frame src=”right.html” noresize scrolling=”no” name=”right”&gt;&lt; /frame&gt; </p>
+<p> &lt; /frameset&gt;</p>
+<hr>
+<p>&lt; frameset&gt;&lt; /frameset&gt;的属性有：</p>
+<p><strong>rows</strong>：横向分割网页。属性值决定了分割页面之间的宽度的比值。</p>
+<p><strong>cols</strong>：纵向分割网页。属性值决定了分割页面之间的长度的比值。</p>
+<p><strong>border</strong>：框架边框的宽度。当值为<strong>0</strong>时，表示没有边框</p>
+<p>**&lt; frameset&gt;&lt; /frameset&gt;**是可以嵌套使用的</p>
+<p>&lt; frame&gt;&lt; /frame&gt;的属性有：</p>
+<p><strong>src</strong>：表示框架内容的地址。</p>
+<p><strong>noresize</strong>：表示该框架不可被用户改变大小。</p>
+<p><strong>scrolling</strong>：表示是否有滚动条。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">骆皓</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/09/24/JavaWeb-html5/">http://yoursite.com/2020/09/24/JavaWeb-html5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://yoursite.com" target="_blank">骆皓的blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/javaWeb/">javaWeb</a></div><div class="post_share"><div class="social-share" data-image="http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="http://lc-ySstfNx3.cn-n1.lcfile.com/8804653197b83c448d5d.jpg/7DE697E301426D7354B13170E0C6460F.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/8804653197b83c448d5d.jpg/7DE697E301426D7354B13170E0C6460F.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="http://lc-ySstfNx3.cn-n1.lcfile.com/842a579bdb3c9ed800ac.jpg/5B8C1807F0A79C8ECE47CCAC02BF26DF.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/842a579bdb3c9ed800ac.jpg/5B8C1807F0A79C8ECE47CCAC02BF26DF.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/24/javaWeb/"><img class="prev-cover" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">javaWeb概述</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/24/javascript/"><img class="next-cover" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">javaWebjavascript</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/09/24/javaWeb/" title="javaWeb概述"><img class="cover" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-24</div><div class="title">javaWeb概述</div></div></a></div><div><a href="/2020/09/25/javaWeb环境搭配/" title="javaWeb环境搭配"><img class="cover" data-lazy-src="https://temp-1gy46md6aa57683d-1303006761.tcloudbaseapp.com/photo_2020-09-23_19-33-53.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-25</div><div class="title">javaWeb环境搭配</div></div></a></div><div><a href="/2020/09/24/javascript/" title="javaWebjavascript"><img class="cover" data-lazy-src="http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-24</div><div class="title">javaWebjavascript</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></article></main><footer id="footer" style="background-image: url(http://lc-ySstfNx3.cn-n1.lcfile.com/bc6df20fd0dadea36730.jpg/%40_volcanicBURST_-ENWXrz3U0AA7oSr.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 By 骆皓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog.</div><div class="icp"><a><img class="icp-icon" src="/img/icp.png"/><span></span></a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    window.valine = new Valine({
+      el: '#vcomment',
+      appId: 'CgOErKQusCTMFmQ3PImd3yc8-gzGzoHsz',
+      appKey: '9Q5I8nml1PWhEiFC3hBsnNc5',
+      placeholder: '记得留下你的暱称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    });
+    if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src = "https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/js/hideCategory.min.js" </script><div class="aplayer no-destroy" data-id="5144301919" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src = "http://lc-xT5R5TPw.cn-n1.lcfile.com/7eadef3a3944b93642df.js/touming.js" </script><script src = "https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js" </script><script defer="defer" id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/click_heart.js" async="async"></script><script src="/js/third-party/ClickShowText.js" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
