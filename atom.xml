@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-29T11:28:31.243Z</updated>
+  <updated>2021-05-27T09:50:19.260Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生成树</title>
+    <link href="http://yoursite.com/2021/05/27/%E7%94%9F%E6%88%90%E6%A0%91/"/>
+    <id>http://yoursite.com/2021/05/27/%E7%94%9F%E6%88%90%E6%A0%91/</id>
+    <published>2021-05-27T09:46:26.000Z</published>
+    <updated>2021-05-27T09:50:19.260Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &lt;bits&#x2F;stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int fa[100005],f[100005];</span><br><span class="line">int find(int x)&#123;return fa[x]&#x3D;&#x3D;x?x:fa[x]&#x3D;find(fa[x]);&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    srand(time(0));</span><br><span class="line">    int n&#x3D;100;&#x2F;&#x2F;节点个数，自行更改</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;n;i++)fa[i]&#x3D;i;   &#x2F;&#x2F;n个节点</span><br><span class="line">    int root&#x3D;rand()%n+1;</span><br><span class="line">    cout&lt;&lt;n&lt;&lt;endl;</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(i&#x3D;&#x3D;root) continue;</span><br><span class="line">        int father;</span><br><span class="line">        do&#123;</span><br><span class="line">            father&#x3D;rand()%n+1;</span><br><span class="line">        &#125;while(find(i)&#x3D;&#x3D;find(father));</span><br><span class="line">        f[i]&#x3D;father;</span><br><span class="line">        fa[find(i)]&#x3D;find(father);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i&#x3D;1;i&lt;&#x3D;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(root&#x3D;&#x3D;i) continue;</span><br><span class="line">        cout&lt;&lt;i&lt;&lt;&#39; &#39;&lt;&lt;f[i]&lt;&lt;&#39; &#39;&lt;&lt;rand()%100+1&lt;&lt;endl;&#x2F;&#x2F;相连的两个节点及边权</span><br><span class="line">    &#125;&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#include &amp;lt;bits&amp;#x2F;stdc++.h&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span clas</summary>
+      
+    
+    
+    
+    
+    <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>tomcat ，servlet遇到的坑</title>
