@@ -44,6 +44,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/2020/09/22/HTML5/</loc>
+    
+    <lastmod>2020-10-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/10/22/web-form/</loc>
     
     <lastmod>2020-10-22</lastmod>
@@ -89,13 +96,6 @@
     <loc>http://yoursite.com/2020/09/24/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86/</loc>
     
     <lastmod>2020-09-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/09/22/HTML5/</loc>
-    
-    <lastmod>2020-09-24</lastmod>
     
   </url>
   
@@ -165,6 +165,13 @@
 
   
   <url>
+    <loc>http://yoursite.com/tags/javaWeb/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/HTML5/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
@@ -173,20 +180,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/OS/</loc>
-    <lastmod>2021-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/javaWeb/</loc>
-    <lastmod>2021-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -206,7 +199,21 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://yoursite.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>http://yoursite.com/categories/javaWeb/</loc>
+    <lastmod>2021-05-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>http://yoursite.com/categories/HTML5/</loc>
@@ -223,7 +230,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/javaWeb/</loc>
+    <loc>http://yoursite.com/categories/tomcat/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -231,13 +238,6 @@
   
   <url>
     <loc>http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2021-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/tomcat/</loc>
     <lastmod>2021-05-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
