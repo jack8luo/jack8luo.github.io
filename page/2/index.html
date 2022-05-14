@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>骆皓的blog - sunshine</title><meta name="description" content="科班小屁孩学习记录"><meta name="keywords" content="骆皓"><meta name="author" content="骆皓"><meta name="copyright" content="骆皓"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="shortcut icon" href="/img/favicon1.png"><link rel="canonical" href="http://yoursite.com/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="骆皓的blog"><meta property="og:url" content="http://yoursite.com/page/2/"><meta property="og:site_name" content="骆皓的blog"><meta property="og:description" content="科班小屁孩学习记录"><meta property="og:image" content="https://w.wallhaven.cc/full/pk/wallhaven-pk3e8m.png"><meta property="article:published_time" content="2022-05-14T01:45:08.278Z"><meta property="article:modified_time" content="2022-05-14T01:45:08.278Z"><meta name="twitter:card" content="summary"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime: '天',
+  date_suffix: {"one_hour":"刚刚","hours":"小时前","day":"天前"},
+  copyright: {"limitCount":100,"languages":{"author":"作者: 骆皓","link":"链接: ","source":"来源: 骆皓的blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: {"text":"✪ω✪","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+      const now = new Date()
+      const expiryDay = ttl * 86400000
+      const item = {
+        value: value,
+        expiry: now.getTime() + expiryDay,
+      }
+      localStorage.setItem(key, JSON.stringify(item))
+    },
+  
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2022-05-14 09:45:08'
+}</script><noscript><style type="text/css">
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/gh/radium-bit/res@master/live2d/autoload.js" async></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+  }
+}
+
+var autoChangeMode = 'false'
+var t = saveToLocal.get('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (saveToLocal.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel = "stylesheet" href = "/css/mouse.css"><link rel = "stylesheet" href = "//at.alicdn.com/t/font_2091520_1nquea0g9um.css"><link rel = "stylesheet" href = "https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/hideCategory.min.css"><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="骆皓的blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="https://w.wallhaven.cc/full/pk/wallhaven-pk3e8m.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">19</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">6</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-kecheng"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-fanxiaoka"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-book"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="full_page" id="page-header" style="background-image: url(https://i.loli.net/2021/05/28/XZkjOJgPNcTVbFB.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">骆皓的blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-kecheng"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-fanxiaoka"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw iconfont icon-book"></i><span> 书籍</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">骆皓的blog</h1><div id="site_subtitle"><span id="subtitle"></span></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/22/web-JSP/" title="web-JSP">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/WNEtU9MomKp5jBe.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web-JSP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/22/web-JSP/" title="web-JSP">web-JSP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-22T10:29:32.000Z" title="发表于 2020-10-22 18:29:32">2020-10-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:57:44.362Z" title="更新于 2021-05-28 09:57:44">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaWeb/">javaWeb</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/javaWeb/">javaWeb</a></span></div><div class="content">📖这是大三上学期学的javaweb知识记录总汇
+
+
+
+介绍：JSP就是嵌入了java代码的网页。
+JSP属于动态网页
+创建JSP：
+在IDEA左上角点击File-New-Project,选择java-javaweb.确定。
+在创建好的项目下的 WEB-INF目录下右击点击New-JSP.
+如图:
+
+其中，
+&lt;%@ page contentType&#x3D;&quot;text&#x2F;html;charset&#x3D;UTF-8&quot; language&#x3D;&quot;java&quot; %&gt;
+
+是文件的page指令，作用是：定义输出格式是HTML。编码UTF-8.语言是java语言。
+导入包编程时用到JDK类，或者自行定义的类这个时候需要用import导入。
+&lt;%@ page import = “包名.类名”%&gt;
+例如导入java.util.Date包实现时间的显示：
+&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot;  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/22/web-mysql/" title="web-mysql">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/5E3SrgQdkRHIc2t.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web-mysql"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/22/web-mysql/" title="web-mysql">web-mysql</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-22T10:21:23.000Z" title="发表于 2020-10-22 18:21:23">2020-10-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T02:00:12.759Z" title="更新于 2021-05-28 10:00:12">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaWeb/">javaWeb</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/javaWeb/">javaWeb</a></span></div><div class="content">📖这是大三上学期学的javaweb知识记录总汇
+
+
+
+
+用JSP访问数据库Java技术访问数据库叫作jdbc。与jdbc有关的接口存放在java.sql包中。主要包括：
+Connection：负责连接数据库
+Statement：负责执行数据库语句
+ResultSet：负责存放查询结果
+数据库厂商驱动连接：第一步：安装数据库，选择的是mysql。
+第二步：为了简化mysql的使用，选择破解版的navicteformysql
+第三步：新建本地数据库，新建表。
+第四步：将数据库厂商下载的jdbc驱动包，复制到WEB-INF/lib下。
+第五步：连接数据库
+//starClass.forName(&quot;com.mysql.jdbc.Driver&quot;);String url = &quot;jdbc:mysql://localhost:3306/school&quot;;//    8.0以前版本加载驱动方式//endConnection con = DriverManager.getConnection(url, &quot;root&quot;, &quot;&quot;); ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/10/15/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/" title="javaWeb环境搭配">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/hWCg8TvuA4cVIfB.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaWeb环境搭配"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/15/javaWeb%E7%8E%AF%E5%A2%83%E6%90%AD%E9%85%8D/" title="javaWeb环境搭配">javaWeb环境搭配</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-15T07:44:46.000Z" title="发表于 2020-10-15 15:44:46">2020-10-15</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:59:54.430Z" title="更新于 2021-05-28 09:59:54">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaWeb/">javaWeb</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/javaWeb/">javaWeb</a></span></div><div class="content">实验一 JSP开发环境的配置运行一、实验目的
+1．掌握设置JDK环境。
+2．掌握设置Tomcat环境。
+3．安装、掌握Eclipse、MyEclipse、IntelliJ IDEA软件，为学习 JSP和进行JSP的实验做好准备工作。
+4．浏览JSP 程序并运行JSP页面。
+二、实验项目内容
+（一）JDK安装与配置
+略
+（二）Tomcat安装与配置
+略
+（三）IDE（Eclipse、MyEclipse或IntelliJ IDEA）的安装与配置
+略
+（四）在IDE上建立一个项目（javaweb）在项目中一个JSP （first.jsp）
+以intelliJ IDEA为例
+
+
+
+
+（五）部署JSP工程文件
+
+
+
+
+（六）启动Tomcat服务器（IDE方式）
+
+（七）浏览JSP
+
+（八）发布WAR包
+
+
+
+
+编译生成war包
+
+
+访问之前设定的文件目录路径，可看到生成的war包文件。
+将项目生成war包，放置tomcat/webapps下，
+
+通过命令或tomcat控制台启动tomcat，访问项目。
+
+访问地址：http://localhost:8080/javaweb（注意：先停止IDE的w ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/10/14/JavaWeb-html5/" title="javaWeb—html5">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/CY9GdjBWiqUwz52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaWeb—html5"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/10/14/JavaWeb-html5/" title="javaWeb—html5">javaWeb—html5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-10-14T12:52:55.000Z" title="发表于 2020-10-14 20:52:55">2020-10-14</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:59:54.409Z" title="更新于 2021-05-28 09:59:54">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaWeb/">javaWeb</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/javaWeb/">javaWeb</a></span></div><div class="content">
+📖这是大三上学期学的javaweb知识记录总汇
+
+
+📚更新于9.24
+
+
+第二章 HTML5
+静态网页制作
+
+HTML中的常见标签
+
+表格标签
+
+链接和图片标签
+
+表单标签
+
+框架
+
+
+
+静态网页制作
+  HTML 有’两种’类型的标签，一类是单标签   &lt; br &gt;就是一种单标签，它只需要单独一组符号就可以表示完整的功能。另一种是双标签，形如&lt; B &gt;内容&lt; /B&gt;，表示将”内容”显示为粗体，这种标签所围绕的内容就是标签作用的作用域.
+
+  标签还有属性，如： &lt; a href=page.html/&gt;，其中的“href”就是一个属性名称，“page.html”是属性值。
+
+  HTML 语言对于大小写不敏感
+
+
+文字标签标题标签：&lt; hn&gt;…&lt; /hn&gt;
+换行标签：&lt; br&gt;
+段落标签：&lt; p&gt;为段落标签，一个段落开始由&lt; p&gt;来标记，结束用&lt; /p&gt;表示。&lt; p&gt;有一个常用属性align，用来指明内容显示时的对齐方式，常用的有left、cente ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/24/javaWeb/" title="javaWeb概述">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/WNEtU9MomKp5jBe.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaWeb概述"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/24/javaWeb/" title="javaWeb概述">javaWeb概述</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-24T12:52:55.000Z" title="发表于 2020-09-24 20:52:55">2020-09-24</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:59:54.267Z" title="更新于 2021-05-28 09:59:54">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaWeb/">javaWeb</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/javaWeb/">javaWeb</a></span></div><div class="content">📖这是大三上学期学的javaweb知识记录总汇
+
+
+📚更新于9.24
+
+
+
+第一章 web程序概述网页分类
+静态页面：纯HTML标记语言编写的。只需要浏览器执行就好。
+动态页面：与用户有交互的。需要web服务器对其做解析。
+
+web消息生命周期
+
+web应用程序类型
+C/S(客户端/服务器)
+优点：基于浏览器访问，速度快，安全性高，客户端强
+缺点：需要下载安装升级，部署维护困难
+
+
+B/S(浏览器/服务器)
+优点：维护容易，只需要维护服务器
+缺点：速度慢，安全性低，客户端能力弱
+
+
+
+web程序工作原理
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/24/javascript/" title="javaWebjavascript">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/C3IRsqpfKGu1lk6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaWebjavascript"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/24/javascript/" title="javaWebjavascript">javaWebjavascript</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-24T12:52:55.000Z" title="发表于 2020-09-24 20:52:55">2020-09-24</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:59:54.383Z" title="更新于 2021-05-28 09:59:54">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/javaWeb/">javaWeb</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/javaWeb/">javaWeb</a></span></div><div class="content">📖这是大三上学期学的javaweb知识记录总汇
+
+
+📚更新于9.24
+
+
+
+
+JavaScript简介
+
+JavaScript内置对象
+
+
+
+
+JavaScript简介
+JavaScript 与 Java 一样，对大小写是敏感的 
+在 JavaScript 中，注释有三种写法：一种是 HTML 注释的写法：&lt; !–注释内容– &gt;，还有两种和 Java 语言相同，分别为：”//单行注释”和”/ * 多行注释 * /“
+除了可以将 JavaScript 代码嵌入 HTML 中之外，还可以专门将 JavaScript 代码写在单独 的文件中
+弱类型变量
+需要注意的是，JavaScript中变量未声明就使用是不会报错的。
+
+
+
+JavaScript 中定义一个函数的基本格式是：  
+function 函数名(参数列表){ 
+   return 值; 
+   } 
+  也可以在使用中直接匿名定义： 
+   var arg1 = function(参数列表){ 
+   return 值; 
+   } 
+使用最多的内置对象（内置对象由浏览器提供）有四个，并且之后的学习也将主要围绕着四 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/24/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86/" title="编译原理">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/1qbrsR8zc2Jlvuo.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译原理"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/24/%E6%B1%87%E7%BC%96%E5%8E%9F%E7%90%86/" title="编译原理">编译原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-24T08:56:14.000Z" title="发表于 2020-09-24 16:56:14">2020-09-24</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T02:01:12.291Z" title="更新于 2021-05-28 10:01:12">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a></span></div><div class="content">📖这是大三上学期学的编译知识记录总汇
+
+
+📚更新于9.24
+
+
+
+教材
+第一章 引论1.1什么叫编译程序
+编译器和解释器
+编译器：工作效率高，时间快，空间省，交互能力低，可移植能力差，大多数高级程序设计语言采用
+解释器：工作效率低，时间慢，空间费，交互能力强，可移植能力强，用于[perl][https://baike.baidu.com/item/Perl/851577] :cat:
+
+
+
+
+1.2 编译过程概述
+1.3 编译程序结构
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/22/OS/" title="OS">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/WzXDHvt4V2wygcf.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OS"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/22/OS/" title="OS">OS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-22T12:49:31.000Z" title="发表于 2020-09-22 20:49:31">2020-09-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:59:54.449Z" title="更新于 2021-05-28 09:59:54">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/OS/">OS</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/OS/">OS</a></span></div><div class="content">📖操作系统第一章
+📚操作系统引论
+
+
+
+目录
+目标和作用：
+发展过程：
+基本特征
+主要功能
+OS结构设计
+
+
+:star: 操作系统的目标
+
+
+:star: 操作系统的发展过程
+单道批处理系统
+
+纸片机
+
+
+多道批处理系统
+
+优缺点
+资源利用率高
+系统吞吐量大
+平均周期长
+无交互能力
+
+
+
+
+分时系统
+
+人机交互： 不停调试和修改
+共享主机： 共享一台主机
+关键问题： 及时接收 及时处理
+特征：多路性，独立性，交互性，及时性
+
+
+实时系统
+
+周期性实时任务和非周期性实时任务
+硬实时任务和软实时任务
+
+
+实时和分时系统特征的比较
+
+多路性
+独立性
+及时性
+交互性
+可靠性
+
+
+
+:star:操作系统的基本特征并发，共享，虚拟，异步 
+:star: 并行和并发：
+
+并行是同时刻
+并发是时间段
+
+:star: 共享：
+
+互斥共享：轮流使用
+同时访问：宏观上同时使用，微观轮流使用
+
+:star:虚拟：
+
+时分复用技术
+
+虚拟处理机
+虚拟设备
+
+
+空分复用技术
+
+
+:star:异步：
+
+并发时，进程不按照顺序进行
+
+:star:操作系统的主要功能
+处理机管理功能（2，3章节）：进程控制，进程同 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/22/HTML5/" title="HTML5">     <img class="post_bg" data-lazy-src="https://i.loli.net/2021/05/28/4BSKjZYsXtinTO7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML5"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/22/HTML5/" title="HTML5">HTML5</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-22T06:13:27.000Z" title="发表于 2020-09-22 14:13:27">2020-09-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-05-28T01:51:38.251Z" title="更新于 2021-05-28 09:51:38">2021-05-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML5/">HTML5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/HTML5/">HTML5</a></span></div><div class="content">📖这是大三上学期学的前端知识记录总汇
+
+
+📚更新于9.22
+
+
+HTML5及CSS学习
+
+学习路径：
+
+HTML 20%
+CSS3 50%
+H5C3 10%包括新增的标签
+
+
+
+    去学习
+
+
+网页是由三大要素组成的
+HTML ：用于标记，整理分类
+
+CSS ：样式，颜色
+
+Javascript ：方法，逻辑
+
+
+HTML基本结构&lt;html&gt;    &lt;head&gt;        &lt;title&gt;网页的标题&lt;/title&gt;    &lt;/head&gt;    &lt;body&gt;        网页的内容部分    &lt;/body&gt;&lt;/html&gt;
+
+HTML常用的标签
+标题标签&lt;h1&gt;-&lt;h6&gt;一级标题到6级标题 =markdown中的#
+段落标签和换行标签&lt;p&gt;&lt;/p&gt;段落标签
+换行标签 单标签 &lt;br /&gt;强制换行(也可以这么写&lt;br&gt;)
+
+文本格式化标签
+加粗 &lt;strong&gt;加粗标签&lt;/strong&gt; & ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://w.wallhaven.cc/full/pk/wallhaven-pk3e8m.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">骆皓</div><div class="author-info__description">科班小屁孩学习记录</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">19</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">5</div></a></div></div><a class="button--animated" id="card-info-btn"><i class="fas fa-heart"></i><span>加入书签</span></a></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，本站记录大三在南大学习的课程。需要联系的加我QQ:2913353105。</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/14/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/%E8%A7%A3%E5%86%B3git@github.comPermission%20denied(publickey).fatalCould%20not%20read%20form%20remota%20repository/" title="无题"><img data-lazy-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/14/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/%E8%A7%A3%E5%86%B3git@github.comPermission%20denied(publickey).fatalCould%20not%20read%20form%20remota%20repository/" title="无题">无题</a><time datetime="2022-05-13T19:27:37.404Z" title="发表于 2022-05-14 03:27:37">2022-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/13/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/iphone%E5%92%8Cwindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%92%E4%BC%A0/%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9/" title="无题"><img data-lazy-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/05/13/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/iphone%E5%92%8Cwindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%92%E4%BC%A0/%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9/" title="无题">无题</a><time datetime="2022-05-13T07:24:22.161Z" title="发表于 2022-05-13 15:24:22">2022-05-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/14/SSH%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0day1/" title="无题"><img data-lazy-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2022/01/14/SSH%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0day1/" title="无题">无题</a><time datetime="2022-01-14T09:42:36.673Z" title="发表于 2022-01-14 17:42:36">2022-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/27/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="并查集"><img data-lazy-src="https://i.loli.net/2021/05/28/zYcMAhPG5La2Ukt.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="并查集"/></a><div class="content"><a class="title" href="/2021/05/27/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="并查集">并查集</a><time datetime="2021-05-27T10:17:29.000Z" title="发表于 2021-05-27 18:17:29">2021-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/27/%E7%94%9F%E6%88%90%E5%9B%BE%E5%92%8Ckruskal/" title="生成图和kruskal"><img data-lazy-src="https://i.loli.net/2021/05/28/qsG4t7zcljDrPxv.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="生成图和kruskal"/></a><div class="content"><a class="title" href="/2021/05/27/%E7%94%9F%E6%88%90%E5%9B%BE%E5%92%8Ckruskal/" title="生成图和kruskal">生成图和kruskal</a><time datetime="2021-05-27T09:58:59.000Z" title="发表于 2021-05-27 17:58:59">2021-05-27</time></div></div></div></div></div><div class="card-widget card-newest-comments"><div class="card-content"><div class="item-headline"><i class="fas fa-bolt"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML5/"><span class="card-category-list-name">HTML5</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OS/"><span class="card-category-list-name">OS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/javaWeb/"><span class="card-category-list-name">javaWeb</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tomcat/"><span class="card-category-list-name">tomcat</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"><span class="card-category-list-name">编译原理</span><span class="card-category-list-count">1</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href='/tags/HTML5/' style='font-size:1.24em; color:rgb(180, 173, 189)'>HTML5</a><a href='/tags/OS/' style='font-size:1.10em; color:rgb(196, 70, 6)'>OS</a><a href='/tags/javaWeb/' style='font-size:1.14em; color:rgb(171, 136, 106)'>javaWeb</a><a href='/tags/tomcat/' style='font-size:1.40em; color:rgb(104, 104, 48)'>tomcat</a><a href='/tags/%E7%AE%97%E6%B3%95/' style='font-size:1.26em; color:rgb(20, 24, 157)'>算法</a><a href='/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/' style='font-size:1.49em; color:rgb(97, 8, 181)'>编译原理</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">5</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-09-21T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">8.9k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-05-14T01:45:08.086Z"></div></div></div></div></div></div></div></main><footer id="footer" style="background-color: transparent;" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 骆皓</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my blog.</div><div class="icp"><a><img class="icp-icon" src="/img/icp.png"/><span></span></a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "知道的越多，不知道的越多。,The more you know, the more you don’t know".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '知道的越多，不知道的越多。'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script>if (document.getElementsByClassName('mermaid').length) {
+  if (window.mermaidJsLoad) mermaid.init()
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js', function () {
+      window.mermaidJsLoad = true
+      mermaid.initialize({
+        theme: 'default',
+      })
+      true && mermaid.init()
+    })
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src = "https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/js/hideCategory.min.js" </script><div class="aplayer no-destroy" data-id="5144301919" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script src = "http://lc-xT5R5TPw.cn-n1.lcfile.com/7eadef3a3944b93642df.js/touming.js" </script><script src = "https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js" </script><script defer="defer" id="ribbon" src="/js/third-party/canvas-ribbon.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script src="/js/third-party/click_heart.js" async="async"></script><script src="/js/third-party/ClickShowText.js" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  'meta[name=description]',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script></div></body></html>
