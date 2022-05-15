@@ -20,15 +20,15 @@
     <title></title>
     <link href="http://yoursite.com/2022/05/14/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/%E8%A7%A3%E5%86%B3git@github.comPermission%20denied(publickey).fatalCould%20not%20read%20form%20remota%20repository/"/>
     <id>http://yoursite.com/2022/05/14/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/%E8%A7%A3%E5%86%B3git@github.comPermission%20denied(publickey).fatalCould%20not%20read%20form%20remota%20repository/</id>
-    <published>2022-05-13T19:27:37.404Z</published>
+    <published>2022-05-14T10:30:26.835Z</published>
     <updated>2022-05-13T19:27:37.404Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="解决-x67-105-116-64-x67-105-116-104-117-98-x2e-99-111-109-Permission-denied-publickey-fatal-Could-not-read-form-remota-repository"><a href="#解决-x67-105-116-64-x67-105-116-104-117-98-x2e-99-111-109-Permission-denied-publickey-fatal-Could-not-read-form-remota-repository" class="headerlink" title="解决&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;:Permission denied(publickey).fatal:Could not read form remota repository."></a>解决<a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#111;&#109;</a>:Permission denied(publickey).fatal:Could not read form remota repository.</h1><p>今天在github上git别人项目时，下载不下来，提示上面错误。</p><p>原因是客户端与服务器端的publickey不匹配，可能是github看你太久没用了，把你publickey给删掉了。</p><p>看了一下github账号上的publickey，果然还没有绑定这个在本机（客户端）上生成的SSh密钥。</p><p>知道原因之后就很简单了。</p><h5 id="第一步：在本地客户端输入"><a href="#第一步：在本地客户端输入" class="headerlink" title="第一步：在本地客户端输入"></a>第一步：在本地客户端输入</h5><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p><p>中间会提示你各种操作，一直回车就好。</p><h5 id="第二步：复制生成的SSHkey"><a href="#第二步：复制生成的SSHkey" class="headerlink" title="第二步：复制生成的SSHkey"></a>第二步：复制生成的SSHkey</h5><h5 id="第三步：绑定你github上的SSHkey"><a href="#第三步：绑定你github上的SSHkey" class="headerlink" title="第三步：绑定你github上的SSHkey"></a>第三步：绑定你github上的SSHkey</h5>]]></content>
+    <content type="html"><![CDATA[<h1 id="解决-103-x69-x74-x40-103-x69-x74-104-117-98-46-99-111-109-Permission-denied-publickey-fatal-Could-not-read-form-remota-repository"><a href="#解决-103-x69-x74-x40-103-x69-x74-104-117-98-46-99-111-109-Permission-denied-publickey-fatal-Could-not-read-form-remota-repository" class="headerlink" title="解决&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;:Permission denied(publickey).fatal:Could not read form remota repository."></a>解决<a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:Permission denied(publickey).fatal:Could not read form remota repository.</h1><p>今天在github上git别人项目时，下载不下来，提示上面错误。</p><p>原因是客户端与服务器端的publickey不匹配，可能是github看你太久没用了，把你publickey给删掉了。</p><p>看了一下github账号上的publickey，果然还没有绑定这个在本机（客户端）上生成的SSh密钥。</p><p>知道原因之后就很简单了。</p><h5 id="第一步：在本地客户端输入"><a href="#第一步：在本地客户端输入" class="headerlink" title="第一步：在本地客户端输入"></a>第一步：在本地客户端输入</h5><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></p><p>中间会提示你各种操作，一直回车就好。</p><h5 id="第二步：复制生成的SSHkey"><a href="#第二步：复制生成的SSHkey" class="headerlink" title="第二步：复制生成的SSHkey"></a>第二步：复制生成的SSHkey</h5><h5 id="第三步：绑定你github上的SSHkey"><a href="#第三步：绑定你github上的SSHkey" class="headerlink" title="第三步：绑定你github上的SSHkey"></a>第三步：绑定你github上的SSHkey</h5>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;解决-x67-105-116-64-x67-105-116-104-117-98-x2e-99-111-109-Permission-denied-publickey-fatal-Could-not-read-form-remota-repository&quot;&gt;&lt;a </summary>
+    <summary type="html">&lt;h1 id=&quot;解决-103-x69-x74-x40-103-x69-x74-104-117-98-46-99-111-109-Permission-denied-publickey-fatal-Could-not-read-form-remota-repository&quot;&gt;&lt;a </summary>
       
     
     
@@ -38,9 +38,9 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2022/05/13/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/iphone%E5%92%8Cwindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%92%E4%BC%A0/%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9/"/>
-    <id>http://yoursite.com/2022/05/13/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/iphone%E5%92%8Cwindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%92%E4%BC%A0/%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9/</id>
-    <published>2022-05-13T07:24:22.161Z</published>
+    <link href="http://yoursite.com/2022/05/14/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/iphone%E5%92%8Cwindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%92%E4%BC%A0/%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9/"/>
+    <id>http://yoursite.com/2022/05/14/%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/iphone%E5%92%8Cwindows%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%92%E4%BC%A0/%E5%86%85%E5%AE%B9%E4%B8%8D%E5%8F%AF%E7%94%A8%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9/</id>
+    <published>2022-05-14T10:30:26.799Z</published>
     <updated>2022-05-13T07:24:22.556Z</updated>
     
     <content type="html"><![CDATA[<h1 id="内容不可用无法显示文件夹内容"><a href="#内容不可用无法显示文件夹内容" class="headerlink" title="内容不可用无法显示文件夹内容"></a>内容不可用无法显示文件夹内容</h1><p>出错原因是啥不知道</p><p>解决办法：删除链接的服务器然后重新连接。</p><p>共享文件夹方法：</p><h6 id="1、在-Windows-电脑新建一个文件夹，右击「属性」，选择「共享」选项卡。"><a href="#1、在-Windows-电脑新建一个文件夹，右击「属性」，选择「共享」选项卡。" class="headerlink" title="1、在 Windows 电脑新建一个文件夹，右击「属性」，选择「共享」选项卡。"></a>1、在 Windows 电脑新建一个文件夹，右击「属性」，选择「共享」选项卡。</h6><p><img src= "/img/loading.gif" data-lazy-src="https://pic4.zhimg.com/80/v2-712d2769bf193c7a3b92f5639ba6d2d7_720w.jpg" alt="img"></p><h6 id="2、点击「高级共享」，在弹出窗口中勾选「共享此文件夹」，点击「权限」"><a href="#2、点击「高级共享」，在弹出窗口中勾选「共享此文件夹」，点击「权限」" class="headerlink" title="2、点击「高级共享」，在弹出窗口中勾选「共享此文件夹」，点击「权限」"></a>2、点击「高级共享」，在弹出窗口中勾选「共享此文件夹」，点击「权限」</h6><p><img src= "/img/loading.gif" data-lazy-src="https://pic1.zhimg.com/80/v2-669f23527c738dd93f23f6bb82967568_720w.jpg" alt="img"></p><p>3、在新打开的「权限」窗口中选中 「Everyone」，在「Everyone」下方勾选「完全控制」选项。</p><p><img src= "/img/loading.gif" data-lazy-src="https://pic4.zhimg.com/80/v2-131545f3e481709230b2b2d74fc8a2a7_720w.jpg" alt="img"></p><p>4、回到最开始的「属性」窗口，点击「共享」，在弹出的「网络访问」窗口，选择「Everyone」后，点击「添加」。</p><p><img src= "/img/loading.gif" data-lazy-src="https://pic4.zhimg.com/80/v2-2e4f68e3b5d0a93cd4923305520b2aef_720w.jpg" alt="img"></p><p>5、添加了 Everyone 用户后，将文件夹的权限改为「读取/写入」，点击右下角的「共享」。</p><p><img src= "/img/loading.gif" data-lazy-src="https://pic1.zhimg.com/80/v2-eadec0f44566d1b5490613e2661df6a8_720w.jpg" alt="img"></p><p>6、查看自己的ipv4地址。用手机文件app连接到该ip，输入用户名和密码，即可共享此文件。<img src= "/img/loading.gif" data-lazy-src="https://pic1.zhimg.com/80/v2-3909bf6dd6e6fece8e77c2ede991eba0_720w.jpg" alt="img"></p><p><img src= "/img/loading.gif" data-lazy-src="https://pic1.zhimg.com/80/v2-707141eb32295cc607880e44095636f4_720w.jpg" alt="img"></p>]]></content>
@@ -59,9 +59,9 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2022/01/14/SSH%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0day1/"/>
-    <id>http://yoursite.com/2022/01/14/SSH%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0day1/</id>
-    <published>2022-01-14T09:42:36.673Z</published>
+    <link href="http://yoursite.com/2022/05/14/SSH%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0day1/"/>
+    <id>http://yoursite.com/2022/05/14/SSH%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0day1/</id>
+    <published>2022-05-14T10:30:26.675Z</published>
     <updated>2022-01-14T09:42:36.673Z</updated>
     
     
