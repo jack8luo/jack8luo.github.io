@@ -247,7 +247,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -255,42 +255,42 @@
   
   <url>
     <loc>http://yoursite.com/tags/OS/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/javaWeb/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/HTML5/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/tomcat/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -299,35 +299,35 @@
   
   <url>
     <loc>http://yoursite.com/categories/OS/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/javaWeb/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/HTML5/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/tomcat/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
