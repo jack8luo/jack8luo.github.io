@@ -7,3 +7,7 @@ img {
     cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/pointer.cur),
     default;
 }
+/* 头图黑色遮罩层透明 */
+page-header::before{
+  background: transparent!important;
+}
