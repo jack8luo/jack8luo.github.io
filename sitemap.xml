@@ -261,13 +261,6 @@
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/tags/javaWeb/</loc>
-    <lastmod>2022-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.luoxiaohei.co/tags/OS/</loc>
     <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -275,7 +268,21 @@
   </url>
   
   <url>
+    <loc>https://blog.luoxiaohei.co/tags/javaWeb/</loc>
+    <lastmod>2022-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.luoxiaohei.co/tags/tomcat/</loc>
+    <lastmod>2022-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -295,24 +302,10 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://blog.luoxiaohei.co/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
-    <lastmod>2022-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
     <loc>https://blog.luoxiaohei.co/categories/HTML5/</loc>
-    <lastmod>2022-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoxiaohei.co/categories/javaWeb/</loc>
     <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -326,6 +319,13 @@
   </url>
   
   <url>
+    <loc>https://blog.luoxiaohei.co/categories/javaWeb/</loc>
+    <lastmod>2022-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.luoxiaohei.co/categories/tomcat/</loc>
     <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -333,14 +333,14 @@
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/categories/hexo%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://blog.luoxiaohei.co/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://blog.luoxiaohei.co/categories/hexo%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2022-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
