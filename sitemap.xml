@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.luoxiaohei.co/2022/05/18/1.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</loc>
-    
-    <lastmod>2022-05-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.luoxiaohei.co/2021/05/27/%E7%94%9F%E6%88%90%E5%9B%BE%E5%92%8Ckruskal/</loc>
     
     <lastmod>2022-05-17</lastmod>
@@ -263,20 +254,6 @@
 
   
   <url>
-    <loc>https://blog.luoxiaohei.co/tags/c/</loc>
-    <lastmod>2022-05-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-05-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.luoxiaohei.co/tags/HTML5/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -284,14 +261,14 @@
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/tags/javaWeb/</loc>
+    <loc>https://blog.luoxiaohei.co/tags/OS/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/tags/OS/</loc>
+    <loc>https://blog.luoxiaohei.co/tags/javaWeb/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -312,6 +289,13 @@
   </url>
   
   <url>
+    <loc>https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-05-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.luoxiaohei.co/tags/hexo%E9%83%A8%E7%BD%B2%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -321,13 +305,6 @@
 
   
   <url>
-    <loc>https://blog.luoxiaohei.co/categories/%E7%AE%97%E6%B3%95%E9%A2%98/</loc>
-    <lastmod>2022-05-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.luoxiaohei.co/categories/HTML5/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
@@ -335,14 +312,14 @@
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/categories/javaWeb/</loc>
+    <loc>https://blog.luoxiaohei.co/categories/OS/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.luoxiaohei.co/categories/OS/</loc>
+    <loc>https://blog.luoxiaohei.co/categories/javaWeb/</loc>
     <lastmod>2022-05-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
