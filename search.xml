@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>hexo：更换电脑，如何继续写博客</title>
+      <link href="/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="hexo：更换电脑，如何继续写博客"><a href="#hexo：更换电脑，如何继续写博客" class="headerlink" title="hexo：更换电脑，如何继续写博客"></a>hexo：更换电脑，如何继续写博客</h1><details green><summary> 哔哔 </summary>              <div class='content'>              <p>先提一句：</p><p>如果想要在百度收录，需要在百度站长验证一下，最后卡在验证环境如下：明显是访问不到外网。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330190044308.png" alt="image-20230330190044308"></p>              </div>            </details><p>1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure><p>将这些目录放到一个目录下，如：hexo／</p><p>2.在你的新电脑上首先配置hexo环境：安装Node.js<br>3.安装hexo，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure><p>4.安装好之后，进入hexo／目录<br>5.模块安装，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><p>6.部署，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2022/12/18/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
       <url>/2022/12/18/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</url>

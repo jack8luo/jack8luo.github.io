@@ -6,7 +6,7 @@
   <link href="https://blog.luoxiaohei.co/atom.xml" rel="self"/>
   
   <link href="https://blog.luoxiaohei.co/"/>
-  <updated>2022-12-18T08:02:46.818Z</updated>
+  <updated>2023-03-30T11:02:19.487Z</updated>
   <id>https://blog.luoxiaohei.co/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo：更换电脑，如何继续写博客</title>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
+    <published>2023-03-30T08:40:50.000Z</published>
+    <updated>2023-03-30T11:02:19.487Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hexo：更换电脑，如何继续写博客"><a href="#hexo：更换电脑，如何继续写博客" class="headerlink" title="hexo：更换电脑，如何继续写博客"></a>hexo：更换电脑，如何继续写博客</h1><details green><summary> 哔哔 </summary>              <div class='content'>              <p>先提一句：</p><p>如果想要在百度收录，需要在百度站长验证一下，最后卡在验证环境如下：明显是访问不到外网。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330190044308.png" alt="image-20230330190044308"></p>              </div>            </details><p>1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure><p>将这些目录放到一个目录下，如：hexo／</p><p>2.在你的新电脑上首先配置hexo环境：安装Node.js<br>3.安装hexo，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure><p>4.安装好之后，进入hexo／目录<br>5.模块安装，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><p>6.部署，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;hexo：更换电脑，如何继续写博客&quot;&gt;&lt;a href=&quot;#hexo：更换电脑，如何继续写博客&quot; class=&quot;headerlink&quot; title=&quot;hexo：更换电脑，如何继续写博客&quot;&gt;&lt;/a&gt;hexo：更换电脑，如何继续写博客&lt;/h1&gt;&lt;details gree</summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://blog.luoxiaohei.co/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -445,30 +467,6 @@
     
     
     <category term="QT" scheme="https://blog.luoxiaohei.co/tags/QT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣hot100--031 下一个排列</title>
-    <link href="https://blog.luoxiaohei.co/2022/10/17/31.%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/"/>
-    <id>https://blog.luoxiaohei.co/2022/10/17/31.%20%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97/</id>
-    <published>2022-10-17T04:34:09.918Z</published>
-    <updated>2022-11-30T03:28:20.777Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="31-下一个排列"><a href="#31-下一个排列" class="headerlink" title="31. 下一个排列"></a><a href="https://leetcode.cn/problems/next-permutation/">31. 下一个排列</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>整数数组的一个 排列  就是将其所有成员以序列或线性顺序排列。</p><p>例如，arr = [1,2,3] ，以下这些都可以视作 arr 的排列：[1,2,3]、[1,3,2]、[3,1,2]、[2,3,1] 。</p><p>给你一个整数数组 <code>nums</code> ，找出 <code>nums</code> 的下一个排列。</p><p>必须<strong><a href="https://baike.baidu.com/item/原地算法"> 原地 </a></strong>修改，只允许使用额外常数空间。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [1,2,3]</span><br><span class="line">输出：[1,3,2]</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [3,2,1]</span><br><span class="line">输出：[1,2,3]</span><br></pre></td></tr></table></figure><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h2 id="1-调用STL的函数"><a href="#1-调用STL的函数" class="headerlink" title="#1 调用STL的函数"></a>#1 调用STL的函数</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">nextPermutation</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">next_permutation</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>()); <span class="comment">// STL功能和题目描述一致</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><h2 id="2-手动实现-时间复杂度O-n-空间复杂度O-1"><a href="#2-手动实现-时间复杂度O-n-空间复杂度O-1" class="headerlink" title="#2 手动实现 时间复杂度O(n),空间复杂度O(1)"></a>#2 手动实现 时间复杂度O(n),空间复杂度O(1)</h2><ul><li>从后往前找到第一个【相邻升序对】，即A[i]&lt;A[i+1]。此时A[i+1,end)为降序。</li><li>在区间[i+1,end)中，从后往前找到第一个大于A[i]的元素A[j]</li><li>交换A[i]和A[j]，此时A[i+1,end)一定还是降序，因为A[j]是从右侧起第一个大于A[i]的值</li><li>反转A[i+1,end)，变成升序</li></ul><p>应用场景：可兼容处理含有重复元素的全排列问题</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">nextPermutation</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (i=nums.<span class="built_in">size</span>()<span class="number">-2</span>; i &gt;= <span class="number">0</span>; -- i) &#123; <span class="comment">// 从后往前找到第一个相邻升序对</span></span><br><span class="line">            <span class="keyword">if</span> (nums[i] &lt; nums[i+<span class="number">1</span>]) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">-1</span>) <span class="built_in">reverse</span>(nums.<span class="built_in">begin</span>(),nums.<span class="built_in">end</span>()); <span class="comment">// 无相邻升序对，必定为非递减序列</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j=nums.<span class="built_in">size</span>()<span class="number">-1</span>; j &gt;= i+<span class="number">1</span>; -- j) &#123; <span class="comment">// 从后往前[i+1,end)找第一个大于a[i+1]的值</span></span><br><span class="line">                <span class="keyword">if</span> (nums[i] &lt; nums[j]) &#123;</span><br><span class="line">                    <span class="built_in">swap</span>(nums[i],nums[j]); <span class="comment">// 交换二者</span></span><br><span class="line">                    <span class="built_in">reverse</span>(nums.<span class="built_in">begin</span>()+i+<span class="number">1</span>,nums.<span class="built_in">end</span>()); <span class="comment">// 反转[i+1,end)，变成升序</span></span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;31-下一个排列&quot;&gt;&lt;a href=&quot;#31-下一个排列&quot; class=&quot;headerlink&quot; title=&quot;31. 下一个排列&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/next-permutation/&quot;&gt;31. </summary>
-      
-    
-    
-    
-    <category term="算法题" scheme="https://blog.luoxiaohei.co/categories/%E7%AE%97%E6%B3%95%E9%A2%98/"/>
-    
-    
-    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
