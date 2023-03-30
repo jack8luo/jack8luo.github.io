@@ -39,11 +39,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://blog.luoxiaohei.co/2022/12/18/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/18/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
-    <published>2022-12-18T07:31:39.763Z</published>
-    <updated>2022-12-18T08:02:46.818Z</updated>
+    <title>git操作手册（给实验室同学）</title>
+    <link href="https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
+    <id>https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
+    <published>2023-02-03T13:42:06.000Z</published>
+    <updated>2023-03-30T11:09:36.194Z</updated>
     
     <content type="html"><![CDATA[<h2 id="操作手册"><a href="#操作手册" class="headerlink" title="操作手册"></a>操作手册</h2><p>1、安装GIT</p><p><a href="https://blog.csdn.net/adminsir0/article/details/126355313">(3条消息) git安装教程</a>（一直next就行）</p><p>2、注册远程仓库账号</p><p>打开<a href="https://github.com/">GitHub</a>，注册自己账号</p><p>不翻墙的话，注册<a href="https://gitee.com/">Gitee</a>（这个文档展示gitee）</p><p>3、本地创建任意文件夹，鼠标右键选择git bush</p><p>4、配置用户，命令行输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your_email@email.com&quot;</span><br></pre></td></tr></table></figure><p>5、生成SSH密钥        </p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@email.com&quot;</span><br></pre></td></tr></table></figure><p>进入C:\Users\Administrator.ssh目录下，查看生成的SSH密钥，</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181525633.jpeg" alt="img" style="zoom:50%;" /></p><p>复制id_ras.pub里面的字符串，在gitee设置中的SSH公钥中添加密钥。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181527256.png" alt="image-20221218152744139"></p><p>6、创建一个文件，在命令行中输入</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;123&quot; &gt; 1.txt</span><br></pre></td></tr></table></figure><p>7、命令行输入：git init </p><p>8、命令行输入：git add .</p><p>9、命令行输入：git commit -m “123”</p><p>10、命令行输入：git remote add origin <strong>url</strong>  |  url选择你的远程仓库，比如<strong>gitee</strong>创建完仓库后，会有这个地址，我们选择SSH链接就行。</p><p>例如：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181520074.png" alt="image-20221218152045988"></p><p>11、命令行输入：git push -u origin “master”</p><p>显示成功！</p>]]></content>
     
@@ -56,6 +56,8 @@
     
     
     
+    
+    <category term="git" scheme="https://blog.luoxiaohei.co/tags/git/"/>
     
   </entry>
   
