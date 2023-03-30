@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.luoxiaohei.co/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2023-03-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</loc>
     
     <lastmod>2023-03-30</lastmod>
@@ -687,6 +723,27 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://blog.luoxiaohei.co/tags/Linux/</loc>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/tags/Ubuntu22-04/</loc>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/tags/XMind/</loc>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -747,6 +804,20 @@
   
   <url>
     <loc>https://blog.luoxiaohei.co/categories/%E7%94%B5%E8%84%91%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/categories/Linux/</loc>
+    <lastmod>2023-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoxiaohei.co/categories/XMmid/</loc>
     <lastmod>2023-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

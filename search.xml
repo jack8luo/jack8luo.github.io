@@ -4,6 +4,100 @@
   
     
     <entry>
+      <title>Linux系统编程Day2</title>
+      <link href="/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
+      <url>/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跳转到指定行：</span><br><span class="line"></span><br><span class="line">1. 88G （命令模式）</span><br><span class="line"></span><br><span class="line">2. :88  (末行模式)</span><br><span class="line"></span><br><span class="line">跳转文件首：</span><br><span class="line"></span><br><span class="line">gg （命令模式）</span><br><span class="line"></span><br><span class="line">跳转文件尾：</span><br><span class="line"></span><br><span class="line">G（命令模式）</span><br><span class="line"></span><br><span class="line">自动格式化程序：</span><br><span class="line"></span><br><span class="line">gg=G（命令模式）</span><br><span class="line"></span><br><span class="line">大括号对应：</span><br><span class="line"></span><br><span class="line">% （命令模式）</span><br><span class="line"></span><br><span class="line">光标移至行首：</span><br><span class="line"></span><br><span class="line">0 （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line">光标移至行尾：</span><br><span class="line"></span><br><span class="line">$ （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除单个字符：</span><br><span class="line"></span><br><span class="line">x （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line">替换单个字符：</span><br><span class="line"></span><br><span class="line">将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</span><br><span class="line"></span><br><span class="line">删除一个单词：</span><br><span class="line"></span><br><span class="line">dw（命令模式）光标置于单词的首字母进行操作。</span><br><span class="line"></span><br><span class="line">删除光标至行尾：</span><br><span class="line"></span><br><span class="line">D 或者 d$（命令模式）</span><br><span class="line"></span><br><span class="line">删除光标至行首：</span><br><span class="line"></span><br><span class="line">d0 （命令模式）</span><br><span class="line"></span><br><span class="line">删除指定区域：</span><br><span class="line"></span><br><span class="line">按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</span><br><span class="line"></span><br><span class="line">删除指定1行：</span><br><span class="line"></span><br><span class="line">在光标所在行，按 dd （命令模式）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除指定N行：</span><br><span class="line"></span><br><span class="line">在光标所待删除首行，按 Ndd （命令模式）</span><br><span class="line"></span><br><span class="line">复制一行：</span><br><span class="line"></span><br><span class="line">yy</span><br><span class="line"></span><br><span class="line">粘贴：</span><br><span class="line">p：向后、P：向前。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查找：</span><br><span class="line">1. 找 设想 内容：</span><br><span class="line"></span><br><span class="line">命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。</span><br><span class="line"></span><br><span class="line">2. 找 看到的内容：</span><br><span class="line"></span><br><span class="line">命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </span><br><span class="line"></span><br><span class="line">单行替换：</span><br><span class="line"></span><br><span class="line">将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</span><br><span class="line"></span><br><span class="line">通篇替换：</span><br><span class="line"></span><br><span class="line">末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </span><br><span class="line"></span><br><span class="line">指定行的替换：</span><br><span class="line"></span><br><span class="line">末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</span><br><span class="line"></span><br><span class="line">:29,35s /printf/println/g</span><br><span class="line"></span><br><span class="line">撤销、反撤销：</span><br><span class="line"></span><br><span class="line">u、ctrl+r（命令模式）</span><br><span class="line"></span><br><span class="line">分屏：（末行模式）</span><br><span class="line">sp：横屏分。 Ctrl+ww 切换。</span><br><span class="line"></span><br><span class="line">vsp：竖屏分。Ctrl+ww 切换。</span><br><span class="line"></span><br><span class="line">跳转至 man 手册：</span><br><span class="line"></span><br><span class="line">将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</span><br><span class="line"></span><br><span class="line">查看宏定义：</span><br><span class="line"></span><br><span class="line">将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在末行模式执行shell命令：</span><br><span class="line"></span><br><span class="line">:!命令:! ls -l </span><br><span class="line">:! gcc hello.c -o hello100  | !./hello100</span><br><span class="line">:! g++ hello.cpp | !./a.out</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">静态库制作及使用步骤：</span><br><span class="line"></span><br><span class="line">1. 将 .c 生成 .o 文件</span><br><span class="line"></span><br><span class="line">gcc -c add.c -o add.o</span><br><span class="line"></span><br><span class="line">2. 使用 ar 工具制作静态库</span><br><span class="line"></span><br><span class="line">ar rcs  lib库名.a  add.o sub.o div.o</span><br><span class="line"></span><br><span class="line">3. 编译静态库到可执行文件中：</span><br><span class="line"></span><br><span class="line">gcc test.c lib库名.a -o a.out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">头文件守卫：防止头文件被重复包含 | implicit declaration隐式声明，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。</span><br><span class="line">解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</span><br><span class="line"></span><br><span class="line">#ifndef _HEAD_H_</span><br><span class="line"></span><br><span class="line">#define _HEAD_H_</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Xmind激活亲测有效（23/3/30）</title>
+      <link href="/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
+      <url>/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Xmind激活亲测有效（23-3-30）"><a href="#Xmind激活亲测有效（23-3-30）" class="headerlink" title="Xmind激活亲测有效（23/3/30）"></a>Xmind激活亲测有效（23/3/30）</h1><p>下载资源</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330095543117.png" alt="image-20230330095543117"></p><p>双击安装包，程序自动安装在C:\Program Files\XMind下</p><p>替换</p><p>C:\Program Files\XMind\resources下的app.asar,打开xmind即可激活。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> XMmid </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> XMind </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux系统编程Day1</title>
+      <link href="/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
+      <url>/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>学习了一些命令，这些命令记住常用的，备份难记的。</p><p>常用的比如</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">绝对路径中，cd ..、cd .、 cd、 cd - 的使用。</span><br><span class="line">mv 文件重命名|移动文件</span><br><span class="line">创建用户sudo adduser 新用户名--- useradd</span><br><span class="line">删除用户sudo deluser 用户名</span><br><span class="line">find找文件</span><br><span class="line">ln创建软链接和硬链接的方式和属性</span><br><span class="line">chmod修改权限的两种方式</span><br><span class="line">grep查找文件内容</span><br><span class="line">压缩文件tar、rar、zip等命令---gzip and bzip with tar:因为gzip和bzip不能打包文件夹多个文件。</span><br><span class="line">tar zcvf filename file1 file2</span><br><span class="line">z:gzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">tar jcvf filename file1 file2</span><br><span class="line">z:bzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">解压</span><br><span class="line">tar zxvf filename</span><br><span class="line">tar jxvf filename</span><br><span class="line"></span><br><span class="line">rar a -r filename file</span><br><span class="line">unrar x filename</span><br><span class="line"></span><br><span class="line">zip -r filename file</span><br><span class="line">unzip filename</span><br><span class="line"></span><br><span class="line">安装软件卸载软件的方法。</span><br><span class="line">sudo aptitude show softname 查看软件安装信息</span><br></pre></td></tr></table></figure><p>文件类型</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通文件：-</span><br><span class="line">目录文件：d</span><br><span class="line">字符设备文件：c</span><br><span class="line">块设备文件：b</span><br><span class="line">软连接：l</span><br><span class="line">管道文件：p</span><br><span class="line">套接字：s</span><br><span class="line">未知文件。</span><br></pre></td></tr></table></figure><p>系统目录</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin：存放二进制可执行文件</span><br><span class="line">boot：存放开机启动程序</span><br><span class="line">dev：存放设备文件： 字符设备、块设备</span><br><span class="line">home：存放普通用户</span><br><span class="line">etc：用户信息和系统配置文件 passwd、group</span><br><span class="line">lib：库文件：libc.so.6</span><br><span class="line">root：管理员宿主目录（家目录）</span><br><span class="line">usr：用户资源管理目录 unix software resource</span><br></pre></td></tr></table></figure><p>简单的快捷键</p><p>tab显示提示、ctrl-a、ctrl-e、ctrl-u、ctrl-Alt-t。</p><p>细节的内容还请再看一遍视频讲解和讲义。</p><hr><p>学习完后写的五子棋游戏服务器，匹配游戏，断线重连，连接mysql数据库，欢迎大家一起学习 <a href="https://github.com/ChenVv-hong/Gobang">https://github.com/ChenVv-hong/Gobang</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu22.04 中Drag and drop is not supported问题</title>
+      <link href="/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
+      <url>/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Ubuntu22-04-中Drag-and-drop-is-not-supported问题"><a href="#Ubuntu22-04-中Drag-and-drop-is-not-supported问题" class="headerlink" title="Ubuntu22.04 中Drag and drop is not supported问题"></a>Ubuntu22.04 中Drag and drop is not supported问题</h1><p>解决方法<br>先在terminal中安装这两个程序</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install gnome-shell-extension-prefs</span><br><span class="line">sudo apt install nemo</span><br></pre></td></tr></table></figure><p>左下角的application中选择extension， 将Desktop icons NG 选项关闭</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330202439439.png" alt="image-20230330202439439"></p><p>左下角的application中选择startup application preference， 添加如下命令</p><p><img src="https://img-blog.csdnimg.cn/1df319278b124816a90579738f0c6995.png" alt="img"></p><p>将程序重启后即可在host和vm间进行拖动传输</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Ubuntu22.04 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo：更换电脑，如何继续写博客</title>
       <link href="/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
       <url>/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
