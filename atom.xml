@@ -3,11 +3,11 @@
   <title>骆小黑</title>
   
   <subtitle>阿妮亚</subtitle>
-  <link href="https://icebress.gitee.io/jack8luo/atom.xml" rel="self"/>
+  <link href="https://blog.luoxiaohei.co/atom.xml" rel="self"/>
   
-  <link href="https://icebress.gitee.io/jack8luo/"/>
+  <link href="https://blog.luoxiaohei.co/"/>
   <updated>2023-03-31T03:37:45.646Z</updated>
-  <id>https://icebress.gitee.io/jack8luo/</id>
+  <id>https://blog.luoxiaohei.co/</id>
   
   <author>
     <name>骆小黑</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title></title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/</id>
     <published>2023-03-31T01:51:33.959Z</published>
     <updated>2023-03-31T03:37:45.646Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Linux系统编程Day2</title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
     <published>2023-03-30T12:52:55.000Z</published>
     <updated>2023-03-31T03:30:02.889Z</updated>
     
@@ -55,17 +55,17 @@
     
     
     
-    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/categories/Linux/"/>
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/tags/Linux/"/>
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Xmind激活亲测有效（23/3/30）</title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</id>
     <published>2023-03-30T12:52:55.000Z</published>
     <updated>2023-03-30T13:43:08.867Z</updated>
     
@@ -79,17 +79,17 @@
     
     
     
-    <category term="XMmid" scheme="https://icebress.gitee.io/jack8luo/categories/XMmid/"/>
+    <category term="XMmid" scheme="https://blog.luoxiaohei.co/categories/XMmid/"/>
     
     
-    <category term="XMind" scheme="https://icebress.gitee.io/jack8luo/tags/XMind/"/>
+    <category term="XMind" scheme="https://blog.luoxiaohei.co/tags/XMind/"/>
     
   </entry>
   
   <entry>
     <title>Linux系统编程Day1</title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
     <published>2023-03-30T12:52:55.000Z</published>
     <updated>2023-03-30T13:42:23.331Z</updated>
     
@@ -105,17 +105,17 @@
     
     
     
-    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/categories/Linux/"/>
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/tags/Linux/"/>
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu22.04 中Drag and drop is not supported问题</title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
     <published>2023-03-30T12:07:03.891Z</published>
     <updated>2023-03-30T12:41:31.444Z</updated>
     
@@ -130,14 +130,14 @@
     
     
     
-    <category term="Ubuntu22.04" scheme="https://icebress.gitee.io/jack8luo/tags/Ubuntu22-04/"/>
+    <category term="Ubuntu22.04" scheme="https://blog.luoxiaohei.co/tags/Ubuntu22-04/"/>
     
   </entry>
   
   <entry>
     <title>hexo：更换电脑，如何继续写博客</title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-03-30T08:40:50.000Z</published>
     <updated>2023-03-30T11:02:19.487Z</updated>
     
@@ -152,14 +152,14 @@
     
     
     
-    <category term="hexo" scheme="https://icebress.gitee.io/jack8luo/tags/hexo/"/>
+    <category term="hexo" scheme="https://blog.luoxiaohei.co/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>git操作手册（给实验室同学）</title>
-    <link href="https://icebress.gitee.io/jack8luo/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
-    <id>https://icebress.gitee.io/jack8luo/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
+    <link href="https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
+    <id>https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
     <published>2023-02-03T13:42:06.000Z</published>
     <updated>2023-03-30T11:09:36.194Z</updated>
     
@@ -175,14 +175,14 @@
     
     
     
-    <category term="git" scheme="https://icebress.gitee.io/jack8luo/tags/git/"/>
+    <category term="git" scheme="https://blog.luoxiaohei.co/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>最小路径和</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</id>
     <published>2022-12-16T07:04:14.000Z</published>
     <updated>2022-12-16T15:09:48.884Z</updated>
     
@@ -197,14 +197,14 @@
     
     
     
-    <category term="c++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>不同路径</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/</id>
     <published>2022-12-11T18:27:22.000Z</published>
     <updated>2022-12-16T13:54:50.913Z</updated>
     
@@ -219,14 +219,14 @@
     
     
     
-    <category term="c++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>56. 合并区间</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</id>
     <published>2022-12-10T19:34:20.000Z</published>
     <updated>2022-12-11T04:17:03.749Z</updated>
     
@@ -241,14 +241,14 @@
     
     
     
-    <category term="c++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>跳跃游戏</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/</id>
     <published>2022-12-09T22:32:45.000Z</published>
     <updated>2022-12-10T06:41:12.761Z</updated>
     
@@ -263,14 +263,14 @@
     
     
     
-    <category term="C++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="C++、算法" scheme="https://blog.luoxiaohei.co/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>git工作流</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
     <published>2022-12-05T08:40:50.000Z</published>
     <updated>2022-12-10T07:18:52.362Z</updated>
     
@@ -285,14 +285,14 @@
     
     
     
-    <category term="Git" scheme="https://icebress.gitee.io/jack8luo/tags/Git/"/>
+    <category term="Git" scheme="https://blog.luoxiaohei.co/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>旋转图像</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</id>
     <published>2022-12-01T04:25:51.000Z</published>
     <updated>2022-12-08T04:43:54.719Z</updated>
     
@@ -307,14 +307,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>全排列</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/</id>
     <published>2022-11-29T19:16:56.000Z</published>
     <updated>2022-11-30T03:26:36.109Z</updated>
     
@@ -329,14 +329,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>二分查找之找到最左最右元素</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/</id>
     <published>2022-11-27T18:44:50.000Z</published>
     <updated>2022-11-28T03:02:02.927Z</updated>
     
@@ -352,14 +352,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>组合总和</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</id>
     <published>2022-11-27T05:18:48.000Z</published>
     <updated>2022-11-27T13:25:22.968Z</updated>
     
@@ -374,14 +374,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>在排序数组中查找元素的第一个和最后一个位置</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/</id>
     <published>2022-11-25T18:30:30.000Z</published>
     <updated>2022-11-26T02:48:54.400Z</updated>
     
@@ -396,14 +396,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>搜索旋转排序数组</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
     <published>2022-11-24T19:28:31.000Z</published>
     <updated>2022-11-25T08:11:48.692Z</updated>
     
@@ -419,14 +419,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>最长有效括号</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</id>
     <published>2022-11-22T19:36:04.000Z</published>
     <updated>2022-11-25T03:08:56.359Z</updated>
     
@@ -441,14 +441,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>算法作业：来回拉人</title>
-    <link href="https://icebress.gitee.io/jack8luo/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/"/>
-    <id>https://icebress.gitee.io/jack8luo/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/</id>
     <published>2022-11-15T23:43:34.000Z</published>
     <updated>2022-11-16T09:01:26.786Z</updated>
     
@@ -463,7 +463,7 @@
     
     
     
-    <category term="C++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="C++、算法" scheme="https://blog.luoxiaohei.co/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
