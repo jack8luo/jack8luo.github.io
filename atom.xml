@@ -3,11 +3,11 @@
   <title>骆小黑</title>
   
   <subtitle>阿妮亚</subtitle>
-  <link href="https://blog.luoxiaohei.co/atom.xml" rel="self"/>
+  <link href="https://icebress.gitee.io/jack8luo/atom.xml" rel="self"/>
   
-  <link href="https://blog.luoxiaohei.co/"/>
-  <updated>2023-03-30T13:42:41.516Z</updated>
-  <id>https://blog.luoxiaohei.co/</id>
+  <link href="https://icebress.gitee.io/jack8luo/"/>
+  <updated>2023-03-31T01:51:33.959Z</updated>
+  <id>https://icebress.gitee.io/jack8luo/</id>
   
   <author>
     <name>骆小黑</name>
@@ -17,13 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Linux系统编程Day2</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
-    <published>2023-03-30T12:52:55.000Z</published>
-    <updated>2023-03-30T13:42:41.516Z</updated>
+    <title></title>
+    <link href="https://icebress.gitee.io/jack8luo/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/</id>
+    <published>2023-03-31T01:51:33.959Z</published>
+    <updated>2023-03-31T01:51:33.959Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跳转到指定行：</span><br><span class="line"></span><br><span class="line">1. 88G （命令模式）</span><br><span class="line"></span><br><span class="line">2. :88  (末行模式)</span><br><span class="line"></span><br><span class="line">跳转文件首：</span><br><span class="line"></span><br><span class="line">gg （命令模式）</span><br><span class="line"></span><br><span class="line">跳转文件尾：</span><br><span class="line"></span><br><span class="line">G（命令模式）</span><br><span class="line"></span><br><span class="line">自动格式化程序：</span><br><span class="line"></span><br><span class="line">gg=G（命令模式）</span><br><span class="line"></span><br><span class="line">大括号对应：</span><br><span class="line"></span><br><span class="line">% （命令模式）</span><br><span class="line"></span><br><span class="line">光标移至行首：</span><br><span class="line"></span><br><span class="line">0 （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line">光标移至行尾：</span><br><span class="line"></span><br><span class="line">$ （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除单个字符：</span><br><span class="line"></span><br><span class="line">x （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line">替换单个字符：</span><br><span class="line"></span><br><span class="line">将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</span><br><span class="line"></span><br><span class="line">删除一个单词：</span><br><span class="line"></span><br><span class="line">dw（命令模式）光标置于单词的首字母进行操作。</span><br><span class="line"></span><br><span class="line">删除光标至行尾：</span><br><span class="line"></span><br><span class="line">D 或者 d$（命令模式）</span><br><span class="line"></span><br><span class="line">删除光标至行首：</span><br><span class="line"></span><br><span class="line">d0 （命令模式）</span><br><span class="line"></span><br><span class="line">删除指定区域：</span><br><span class="line"></span><br><span class="line">按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</span><br><span class="line"></span><br><span class="line">删除指定1行：</span><br><span class="line"></span><br><span class="line">在光标所在行，按 dd （命令模式）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除指定N行：</span><br><span class="line"></span><br><span class="line">在光标所待删除首行，按 Ndd （命令模式）</span><br><span class="line"></span><br><span class="line">复制一行：</span><br><span class="line"></span><br><span class="line">yy</span><br><span class="line"></span><br><span class="line">粘贴：</span><br><span class="line">p：向后、P：向前。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查找：</span><br><span class="line">1. 找 设想 内容：</span><br><span class="line"></span><br><span class="line">命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。</span><br><span class="line"></span><br><span class="line">2. 找 看到的内容：</span><br><span class="line"></span><br><span class="line">命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </span><br><span class="line"></span><br><span class="line">单行替换：</span><br><span class="line"></span><br><span class="line">将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</span><br><span class="line"></span><br><span class="line">通篇替换：</span><br><span class="line"></span><br><span class="line">末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </span><br><span class="line"></span><br><span class="line">指定行的替换：</span><br><span class="line"></span><br><span class="line">末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</span><br><span class="line"></span><br><span class="line">:29,35s /printf/println/g</span><br><span class="line"></span><br><span class="line">撤销、反撤销：</span><br><span class="line"></span><br><span class="line">u、ctrl+r（命令模式）</span><br><span class="line"></span><br><span class="line">分屏：（末行模式）</span><br><span class="line">sp：横屏分。 Ctrl+ww 切换。</span><br><span class="line"></span><br><span class="line">vsp：竖屏分。Ctrl+ww 切换。</span><br><span class="line"></span><br><span class="line">跳转至 man 手册：</span><br><span class="line"></span><br><span class="line">将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</span><br><span class="line"></span><br><span class="line">查看宏定义：</span><br><span class="line"></span><br><span class="line">将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在末行模式执行shell命令：</span><br><span class="line"></span><br><span class="line">:!命令:! ls -l </span><br><span class="line">:! gcc hello.c -o hello100  | !./hello100</span><br><span class="line">:! g++ hello.cpp | !./a.out</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">静态库制作及使用步骤：</span><br><span class="line"></span><br><span class="line">1. 将 .c 生成 .o 文件</span><br><span class="line"></span><br><span class="line">gcc -c add.c -o add.o</span><br><span class="line"></span><br><span class="line">2. 使用 ar 工具制作静态库</span><br><span class="line"></span><br><span class="line">ar rcs  lib库名.a  add.o sub.o div.o</span><br><span class="line"></span><br><span class="line">3. 编译静态库到可执行文件中：</span><br><span class="line"></span><br><span class="line">gcc test.c lib库名.a -o a.out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">头文件守卫：防止头文件被重复包含 | implicit declaration隐式声明，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。</span><br><span class="line">解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</span><br><span class="line"></span><br><span class="line">#ifndef _HEAD_H_</span><br><span class="line"></span><br><span class="line">#define _HEAD_H_</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Day3</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Day3&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统编程Day2</title>
+    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
+    <published>2023-03-30T12:52:55.000Z</published>
+    <updated>2023-03-31T03:30:02.889Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">跳转到指定行：</span><br><span class="line"></span><br><span class="line">1. 88G （命令模式）</span><br><span class="line"></span><br><span class="line">2. :88  (末行模式)</span><br><span class="line"></span><br><span class="line">跳转文件首：</span><br><span class="line"></span><br><span class="line">gg （命令模式）</span><br><span class="line"></span><br><span class="line">跳转文件尾：</span><br><span class="line"></span><br><span class="line">G（命令模式）</span><br><span class="line"></span><br><span class="line">自动格式化程序：</span><br><span class="line"></span><br><span class="line">gg=G（命令模式）</span><br><span class="line"></span><br><span class="line">大括号对应：</span><br><span class="line"></span><br><span class="line">% （命令模式）</span><br><span class="line"></span><br><span class="line">光标移至行首：</span><br><span class="line"></span><br><span class="line">0 （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line">光标移至行尾：</span><br><span class="line"></span><br><span class="line">$ （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除单个字符：</span><br><span class="line"></span><br><span class="line">x （命令模式）执行结束，工作模式不变。</span><br><span class="line"></span><br><span class="line">替换单个字符：</span><br><span class="line"></span><br><span class="line">将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</span><br><span class="line"></span><br><span class="line">删除一个单词：</span><br><span class="line"></span><br><span class="line">dw（命令模式）光标置于单词的首字母进行操作。</span><br><span class="line"></span><br><span class="line">删除光标至行尾：</span><br><span class="line"></span><br><span class="line">D 或者 d$（命令模式）</span><br><span class="line"></span><br><span class="line">删除光标至行首：</span><br><span class="line"></span><br><span class="line">d0 （命令模式）</span><br><span class="line"></span><br><span class="line">删除指定区域：</span><br><span class="line"></span><br><span class="line">按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</span><br><span class="line"></span><br><span class="line">删除指定1行：</span><br><span class="line"></span><br><span class="line">在光标所在行，按 dd （命令模式）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">删除指定N行：</span><br><span class="line"></span><br><span class="line">在光标所待删除首行，按 Ndd （命令模式）</span><br><span class="line"></span><br><span class="line">复制一行：</span><br><span class="line"></span><br><span class="line">yy</span><br><span class="line"></span><br><span class="line">粘贴：</span><br><span class="line">p：向后、P：向前。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查找：</span><br><span class="line">1. 找 设想 内容：</span><br><span class="line"></span><br><span class="line">命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。</span><br><span class="line"></span><br><span class="line">2. 找 看到的内容：</span><br><span class="line"></span><br><span class="line">命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </span><br><span class="line"></span><br><span class="line">单行替换：</span><br><span class="line"></span><br><span class="line">将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</span><br><span class="line"></span><br><span class="line">通篇替换：</span><br><span class="line"></span><br><span class="line">末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </span><br><span class="line"></span><br><span class="line">指定行的替换：</span><br><span class="line"></span><br><span class="line">末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</span><br><span class="line"></span><br><span class="line">:29,35s /printf/println/g</span><br><span class="line"></span><br><span class="line">撤销、反撤销：</span><br><span class="line"></span><br><span class="line">u、ctrl+r（命令模式）</span><br><span class="line"></span><br><span class="line">分屏：（末行模式）</span><br><span class="line">sp：横屏分。 Ctrl+ww 切换。</span><br><span class="line"></span><br><span class="line">vsp：竖屏分。Ctrl+ww 切换。</span><br><span class="line"></span><br><span class="line">跳转至 man 手册：</span><br><span class="line"></span><br><span class="line">将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</span><br><span class="line"></span><br><span class="line">查看宏定义：</span><br><span class="line"></span><br><span class="line">将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在末行模式执行shell命令：</span><br><span class="line"></span><br><span class="line">:!命令:! ls -l </span><br><span class="line">:! gcc hello.c -o hello100  | !./hello100</span><br><span class="line">:! g++ hello.cpp | !./a.out</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br><span class="line">-l: 指定动态库名</span><br><span class="line"></span><br><span class="line">-L: 指定动态库路径</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">静态库制作及使用步骤：</span><br><span class="line"></span><br><span class="line">1. 将 .c 生成 .o 文件</span><br><span class="line"></span><br><span class="line">gcc -c add.c -o add.o</span><br><span class="line"></span><br><span class="line">2. 使用 ar 工具制作静态库</span><br><span class="line"></span><br><span class="line">ar rcs  lib库名.a  add.o sub.o div.o</span><br><span class="line"></span><br><span class="line">3. 编译静态库到可执行文件中：</span><br><span class="line"></span><br><span class="line">gcc test.c lib库名.a -o a.out</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>头文件守卫：<strong>防止头文件被重复包含</strong> | implicit declaration隐式声明，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。<br>解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</p><pre><code>#ifndef _HEAD_H_#define _HEAD_H_......#endif</code></pre><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>动态库制作及使用：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.  将 .c 生成 .o 文件， （生成与位置无关的代码 -fPIC）</span><br><span class="line"></span><br><span class="line">gcc -c add.c -o add.o -fPIC         （在动态库函数后生成PIC，程序运行时再链接）</span><br><span class="line"></span><br><span class="line">2. 使用 gcc -shared 制作动态库</span><br><span class="line"></span><br><span class="line">gcc -shared -o lib库名.soadd.o sub.o div.o</span><br><span class="line"></span><br><span class="line">3. 编译可执行程序时，指定所使用的动态库。  -l：指定库名(去掉lib前缀和.so后缀)  -L：指定库路径。</span><br><span class="line"></span><br><span class="line">gcc test.c -o a.out -lmymath -L./lib -I./inc</span><br><span class="line"></span><br><span class="line">4. 运行可以执行程序 ./a.out 出错！！！！ --- ldd a.out --&gt; &quot;not found&quot;</span><br><span class="line"></span><br><span class="line">error while loading shared libraries: libxxx.so: cannot open shared object file: No such file or directory</span><br><span class="line"></span><br><span class="line">原因：</span><br><span class="line">链接器：工作于链接阶段， 工作时需要 -l 和 -L （执行数据段合并和地址回填）</span><br><span class="line"></span><br><span class="line">动态链接器：工作于程序运行阶段，工作时需要提供动态库所在固定目录位置。</span><br><span class="line"></span><br><span class="line">解决方式：</span><br><span class="line"></span><br><span class="line">【1】 通过环境变量：  export LD_LIBRARY_PATH=动态库路径</span><br><span class="line"></span><br><span class="line">./a.out 成功！！！  （临时生效， 终端重启环境变量失效）改变的是进程的环境变量</span><br><span class="line"></span><br><span class="line">【2】 永久生效： 写入 终端配置文件。  .bashrc  建议使用绝对路径。</span><br><span class="line"></span><br><span class="line">1) vi ~/.bashrc</span><br><span class="line"></span><br><span class="line">2) 写入 export LD_LIBRARY_PATH=动态库路径  保存</span><br><span class="line"></span><br><span class="line">3）. .bashrc/  source .bashrc / 重启 终端  ---&gt; 让修改后的.bashrc生效</span><br><span class="line"></span><br><span class="line">4）./a.out 成功！！！ </span><br><span class="line"></span><br><span class="line">【3】 拷贝自定义动态库 到 /lib (标准C库所在目录位置)</span><br><span class="line"></span><br><span class="line">【4】 配置文件法</span><br><span class="line"></span><br><span class="line">1）sudo vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">2) 写入 动态库绝对路径  保存</span><br><span class="line"></span><br><span class="line">3）sudo ldconfig -v  使配置文件生效。</span><br><span class="line"></span><br><span class="line">4）./a.out 成功！！！--- 使用 ldd  a.out 查看程序链接情况</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>数据段合并</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331103821681.png" alt="数据段合并"></p><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     
     
       
@@ -34,17 +55,17 @@
     
     
     
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
+    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
+    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Xmind激活亲测有效（23/3/30）</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</id>
     <published>2023-03-30T12:52:55.000Z</published>
     <updated>2023-03-30T13:43:08.867Z</updated>
     
@@ -58,17 +79,17 @@
     
     
     
-    <category term="XMmid" scheme="https://blog.luoxiaohei.co/categories/XMmid/"/>
+    <category term="XMmid" scheme="https://icebress.gitee.io/jack8luo/categories/XMmid/"/>
     
     
-    <category term="XMind" scheme="https://blog.luoxiaohei.co/tags/XMind/"/>
+    <category term="XMind" scheme="https://icebress.gitee.io/jack8luo/tags/XMind/"/>
     
   </entry>
   
   <entry>
     <title>Linux系统编程Day1</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
     <published>2023-03-30T12:52:55.000Z</published>
     <updated>2023-03-30T13:42:23.331Z</updated>
     
@@ -84,17 +105,17 @@
     
     
     
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
+    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/categories/Linux/"/>
     
     
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
+    <category term="Linux" scheme="https://icebress.gitee.io/jack8luo/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu22.04 中Drag and drop is not supported问题</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
     <published>2023-03-30T12:07:03.891Z</published>
     <updated>2023-03-30T12:41:31.444Z</updated>
     
@@ -109,14 +130,14 @@
     
     
     
-    <category term="Ubuntu22.04" scheme="https://blog.luoxiaohei.co/tags/Ubuntu22-04/"/>
+    <category term="Ubuntu22.04" scheme="https://icebress.gitee.io/jack8luo/tags/Ubuntu22-04/"/>
     
   </entry>
   
   <entry>
     <title>hexo：更换电脑，如何继续写博客</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-03-30T08:40:50.000Z</published>
     <updated>2023-03-30T11:02:19.487Z</updated>
     
@@ -131,14 +152,14 @@
     
     
     
-    <category term="hexo" scheme="https://blog.luoxiaohei.co/tags/hexo/"/>
+    <category term="hexo" scheme="https://icebress.gitee.io/jack8luo/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>git操作手册（给实验室同学）</title>
-    <link href="https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
-    <id>https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
+    <id>https://icebress.gitee.io/jack8luo/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
     <published>2023-02-03T13:42:06.000Z</published>
     <updated>2023-03-30T11:09:36.194Z</updated>
     
@@ -154,14 +175,14 @@
     
     
     
-    <category term="git" scheme="https://blog.luoxiaohei.co/tags/git/"/>
+    <category term="git" scheme="https://icebress.gitee.io/jack8luo/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>最小路径和</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</id>
     <published>2022-12-16T07:04:14.000Z</published>
     <updated>2022-12-16T15:09:48.884Z</updated>
     
@@ -176,14 +197,14 @@
     
     
     
-    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="c++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>不同路径</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/12/12/%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84/</id>
     <published>2022-12-11T18:27:22.000Z</published>
     <updated>2022-12-16T13:54:50.913Z</updated>
     
@@ -198,14 +219,14 @@
     
     
     
-    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="c++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>56. 合并区间</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</id>
     <published>2022-12-10T19:34:20.000Z</published>
     <updated>2022-12-11T04:17:03.749Z</updated>
     
@@ -220,14 +241,14 @@
     
     
     
-    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="c++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>跳跃游戏</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/12/10/%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F/</id>
     <published>2022-12-09T22:32:45.000Z</published>
     <updated>2022-12-10T06:41:12.761Z</updated>
     
@@ -242,14 +263,14 @@
     
     
     
-    <category term="C++、算法" scheme="https://blog.luoxiaohei.co/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="C++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>git工作流</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
     <published>2022-12-05T08:40:50.000Z</published>
     <updated>2022-12-10T07:18:52.362Z</updated>
     
@@ -264,14 +285,14 @@
     
     
     
-    <category term="Git" scheme="https://blog.luoxiaohei.co/tags/Git/"/>
+    <category term="Git" scheme="https://icebress.gitee.io/jack8luo/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>旋转图像</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/12/01/%20%E6%97%8B%E8%BD%AC%E5%9B%BE%E5%83%8F/</id>
     <published>2022-12-01T04:25:51.000Z</published>
     <updated>2022-12-08T04:43:54.719Z</updated>
     
@@ -286,14 +307,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>全排列</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/</id>
     <published>2022-11-29T19:16:56.000Z</published>
     <updated>2022-11-30T03:26:36.109Z</updated>
     
@@ -308,14 +329,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>二分查找之找到最左最右元素</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/</id>
     <published>2022-11-27T18:44:50.000Z</published>
     <updated>2022-11-28T03:02:02.927Z</updated>
     
@@ -331,14 +352,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>组合总和</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</id>
     <published>2022-11-27T05:18:48.000Z</published>
     <updated>2022-11-27T13:25:22.968Z</updated>
     
@@ -353,14 +374,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>在排序数组中查找元素的第一个和最后一个位置</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/</id>
     <published>2022-11-25T18:30:30.000Z</published>
     <updated>2022-11-26T02:48:54.400Z</updated>
     
@@ -375,14 +396,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>搜索旋转排序数组</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/25/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
     <published>2022-11-24T19:28:31.000Z</published>
     <updated>2022-11-25T08:11:48.692Z</updated>
     
@@ -398,14 +419,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>最长有效括号</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/23/%20%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</id>
     <published>2022-11-22T19:36:04.000Z</published>
     <updated>2022-11-25T03:08:56.359Z</updated>
     
@@ -420,14 +441,14 @@
     
     
     
-    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    <category term="算法、c++" scheme="https://icebress.gitee.io/jack8luo/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
     
   </entry>
   
   <entry>
     <title>算法作业：来回拉人</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/</id>
+    <link href="https://icebress.gitee.io/jack8luo/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/"/>
+    <id>https://icebress.gitee.io/jack8luo/2022/11/16/%E7%AE%97%E6%B3%95%E4%BD%9C%E4%B8%9A%EF%BC%9A%E6%9D%A5%E5%9B%9E%E6%8B%89%E4%BA%BA/</id>
     <published>2022-11-15T23:43:34.000Z</published>
     <updated>2022-11-16T09:01:26.786Z</updated>
     
@@ -442,29 +463,7 @@
     
     
     
-    <category term="C++、算法" scheme="https://blog.luoxiaohei.co/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hot 23</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/12/hot%2023/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/12/hot%2023/</id>
-    <published>2022-11-11T20:01:53.000Z</published>
-    <updated>2022-11-12T04:08:26.889Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="23-合并K个升序链表"><a href="#23-合并K个升序链表" class="headerlink" title="23. 合并K个升序链表"></a><a href="https://leetcode.cn/problems/merge-k-sorted-lists/">23. 合并K个升序链表</a></h4><p>给你一个链表数组，每个链表都已经按升序排列。</p><p>请你将所有链表合并到一个升序链表中，返回合并后的链表。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：lists = [[1,4,5],[1,3,4],[2,6]]</span><br><span class="line">输出：[1,1,2,3,4,4,5,6]</span><br><span class="line">解释：链表数组如下：</span><br><span class="line">[</span><br><span class="line">  1-&gt;4-&gt;5,</span><br><span class="line">  1-&gt;3-&gt;4,</span><br><span class="line">  2-&gt;6</span><br><span class="line">]</span><br><span class="line">将它们合并到一个有序链表中得到。</span><br><span class="line">1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>思路巨简单，难得一次都不用调试！！!循环直接搞定，什么分治大法我不懂！</p><p>用容量为K的最小堆优先队列，把链表的头结点都放进去，然后出队当前优先队列中最小的，挂上链表，，然后让出队的那个节点的下一个入队，再出队当前优先队列中最小的，直到优先队列为空</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">comp</span> &#123;</span><br><span class="line">        <span class="function"><span class="type">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(ListNode* a, ListNode* b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a-&gt;val &gt; b-&gt;val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    priority_queue&lt;ListNode*, vector&lt;ListNode*&gt;, comp&gt; qu;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">nextPermutation</span><span class="params">(vector&lt;ListNode&gt;&amp; lists)</span></span>&#123;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (ListNode  list : lists) <span class="comment">//只是加入链表头节点</span></span><br><span class="line">       &#123;</span><br><span class="line">            <span class="keyword">if</span>(list == <span class="literal">nullptr</span>)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            qu.<span class="built_in">push</span>(list);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       ListNode head = <span class="keyword">new</span> <span class="built_in">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">       ListNode cur = head;</span><br><span class="line">       <span class="keyword">while</span> (!qu.<span class="built_in">empty</span>())</span><br><span class="line">       &#123;</span><br><span class="line">            ListNode nex = qu.<span class="built_in">pop</span>();</span><br><span class="line">            cur.next = nex;</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            <span class="comment">//链表没到尾，队列加入尾随节点</span></span><br><span class="line">            <span class="keyword">if</span>(nex-&gt;next != <span class="literal">NULL</span>)&#123;</span><br><span class="line">                qu.<span class="built_in">push</span>(nex.next);</span><br><span class="line">            &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> head.next;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>里面涉及优先队列的思想，第一次用到优先队列，很多都不清楚。还有就是判断指针是否指向空时的判断，比如qu.push(list);//list为nullptr不能进行插入操作。</p><p>priority_queue用法详情：<a href="https://blog.csdn.net/weixin_36888577/article/details/79937886">C++ priority_QUEUE</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h4 id=&quot;23-合并K个升序链表&quot;&gt;&lt;a href=&quot;#23-合并K个升序链表&quot; class=&quot;headerlink&quot; title=&quot;23. 合并K个升序链表&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode.cn/problems/merge-k-sorted</summary>
-      
-    
-    
-    
-    
-    <category term="c++、算法" scheme="https://blog.luoxiaohei.co/tags/c-%E3%80%81%E7%AE%97%E6%B3%95/"/>
+    <category term="C++、算法" scheme="https://icebress.gitee.io/jack8luo/tags/C-%E3%80%81%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
