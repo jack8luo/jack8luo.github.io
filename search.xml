@@ -4,13 +4,75 @@
   
     
     <entry>
-      <title></title>
+      <title>Linux系统编程Day3</title>
       <link href="/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/"/>
       <url>/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/</url>
       
-        <content type="html"><![CDATA[<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><p>gdb调试工具：   大前提：程序是你自己写的。  —-逻辑错误</p><p>基础指令：<br>    -g：使用该参数编译可以执行文件，得到调试表。</p><pre><code>gdb ./a.outlist： list 1  列出源码。根据源码指定 行号设置断点。b：    b 20    在20行位置设置断点。run/r:    运行程序n/next: 下一条指令（会越过函数）s/step: 下一条指令（会进入函数） |  进入系统函数会找不到文件，使用until+行号退出 | 或者finish结束函数调用p/print：p i  查看变量的值。continue：继续执行断点后续指令。finish：结束当前函数调用。 quit：退出gdb当前调试。</code></pre><p>其他指令：</p><pre><code>run：使用run查找段错误出现位置。set args： 设置main函数命令行参数 （在 start、run 之前）run 字串1 字串2 ...: 设置main函数命令行参数info b: 查看断点信息表b 20 if i = 5：    设置条件断点。ptype：查看变量类型。display：设置跟踪变量undisplay：取消设置跟踪变量。 使用跟踪变量的编号。</code></pre><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bt：列出当前程序正存活着的栈帧。</span><br><span class="line"></span><br><span class="line">frame： 根据栈帧编号，切换栈帧。</span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331112614337.png" alt="栈帧"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><p>gdb调试工具：   大前提：程序是你自己写的。  —-逻辑错误</p><p>基础指令：<br>    -g：使用该参数编译可以执行文件，得到调试表。</p><pre><code>gdb ./a.outlist： list 1  列出源码。根据源码指定 行号设置断点。b：    b 20    在20行位置设置断点。run/r:    运行程序n/next: 下一条指令（会越过函数）s/step: 下一条指令（会进入函数） |  进入系统函数会找不到文件，使用until+行号回到调试点 | 或者finish结束函数调用p/print：p i  查看变量的值。continue：继续执行断点后续指令。finish：结束当前函数调用。 quit：退出gdb当前调试。</code></pre><p>其他指令：</p><pre><code>run：使用run查找段错误出现位置。set args： 设置main函数命令行参数 （在 start、run 之前）run 字串1 字串2 ...: 设置main函数命令行参数info b: 查看断点信息表b 20 if i = 5：    设置条件断点。ptype：查看变量类型。display：设置跟踪变量undisplay：取消设置跟踪变量。 使用跟踪变量的编号。</code></pre><blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bt：列出当前程序正存活着的栈帧。</span><br><span class="line"></span><br><span class="line">frame： 根据栈帧编号，切换栈帧。</span><br></pre></td></tr></table></figure><p>切换栈帧即可访问函数调用栈帧中的数据</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331112614337.png" alt="栈帧"></p></blockquote><hr><blockquote><p>makefile： 管理项目。</p><blockquote><p>命名：makefile     Makefile  —- make 命令</p><p>1 个规则：</p><p>​    目标：依赖条件<br>​    （一个tab缩进）命令</p><pre><code> 1. **目标的时间必须晚于依赖条件的时间，否则，更新目标并继续更新总目标** 2. **依赖条件如果不存在，找寻新的规则去产生依赖条件。**</code></pre><p>（make会把makefile的第一行规则作为终极目标）</p><p>ALL：指定 makefile 的终极目标。</p><p><strong>小细节</strong>：为什么要把makefile写的复杂？</p><p>例如：我修改了一个add的源码，而导致我所有的源文件都要跟着编译一遍，这是非常耗时的。如果写成如下的样式，make会根据<strong>目标的时间必须晚于依赖条件的时间，否则，更新目标并继续更新总目标</strong>原则，只执行<code>gcc -v add.c -o hello.o 和 gcc hello.o add.o sub.o div1.o -o a.out.</code></p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331164549575.png" alt="image-20230331164549575"></p><p>2 个函数：</p><p>​    src = $(wildcard ./*.c): 匹配当前工作目录下的所有.c 文件。将文件名组成列表，赋值给变量 src。  src = add.c sub.c div1.c </p><p>​    obj = $(patsubst %.c, %.o, $(src)): 将参数3中，包含参数1的部分，替换为参数2。 obj = add.o sub.o div1.o</p><p>clean:    (没有依赖)</p><pre><code>make clean -n | -n表示提示不执行-rm -rf $(obj) a.out    “-”：作用是，删除不存在文件时，不报错。顺序执行结束。</code></pre><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331172250751.png" alt="使用2个函数"></p><p>3 个自动变量：</p><p>​    $@: 在规则的<strong>命令中</strong>，表示<strong>规则中的目标</strong>。</p><p>​    $^: 在规则的<strong>命令中</strong>，表示<strong>所有依赖条件</strong>。</p><p>​    $&lt;: 在规则的<strong>命令中，</strong>表示<strong>第一个依赖条件</strong>。如果将该变量应用在<strong>模式规则</strong>中，它可将依赖条件列表中的依赖<strong>依次</strong>取出，套用模式规则。</p><p>模式规则：</p><p>​    %.o:%.c<br>​       gcc -c $&lt; -o %@</p></blockquote><p>使用这么多函数和自动变量的原因是<strong>方便扩展</strong></p><p><strong>不需要修改makefile</strong>即可扩展程序功能函数。</p><blockquote><p>静态模式规则：（指定模式规则下使用的obj）（obj可以有多个，可有obj函数的特性看出）</p><p>​    $(obj):%.o:%.c<br>​       gcc -c $&lt; -o %@    </p><p>伪目标：（不管重名与否都执行）</p><p>​    .PHONY: clean ALL</p><p>参数：<br>    -n：模拟执行make、make clean 命令。</p><p>​    -f：指定文件执行 make 命令。                make -f filename            (xxx.mk是makefile文件)</p></blockquote></blockquote><pre><code>作业：编写一个 makefile 可以将其所在目录下的所有独立 .c 文件编译生成同名可执行文件。</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux文件IO-Day3</title>
+      <link href="/2023/03/31/Linux%E6%96%87%E4%BB%B6IO-Day3/"/>
+      <url>/2023/03/31/Linux%E6%96%87%E4%BB%B6IO-Day3/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>系统调用（内核提供的函数| 内核=操作系统=系统的核心代码）</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331193102158.png" alt="image-20230331193102158"></p></blockquote><p>open函数：</p><pre><code>int open(char *pathname, int flags)    #include &lt;unistd.h&gt;参数：    pathname: 欲打开的文件路径名    flags：文件打开方式：    #include &lt;fcntl.h&gt;        O_RDONLY|O_WRONLY|O_RDWR    O_CREAT|O_APPEND|O_TRUNC|O_EXCL|O_NONBLOCK ....返回值：    成功： 打开文件所得到对应的 文件描述符（整数）    失败： -1， 设置errno    int open(char *pathname, int flags， mode_t mode)        123  775    参数：    pathname: 欲打开的文件路径名    flags：文件打开方式：    O_RDONLY|O_WRONLY|O_RDWR    O_CREAT|O_APPEND|O_TRUNC|O_EXCL|O_NONBLOCK ....    mode: 参数3使用的前提， 参2指定了 O_CREAT。    取值8进制数，用来描述文件的 访问权限。 rwx    0664        创建文件最终权限 = mode &amp; ~umask （umask是默认文件权限取反）返回值：    成功： 打开文件所得到对应的 文件描述符（整数）    失败： -1， 设置errno    </code></pre><p>close函数：</p><pre><code>int close(int fd);</code></pre><p>错误处理函数：        与 errno 相关。</p><pre><code>printf(&quot;xxx error: %d\n&quot;, errno);char *strerror(int errnum);    printf(&quot;xxx error: %s\n&quot;, strerror(errno));void perror(const char *s);    perror(&quot;open error&quot;);</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java学习路线</title>
+      <link href="/2023/03/31/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"/>
+      <url>/2023/03/31/java%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</url>
+      
+        <content type="html"><![CDATA[<p>个人推荐一个java框架路线。</p><p> 1、首先了解一下javaweb（servlet）</p><p> 2、入门ssm </p><p>3、了解springboot </p><p>4、了解常见组件springcloud或者dubbo&amp;;zk </p><p>5、中间件等 redis和消息队列  </p><p>6、上手项目，在项目中巩固技术栈 </p><p>更多java面试干货和实战项目推荐，可以关注我的公众号：代码界的小白，希望对你有帮助。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
       
     </entry>
     
@@ -21,7 +83,7 @@
       <link href="/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
       <url>/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</url>
       
-        <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><blockquote><p>跳转到指定行：</p><pre><code>1. 88G （命令模式）2. :88  (末行模式)</code></pre><p>跳转文件首：</p><p>​    gg （命令模式）</p><p>跳转文件尾：</p><p>​    G（命令模式）</p><p>自动格式化程序：</p><p>​    gg=G（命令模式）</p><p>大括号对应：</p><p>​    % （命令模式）</p><p>光标移至行首：</p><p>​    0 （命令模式）执行结束，工作模式不变。</p><p>光标移至行尾：</p><p>​    $ （命令模式）执行结束，工作模式不变。</p><p>删除单个字符：</p><p>​    x （命令模式）执行结束，工作模式不变。</p><p>替换单个字符：</p><p>​    将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</p><p>删除一个单词：</p><p>​    dw（命令模式）光标置于单词的首字母进行操作。</p><p>删除光标至行尾：</p><p>​    D 或者 d$（命令模式）</p><p>删除光标至行首：</p><p>​    d0 （命令模式）</p><p>删除指定区域：</p><p>​    按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</p><p>删除指定1行：</p><p>​    在光标所在行，按 dd （命令模式）</p><p>删除指定N行：</p><p>​    在光标所待删除首行，按 Ndd （命令模式）</p><p>复制一行：</p><p>​    yy</p><p>粘贴：<br>    p：向后、P：向前。</p><p>查找：</p><pre><code>1. 找 设想 内容：​    命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。2. 找 看到的内容：    命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </code></pre><p>单行替换：</p><p>​    将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</p><p>通篇替换：</p><p>​    末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </p><p>指定行的替换：</p><p>​    末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</p><p>​        :29,35s /printf/println/g</p><p>撤销、反撤销：</p><p>​    u、ctrl+r（命令模式）</p><p>分屏：（末行模式）<br>    sp：横屏分。 Ctrl+ww 切换。</p><p>​    vsp：竖屏分。Ctrl+ww 切换。</p><p>跳转至 man 手册：</p><p>​    将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</p><p>查看宏定义：</p><p>​    将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</p><p>在末行模式执行shell命令：</p><p>​    :!命令        :! ls -l<br>​    :! gcc hello.c -o hello100  | !./hello100<br>​    :! g++ hello.cpp | !./a.out</p></blockquote><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br><span class="line">-l: 指定动态库名</span><br><span class="line"></span><br><span class="line">-L: 指定动态库路径</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">静态库制作及使用步骤：</span><br><span class="line"></span><br><span class="line">1. 将 .c 生成 .o 文件</span><br><span class="line"></span><br><span class="line">gcc -c add.c -o add.o</span><br><span class="line"></span><br><span class="line">2. 使用 ar 工具制作静态库</span><br><span class="line"></span><br><span class="line">ar rcs  lib库名.a  add.o sub.o div.o</span><br><span class="line"></span><br><span class="line">3. 编译静态库到可执行文件中：</span><br><span class="line"></span><br><span class="line">gcc test.c lib库名.a -o a.out</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>头文件守卫：<strong>防止头文件被重复包含</strong> | implicit declaration隐式声明，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。<br>解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</p><pre><code>#ifndef _HEAD_H_#define _HEAD_H_......#endif</code></pre><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>动态库制作及使用：</p><blockquote><ol><li>将 .c 生成 .o 文件， （生成与位置无关的代码 -fPIC）</li></ol><p>​    gcc -c add.c -o add.o -fPIC         （在动态库函数后生成PIC，程序运行时再链接）</p><ol><li><p>使用 gcc -shared 制作动态库</p><p> gcc -shared -o lib库名.so    add.o sub.o div.o</p></li><li><p>编译可执行程序时，指定所使用的动态库。  -l：指定库名(去掉lib前缀和.so后缀)  -L：指定库路径。</p><p> gcc test.c -o a.out -lmymath -L./lib -I./inc</p></li><li><p>运行可以执行程序 ./a.out 出错！！！！ —- ldd a.out —&gt; “not found”</p><p> error while loading shared libraries: libxxx.so: cannot open shared object file: No such file or directory</p><p> 原因：</p><pre><code> 链接器：    工作于链接阶段， 工作时需要 -l 和 -L （执行数据段合并和地址回填）</code></pre><p> ​    动态链接器：    工作于程序运行阶段，工作时需要提供动态库所在固定目录位置。</p><p> 解决方式：                </p><p> ​    【1】 通过环境变量：  export LD_LIBRARY_PATH=动态库路径</p><p> ​        ./a.out 成功！！！  （临时生效， 终端重启环境变量失效）改变的是进程的环境变量</p><p> ​    【2】 永久生效： 写入 终端配置文件。  .bashrc  建议使用绝对路径。</p><pre><code>     1) vi ~/.bashrc     2) 写入 export LD_LIBRARY_PATH=动态库路径  保存     3）. .bashrc/  source .bashrc / 重启 终端  ---&gt; 让修改后的.bashrc生效     4）./a.out 成功！！！  【3】 拷贝自定义动态库 到 /lib (标准C库所在目录位置) 【4】 配置文件法 ​    1）sudo vi /etc/ld.so.conf     2) 写入 动态库绝对路径  保存     3）sudo ldconfig -v  使配置文件生效。     4）./a.out 成功！！！--- 使用 ldd  a.out 查看程序链接情况</code></pre></li></ol></blockquote><p>数据段合并</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331103821681.png" alt="数据段合并"></p><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><blockquote><p>跳转到指定行：</p><pre><code> 1. 88G （命令模式） 2. :88  (末行模式)</code></pre><p>跳转文件首：</p><p>​    gg （命令模式）</p><p>跳转文件尾：</p><p>​    G（命令模式）</p><p>自动格式化程序：</p><p>​    gg=G（命令模式）</p><p>大括号对应：</p><p>​    % （命令模式）</p><p>光标移至行首：</p><p>​    0 （命令模式）执行结束，工作模式不变。</p><p>光标移至行尾：</p><p>​    $ （命令模式）执行结束，工作模式不变。</p><p>删除单个字符：</p><p>​    x （命令模式）执行结束，工作模式不变。</p><p>替换单个字符：</p><p>​    将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</p><p>删除一个单词：</p><p>​    dw（命令模式）光标置于单词的首字母进行操作。</p><p>删除光标至行尾：</p><p>​    D 或者 d$（命令模式）</p><p>删除光标至行首：</p><p>​    d0 （命令模式）</p><p>删除指定区域：</p><p>​    按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</p><p>剪切指定1行：</p><p>​    在光标所在行，按 dd （命令模式）</p><p>剪切指定N行：</p><p>​    在光标所待删除首行，按 Ndd （命令模式）</p><p>复制一行：</p><p>​    yy</p><p>粘贴：<br>    p：向后、P：向前。</p><p>查找：</p><pre><code> 1. 找 设想 内容：命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。 2. 找 看到的内容：命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </code></pre><p>单行替换：</p><p>​    将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</p><p>通篇替换：</p><p>​    末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </p><p>指定行的替换：</p><p>​    末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</p><p>​        :29,35s /printf/println/g</p><p>撤销、反撤销：</p><p>​    u、ctrl+r（命令模式）</p><p>分屏：（末行模式）<br>    sp：横屏分。 Ctrl+ww 切换。</p><p>​    vsp：竖屏分。Ctrl+ww 切换。</p><p>跳转至 man 手册：</p><p>​    将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</p><p>查看宏定义：</p><p>​    将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</p><p>在末行模式执行shell命令：</p><p>​    :!命令        :! ls -l<br>​    :! gcc hello.c -o hello100  | !./hello100</p><p>​    <strong>gcc hello.c -o hello = gcc -c hello.c -o hello.o + gcc hello.o -o a.out</strong></p><p>​    :! g++ hello.cpp | !./a.out</p></blockquote><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br><span class="line">-l: 指定动态库名</span><br><span class="line"></span><br><span class="line">-L: 指定动态库路径</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><blockquote><blockquote><p>静态库制作及使用步骤：</p><p><strong>（-o 取名）</strong></p><pre><code>1. 将 .c 生成 .o 文件​    gcc -c add.c -o add.o2. 使用 ar 工具制作静态库    ar rcs  lib库名.a  add.o sub.o div.o3. 编译静态库到可执行文件中：    gcc test.c lib库名.a -o a.out</code></pre><p>头文件守卫：<strong>防止头文件被重复包含</strong> </p><p> implicit declaration<strong>隐式声明</strong>，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。<br>解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</p><pre><code>#ifndef _HEAD_H_#define _HEAD_H_......#endif</code></pre><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>动态库制作及使用：</p></blockquote><ol><li>将 .c 生成 .o 文件， （<strong>生成与位置无关的代码 -fPIC</strong>）</li></ol><p>​    gcc -c add.c -o add.o -fPIC         （<strong>在动态库函数后生成PIC，程序运行时再链接</strong>）</p><ol><li><p>使用 gcc -shared 制作动态库</p><p> gcc -shared -o lib库名.so    add.o sub.o div.o</p></li><li><p>编译可执行程序时，指定所使用的动态库。  -l：指定库名(去掉lib前缀和.so后缀)  -L：指定库路径。</p><p> gcc test.c -o a.out -lmymath -L./lib -I./inc</p></li><li><p>运行可以执行程序 ./a.out <strong>出错</strong>！！！！ —- ldd a.out —&gt; “not found” （<strong>ldd 查看程序链接信息</strong>）</p><p> error while loading shared libraries: libxxx.so: cannot open shared object file: No such file or directory</p><p> 原因：</p><pre><code> 链接器：    工作于链接阶段， 工作时需要 -l 和 -L （**执行数据段合并和地址回填**）| </code></pre><p> ​    动态链接器：    工作于程序运行阶段，工作时需要提供动态库所在固定目录位置。</p><p> 解决方式：</p><p> ​    【1】 通过环境变量：  export LD_LIBRARY_PATH=动态库路径</p><p> ​        ./a.out 成功！！！  （临时生效， 终端重启环境变量失效）改变的是进程的环境变量</p><p> ​    【2】 永久生效： 写入 终端配置文件。  .bashrc  建议使用绝对路径。eg:/home/luo/file/dynamicLab/lib</p><p> ​                1.vi ~/.bashrc</p><p> ​                2.写入 export LD_LIBRARY_PATH=动态库路径  保存</p><p> 3）. .bashrc/  source .bashrc / 重启 终端  —-&gt; 让修改后的.bashrc生效</p><p> 4）./a.out 成功！！！ </p><p> 【3】 拷贝自定义动态库 到 /lib (标准C库所在目录位置)</p><p> 【4】 配置文件法</p> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1）sudo vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">2）写入 动态库绝对路径  保存</span><br><span class="line"></span><br><span class="line">3）sudo ldconfig -v  使配置文件生效。</span><br><span class="line"></span><br><span class="line">4）./a.out 成功！！！--- 使用 ldd  a.out 查看程序链接情况</span><br></pre></td></tr></table></figure></li></ol></blockquote><p>数据段合并</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331103821681.png" alt="数据段合并"></p><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -43,8 +105,8 @@
     
     <entry>
       <title>Xmind激活亲测有效（23/3/30）</title>
-      <link href="/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
-      <url>/2023/03/30/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</url>
+      <link href="/2023/03/30/%E6%97%A5%E5%B8%B8/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
+      <url>/2023/03/30/%E6%97%A5%E5%B8%B8/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</url>
       
         <content type="html"><![CDATA[<h1 id="Xmind激活亲测有效（23-3-30）"><a href="#Xmind激活亲测有效（23-3-30）" class="headerlink" title="Xmind激活亲测有效（23/3/30）"></a>Xmind激活亲测有效（23/3/30）</h1><p>下载资源</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330095543117.png" alt="image-20230330095543117"></p><p>双击安装包，程序自动安装在C:\Program Files\XMind下</p><p>替换</p><p>C:\Program Files\XMind\resources下的app.asar,打开xmind即可激活。</p>]]></content>
       
@@ -59,31 +121,6 @@
         <tags>
             
             <tag> XMind </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Linux系统编程Day1</title>
-      <link href="/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
-      <url>/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>学习了一些命令，这些命令记住常用的，备份难记的。</p><p>常用的比如</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">绝对路径中，cd ..、cd .、 cd、 cd - 的使用。</span><br><span class="line">mv 文件重命名|移动文件</span><br><span class="line">创建用户sudo adduser 新用户名--- useradd</span><br><span class="line">删除用户sudo deluser 用户名</span><br><span class="line">find找文件</span><br><span class="line">ln创建软链接和硬链接的方式和属性</span><br><span class="line">chmod修改权限的两种方式</span><br><span class="line">grep查找文件内容</span><br><span class="line">压缩文件tar、rar、zip等命令---gzip and bzip with tar:因为gzip和bzip不能打包文件夹多个文件。</span><br><span class="line">tar zcvf filename file1 file2</span><br><span class="line">z:gzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">tar jcvf filename file1 file2</span><br><span class="line">z:bzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">解压</span><br><span class="line">tar zxvf filename</span><br><span class="line">tar jxvf filename</span><br><span class="line"></span><br><span class="line">rar a -r filename file</span><br><span class="line">unrar x filename</span><br><span class="line"></span><br><span class="line">zip -r filename file</span><br><span class="line">unzip filename</span><br><span class="line"></span><br><span class="line">安装软件卸载软件的方法。</span><br><span class="line">sudo aptitude show softname 查看软件安装信息</span><br></pre></td></tr></table></figure><p>文件类型</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通文件：-</span><br><span class="line">目录文件：d</span><br><span class="line">字符设备文件：c</span><br><span class="line">块设备文件：b</span><br><span class="line">软连接：l</span><br><span class="line">管道文件：p</span><br><span class="line">套接字：s</span><br><span class="line">未知文件。</span><br></pre></td></tr></table></figure><p>系统目录</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin：存放二进制可执行文件</span><br><span class="line">boot：存放开机启动程序</span><br><span class="line">dev：存放设备文件： 字符设备、块设备</span><br><span class="line">home：存放普通用户</span><br><span class="line">etc：用户信息和系统配置文件 passwd、group</span><br><span class="line">lib：库文件：libc.so.6</span><br><span class="line">root：管理员宿主目录（家目录）</span><br><span class="line">usr：用户资源管理目录 unix software resource</span><br></pre></td></tr></table></figure><p>简单的快捷键</p><p>tab显示提示、ctrl-a、ctrl-e、ctrl-u、ctrl-Alt-t。</p><p>细节的内容还请再看一遍视频讲解和讲义。</p><hr><p>学习完后写的五子棋游戏服务器，匹配游戏，断线重连，连接mysql数据库，欢迎大家一起学习 <a href="https://github.com/ChenVv-hong/Gobang">https://github.com/ChenVv-hong/Gobang</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Linux </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
             
         </tags>
       
@@ -122,6 +159,31 @@
         <tags>
             
             <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux系统编程Day1</title>
+      <link href="/2023/03/29/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
+      <url>/2023/03/29/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>学习了一些命令，这些命令记住常用的，备份难记的。</p><p>常用的比如</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">绝对路径中，cd ..、cd .、 cd、 cd - 的使用。</span><br><span class="line">./ 本级目录 ../上一级目录</span><br><span class="line"></span><br><span class="line">删除文件rm</span><br><span class="line">rm -rf 递归强制删除</span><br><span class="line">mv 文件重命名|移动文件</span><br><span class="line">mv和cp的区别</span><br><span class="line">1、功能上的区别</span><br><span class="line">mv：用户可以使用该命令为文件或目录重命名或将文件由一个目录移入另一个目录中（该文件从原来的文件夹中消失）。</span><br><span class="line"></span><br><span class="line">cp: 该命令的功能是将给出的文件或目录拷贝到另一文件或目录中（该文件仍保存在原文件夹中）。</span><br><span class="line"></span><br><span class="line">2、从inode角度来区分</span><br><span class="line">mv：会将存储于indoe索引节点上的文件元信息也移动到新文件中。</span><br><span class="line"></span><br><span class="line">cp : 只会复制文件数据，不会复制inode索引节点上的文件元信息。</span><br><span class="line"></span><br><span class="line">创建用户sudo adduser 新用户名--- useradd</span><br><span class="line">删除用户sudo deluser 用户名</span><br><span class="line">find找文件</span><br><span class="line">ln创建软链接和硬链接的方式和属性</span><br><span class="line">chmod修改权限的两种方式</span><br><span class="line">grep查找文件内容</span><br><span class="line">压缩文件tar、rar、zip等命令---gzip and bzip with tar:因为gzip和bzip不能打包文件夹多个文件。</span><br><span class="line">tar zcvf filename file1 file2</span><br><span class="line">z:gzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">tar jcvf filename file1 file2</span><br><span class="line">z:bzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">解压</span><br><span class="line">tar zxvf filename</span><br><span class="line">tar jxvf filename</span><br><span class="line"></span><br><span class="line">rar a -r filename file</span><br><span class="line">unrar x filename</span><br><span class="line"></span><br><span class="line">zip -r filename file</span><br><span class="line">unzip filename</span><br><span class="line"></span><br><span class="line">安装软件卸载软件的方法。</span><br><span class="line">sudo aptitude show softname 查看软件安装信息</span><br></pre></td></tr></table></figure><p>文件类型</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通文件：-</span><br><span class="line">目录文件：d</span><br><span class="line">字符设备文件：c</span><br><span class="line">块设备文件：b</span><br><span class="line">软连接：l</span><br><span class="line">管道文件：p</span><br><span class="line">套接字：s</span><br><span class="line">未知文件。</span><br></pre></td></tr></table></figure><p>系统目录</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin：存放二进制可执行文件</span><br><span class="line">boot：存放开机启动程序</span><br><span class="line">dev：存放设备文件： 字符设备、块设备</span><br><span class="line">home：存放普通用户</span><br><span class="line">etc：用户信息和系统配置文件 passwd、group</span><br><span class="line">lib：库文件：libc.so.6</span><br><span class="line">root：管理员宿主目录（家目录）</span><br><span class="line">usr：用户资源管理目录 unix software resource</span><br></pre></td></tr></table></figure><p>简单的快捷键</p><p>tab显示提示、ctrl-a、ctrl-e、ctrl-u、ctrl-Alt-t。</p><p>细节的内容还请再看一遍视频讲解和讲义。</p><hr><p>学习完后写的五子棋游戏服务器，匹配游戏，断线重连，连接mysql数据库，欢迎大家一起学习 <a href="https://github.com/ChenVv-hong/Gobang">https://github.com/ChenVv-hong/Gobang</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
             
         </tags>
       
@@ -282,11 +344,11 @@
     
     
     <entry>
-      <title>二分查找之找到最左最右元素</title>
+      <title>二分查找之找到=target的第一个数和最后一个数</title>
       <link href="/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/"/>
       <url>/2022/11/28/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E4%B9%8B%E6%89%BE%E5%88%B0%E6%9C%80%E5%B7%A6%E6%9C%80%E5%8F%B3%E5%85%83%E7%B4%A0/</url>
       
-        <content type="html"><![CDATA[<h2 id="二分查找总结"><a href="#二分查找总结" class="headerlink" title="二分查找总结"></a>二分查找总结</h2><details pink><summary> 哔哔 </summary>              <div class='content'>              <p>​        最近做了很多二分查找的算法题，这里来整理一下学到了什么。</p><p>​        做到有关二分查找的题目</p><p>​    -     <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a></p><p>​    -     <a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/">34. 在排序数组中查找元素的第一个和最后一个位置</a></p><p>​    -     <a href="https://leetcode.cn/problems/combination-sum/">39. 组合总和</a></p>              </div>            </details><p>针对34题总结了一下二分查找的一些细节。</p><p>普通的二分查找很简单。</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(left &lt;= right)</span><br><span class="line">&#123;</span><br><span class="line"><span class="type">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">if</span>(A[mid] == val)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(mid &lt; index)</span><br><span class="line">   index = mid;</span><br><span class="line">            right = mid <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &gt; val)</span><br><span class="line">right = mid<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &lt; val)</span><br><span class="line">left = mid+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="找到最左边元素"><a href="#找到最左边元素" class="headerlink" title="找到最左边元素"></a>找到最左边元素</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//找到=target的第一个数</span></span><br><span class="line">    <span class="type">int</span> lside;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[mid] &gt;= target)</span><br><span class="line">        &#123;</span><br><span class="line">            r = mid;</span><br><span class="line">            lside = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h2 id="找到最右边元素"><a href="#找到最右边元素" class="headerlink" title="找到最右边元素"></a>找到最右边元素</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//找到=target的最后一个数</span></span><br><span class="line">    <span class="type">int</span> lside;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) <span class="comment">// 因为l已经累加了，如果l等于r的情况不能进行判断，那么l=r-1 且 两个数都是target时，mid只会=l，lside也是，我们要的结果是右边的，即r</span></span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[mid] &lt;= target)</span><br><span class="line">        &#123;</span><br><span class="line">            l = mid+<span class="number">1</span>;  <span class="comment">// 找到大于第一个大于target的数减1 即可</span></span><br><span class="line">            lside = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><hr><p>好啦，我要去打怪兽了，掰掰</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="二分查找总结"><a href="#二分查找总结" class="headerlink" title="二分查找总结"></a>二分查找总结</h2><details pink><summary> 哔哔 </summary>              <div class='content'>              <p>​        最近做了很多二分查找的算法题，这里来整理一下学到了什么。</p><p>​        做到有关二分查找的题目</p><p>​    -     <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/">33. 搜索旋转排序数组</a></p><p>​    -     <a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/">34. 在排序数组中查找元素的第一个和最后一个位置</a></p><p>​    -     <a href="https://leetcode.cn/problems/combination-sum/">39. 组合总和</a></p>              </div>            </details><p>针对34题总结了一下二分查找的一些细节。</p><p>普通的二分查找很简单。</p><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(left &lt;= right)</span><br><span class="line">&#123;</span><br><span class="line"><span class="type">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">if</span>(A[mid] == val)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(mid &lt; index)</span><br><span class="line">   index = mid;</span><br><span class="line">            right = mid <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &gt; val)</span><br><span class="line">right = mid<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(A[mid] &lt; val)</span><br><span class="line">left = mid+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="找到-target的第一个数"><a href="#找到-target的第一个数" class="headerlink" title="找到=target的第一个数"></a>找到=target的第一个数</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//找到=target的第一个数</span></span><br><span class="line">    <span class="type">int</span> lside;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[mid] &gt;= target)</span><br><span class="line">        &#123;</span><br><span class="line">            r = mid;</span><br><span class="line">            lside = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h2 id="找到-target的最后一个数"><a href="#找到-target的最后一个数" class="headerlink" title="找到=target的最后一个数"></a>找到=target的最后一个数</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//找到=target的最后一个数</span></span><br><span class="line">    <span class="type">int</span> lside;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) <span class="comment">// 因为l已经累加了，如果l等于r的情况不能进行判断，那么l=r-1 且 两个数都是target时，mid只会=l，lside也是，我们要的结果是右边的，即r</span></span><br><span class="line">    &#123;</span><br><span class="line">        mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[mid] &lt;= target)</span><br><span class="line">        &#123;</span><br><span class="line">            l = mid+<span class="number">1</span>;  <span class="comment">// 找到大于第一个大于target的数减1 即可</span></span><br><span class="line">            lside = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><hr><p>好啦，我要去打怪兽了，掰掰</p>]]></content>
       
       
       
@@ -747,31 +809,6 @@
     
     
     <entry>
-      <title>linux必备知识</title>
-      <link href="/2022/09/26/linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
-      <url>/2022/09/26/linux%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
-      
-        <content type="html"><![CDATA[<h1 id="linux常用技巧指令"><a href="#linux常用技巧指令" class="headerlink" title="linux常用技巧指令"></a>linux常用技巧指令</h1><p>安装好的linux是没有图形界面的，所以安装图形界面X Window System和GNOME Desktop。教程：<a href="https://blog.csdn.net/weixin_41556217/article/details/81429152?ops_request_misc=%7B%22request%5Fid%22%3A%22164873028116782184623234%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=164873028116782184623234&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-1-81429152.142^v5^pc_search_result_cache,143^v6^control&amp;utm_term=centos7安装图像界面&amp;spm=1018.2226.3001.4187">centos7安装图形界面_基础技术总结的博客-CSDN博客_centos7图形界面</a></p><p>，安装完成后输入startx就可以进入linux图形界面。</p><p>vim编辑器的退出指令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">:q ，退出（:quit的缩写）</span><br><span class="line"></span><br><span class="line">:q!，退出且不保存（:quit!的缩写）</span><br><span class="line"></span><br><span class="line">:wq，保存并退出</span><br><span class="line"></span><br><span class="line">:wq!，保存并退出即使文件没有写入权限（强制保存退出）</span><br><span class="line"></span><br><span class="line">:x，保存并退出（类似:wq，但是只有在有更改的情况下才保存）</span><br><span class="line"></span><br><span class="line">:exit，保存并退出（和:x相同）</span><br><span class="line"></span><br><span class="line">:qa，退出所有(:quitall的缩写)</span><br><span class="line"></span><br><span class="line">:cq，退出且不保存（即便有错误）</span><br></pre></td></tr></table></figure><p>todo：</p><div class='checkbox'><input type="checkbox" />            <p>设置中文</p>            </div><div class='checkbox'><input type="checkbox" />            <p>设置主机于虚拟机拖拽</p>            </div><div class='checkbox'><input type="checkbox" />            <p>安装浏览器</p>            </div>]]></content>
-      
-      
-      <categories>
-          
-          <category> butterfly </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> butterfly </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>自然数与有理数的双射函数</title>
       <link href="/2022/09/23/2022-9-23-%E8%87%AA%E7%84%B6%E6%95%B0%E4%B8%8E%E6%9C%89%E7%90%86%E6%95%B0%E7%9A%84%E5%8F%8C%E5%B0%84%E5%87%BD%E6%95%B0/"/>
       <url>/2022/09/23/2022-9-23-%E8%87%AA%E7%84%B6%E6%95%B0%E4%B8%8E%E6%9C%89%E7%90%86%E6%95%B0%E7%9A%84%E5%8F%8C%E5%B0%84%E5%87%BD%E6%95%B0/</url>
@@ -1024,8 +1061,8 @@
     
     <entry>
       <title>word论文格式</title>
-      <link href="/2022/05/31/word%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F/"/>
-      <url>/2022/05/31/word%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F/</url>
+      <link href="/2022/05/31/%E6%97%A5%E5%B8%B8/word%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F/"/>
+      <url>/2022/05/31/%E6%97%A5%E5%B8%B8/word%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F/</url>
       
         <content type="html"><![CDATA[<h1 id="优雅搞定word论文模板"><a href="#优雅搞定word论文模板" class="headerlink" title="优雅搞定word论文模板"></a>优雅搞定word论文模板</h1><h3 id="Q：怎么修改默认标题字体"><a href="#Q：怎么修改默认标题字体" class="headerlink" title="Q：怎么修改默认标题字体"></a>Q：怎么修改默认标题字体</h3><h3 id="A：右键点击修改。"><a href="#A：右键点击修改。" class="headerlink" title="A：右键点击修改。"></a>A：右键点击修改。</h3><p><img src="https://s2.loli.net/2022/05/24/6TN9RorpljU15uM.png" alt="image-20220524213950373"></p><h3 id="点击修改字体"><a href="#点击修改字体" class="headerlink" title="点击修改字体"></a>点击修改字体</h3><p><img src="https://s2.loli.net/2022/05/24/fmxbRcoUyikV21D.png" alt="image-20220524214048455"></p><h3 id="修改成一级标题三号中文宋体黑体居中，英文字体times-new-roman。"><a href="#修改成一级标题三号中文宋体黑体居中，英文字体times-new-roman。" class="headerlink" title="修改成一级标题三号中文宋体黑体居中，英文字体times new roman。"></a>修改成一级标题三号中文宋体黑体居中，英文字体times new roman。</h3><p><img src="https://s2.loli.net/2022/05/24/VxncEFvARZ7tzPq.png" alt="image-20220524214244871"></p><p>设置行距在段落中有，设置两倍行距。</p><p>同样地设置正文字体：宋体小四times new roman，行间距1.25。二级三级标题设置方法一样。</p><h2 id="标号如何自动生成："><a href="#标号如何自动生成：" class="headerlink" title="标号如何自动生成："></a>标号如何自动生成：</h2><h3 id="Q-如何设置自己想要的标号，比如：第一章、第1章这种。"><a href="#Q-如何设置自己想要的标号，比如：第一章、第1章这种。" class="headerlink" title="Q:如何设置自己想要的标号，比如：第一章、第1章这种。"></a>Q:如何设置自己想要的标号，比如：第一章、第1章这种。</h3><h3 id="A-点击开始选项栏中的定义新的多级列表"><a href="#A-点击开始选项栏中的定义新的多级列表" class="headerlink" title="A:点击开始选项栏中的定义新的多级列表"></a>A:点击开始选项栏中的定义新的多级列表</h3><p><img src="https://s2.loli.net/2022/05/24/CDUyq4IovX3NfSz.png" alt="image-20220524214850349"></p><p><img src="https://s2.loli.net/2022/05/24/Vsvq47aibjGlrfD.png" alt="image-20220524215407245"></p><h3 id="Q-如何设置成第一章1-1、1-2这样子"><a href="#Q-如何设置成第一章1-1、1-2这样子" class="headerlink" title="Q:如何设置成第一章1.1、1.2这样子"></a>Q:如何设置成第一章1.1、1.2这样子</h3><h3 id="A"><a href="#A" class="headerlink" title="A:"></a>A:<img src="https://s2.loli.net/2022/05/24/gbUqj3WoXRlsHVQ.png" alt="image-20220524215617233"></h3><p><img src="https://s2.loli.net/2022/05/24/MyIELQmtcxAnjdT.png" alt="image-20220524220420629"></p><h1 id="优雅搞定word论文图片-amp-表格"><a href="#优雅搞定word论文图片-amp-表格" class="headerlink" title="优雅搞定word论文图片&amp;表格"></a>优雅搞定word论文图片&amp;表格</h1><p>图片样式选择嵌入型</p><p><img src="https://s2.loli.net/2022/05/24/2OdfhGF3YaocMrA.png" alt="image-20220524220740210"></p><p><img src="https://s2.loli.net/2022/05/24/1pOgrnemJPUki7z.png" alt="image-20220524220840289"></p><p>点击引用选项中的交叉引用，可以插入引用，但是会遇见如下情况：</p><p><img src="https://s2.loli.net/2022/05/24/TSg1xhmIKn3Ajqd.png" alt="image-20220524221112075"></p><p>解决办法：ctrl + A全选，按F9刷新即可解决。</p><p>tips：两张图片并排放可以用表格实现，插入两列表格，然后插入图片，最后在表格设计中隐藏框框。</p><p>tips：两张图片组合成一张图片：1、设置图片为四周型。2、选中两张图片，点击组合。最后设置为嵌入型就可以。</p><p>Q:如果我们标题是汉字一，图片编号会变成一-1这样子，怎么办？</p><p>A:按Alt+F9，在每章标题上按ctrl+F9进入域，输入SEQ seq \h</p><p><img src="https://s2.loli.net/2022/05/24/RVdipzncq6MJOPD.png" alt="image-20220524221835190"></p><p>在空白处按ctrl+F9，输入SEQ seq \c。剪切这部分，点击ctrl+h，进入替换页面。把^d STYLEREF 1\s替换为剪切的部分。</p><p><img src="https://s2.loli.net/2022/05/24/iQblfeqks2tZV3D.png" alt="image-20220524222056969"></p><p>按Alt + F9退出域，ctrl+A全选，按F9刷新即可完成。</p><p>Tips：建议写完所有论文之后再设置这个图注。</p><p>表格和图片引用是一样的，这里不赘诉了。</p><p>设计一个好看的表结构：</p><p>插入表格，进入表格设计，右击表格点击新建表格样式，选择古典型1</p><p><img src="https://s2.loli.net/2022/05/24/nRat5yObDC6HAWp.png" alt="image-20220524222645757"></p><p>设置字体：和正文一样。</p><p>设置格式：首先在将格式应用于首列，在框线出取消右框线，再选择应用于首行，把字体改成不倾斜即可。</p><p><img src="https://s2.loli.net/2022/05/24/lBqOwHpQmbuxjFr.png" alt="image-20220524223029002"></p>]]></content>
       
