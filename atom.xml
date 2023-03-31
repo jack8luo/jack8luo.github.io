@@ -6,7 +6,7 @@
   <link href="https://blog.luoxiaohei.co/atom.xml" rel="self"/>
   
   <link href="https://blog.luoxiaohei.co/"/>
-  <updated>2023-03-31T12:00:57.153Z</updated>
+  <updated>2023-03-31T06:57:05.787Z</updated>
   <id>https://blog.luoxiaohei.co/</id>
   
   <author>
@@ -15,57 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Linux系统编程Day3</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/31/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/</id>
-    <published>2023-03-31T12:52:55.000Z</published>
-    <updated>2023-03-31T12:00:57.153Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><p>gdb调试工具：   大前提：程序是你自己写的。  —-逻辑错误</p><p>基础指令：<br>    -g：使用该参数编译可以执行文件，得到调试表。</p><pre><code>gdb ./a.outlist： list 1  列出源码。根据源码指定 行号设置断点。b：    b 20    在20行位置设置断点。run/r:    运行程序n/next: 下一条指令（会越过函数）s/step: 下一条指令（会进入函数） |  进入系统函数会找不到文件，使用until+行号回到调试点 | 或者finish结束函数调用p/print：p i  查看变量的值。continue：继续执行断点后续指令。finish：结束当前函数调用。 quit：退出gdb当前调试。</code></pre><p>其他指令：</p><pre><code>run：使用run查找段错误出现位置。set args： 设置main函数命令行参数 （在 start、run 之前）run 字串1 字串2 ...: 设置main函数命令行参数info b: 查看断点信息表b 20 if i = 5：    设置条件断点。ptype：查看变量类型。display：设置跟踪变量undisplay：取消设置跟踪变量。 使用跟踪变量的编号。</code></pre><blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bt：列出当前程序正存活着的栈帧。</span><br><span class="line"></span><br><span class="line">frame： 根据栈帧编号，切换栈帧。</span><br></pre></td></tr></table></figure><p>切换栈帧即可访问函数调用栈帧中的数据</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331112614337.png" alt="栈帧"></p></blockquote><hr><blockquote><p>makefile： 管理项目。</p><blockquote><p>命名：makefile     Makefile  —- make 命令</p><p>1 个规则：</p><p>​    目标：依赖条件<br>​    （一个tab缩进）命令</p><pre><code> 1. **目标的时间必须晚于依赖条件的时间，否则，更新目标并继续更新总目标** 2. **依赖条件如果不存在，找寻新的规则去产生依赖条件。**</code></pre><p>（make会把makefile的第一行规则作为终极目标）</p><p>ALL：指定 makefile 的终极目标。</p><p><strong>小细节</strong>：为什么要把makefile写的复杂？</p><p>例如：我修改了一个add的源码，而导致我所有的源文件都要跟着编译一遍，这是非常耗时的。如果写成如下的样式，make会根据<strong>目标的时间必须晚于依赖条件的时间，否则，更新目标并继续更新总目标</strong>原则，只执行<code>gcc -v add.c -o hello.o 和 gcc hello.o add.o sub.o div1.o -o a.out.</code></p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331164549575.png" alt="image-20230331164549575"></p><p>2 个函数：</p><p>​    src = $(wildcard ./*.c): 匹配当前工作目录下的所有.c 文件。将文件名组成列表，赋值给变量 src。  src = add.c sub.c div1.c </p><p>​    obj = $(patsubst %.c, %.o, $(src)): 将参数3中，包含参数1的部分，替换为参数2。 obj = add.o sub.o div1.o</p><p>clean:    (没有依赖)</p><pre><code>make clean -n | -n表示提示不执行-rm -rf $(obj) a.out    “-”：作用是，删除不存在文件时，不报错。顺序执行结束。</code></pre><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331172250751.png" alt="使用2个函数"></p><p>3 个自动变量：</p><p>​    $@: 在规则的<strong>命令中</strong>，表示<strong>规则中的目标</strong>。</p><p>​    $^: 在规则的<strong>命令中</strong>，表示<strong>所有依赖条件</strong>。</p><p>​    $&lt;: 在规则的<strong>命令中，</strong>表示<strong>第一个依赖条件</strong>。如果将该变量应用在<strong>模式规则</strong>中，它可将依赖条件列表中的依赖<strong>依次</strong>取出，套用模式规则。</p><p>模式规则：</p><p>​    %.o:%.c<br>​       gcc -c $&lt; -o %@</p></blockquote><p>使用这么多函数和自动变量的原因是<strong>方便扩展</strong></p><p><strong>不需要修改makefile</strong>即可扩展程序功能函数。</p><blockquote><p>静态模式规则：（指定模式规则下使用的obj）（obj可以有多个，可有obj函数的特性看出）</p><p>​    $(obj):%.o:%.c<br>​       gcc -c $&lt; -o %@    </p><p>伪目标：（不管重名与否都执行）</p><p>​    .PHONY: clean ALL</p><p>参数：<br>    -n：模拟执行make、make clean 命令。</p><p>​    -f：指定文件执行 make 命令。                make -f filename            (xxx.mk是makefile文件)</p></blockquote></blockquote><pre><code>作业：编写一个 makefile 可以将其所在目录下的所有独立 .c 文件编译生成同名可执行文件。</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Day3&quot;&gt;&lt;a href=&quot;#Day3&quot; class=&quot;headerlink&quot; title=&quot;Day3&quot;&gt;&lt;/a&gt;Day3&lt;/h1&gt;&lt;p&gt;gdb调试工具：   大前提：程序是你自己写的。  —-逻辑错误&lt;/p&gt;
-&lt;p&gt;基础指令：&lt;br&gt;    -g：使用该参数编</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux文件IO-Day3</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/31/Linux%E6%96%87%E4%BB%B6IO-Day3/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/31/Linux%E6%96%87%E4%BB%B6IO-Day3/</id>
-    <published>2023-03-31T12:52:55.000Z</published>
-    <updated>2023-03-31T12:12:05.220Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>系统调用（内核提供的函数| 内核=操作系统=系统的核心代码）</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331193102158.png" alt="image-20230331193102158"></p></blockquote><p>open函数：</p><pre><code>int open(char *pathname, int flags)    #include &lt;unistd.h&gt;参数：    pathname: 欲打开的文件路径名    flags：文件打开方式：    #include &lt;fcntl.h&gt;        O_RDONLY|O_WRONLY|O_RDWR    O_CREAT|O_APPEND|O_TRUNC|O_EXCL|O_NONBLOCK ....返回值：    成功： 打开文件所得到对应的 文件描述符（整数）    失败： -1， 设置errno    int open(char *pathname, int flags， mode_t mode)        123  775    参数：    pathname: 欲打开的文件路径名    flags：文件打开方式：    O_RDONLY|O_WRONLY|O_RDWR    O_CREAT|O_APPEND|O_TRUNC|O_EXCL|O_NONBLOCK ....    mode: 参数3使用的前提， 参2指定了 O_CREAT。    取值8进制数，用来描述文件的 访问权限。 rwx    0664        创建文件最终权限 = mode &amp; ~umask （umask是默认文件权限取反）返回值：    成功： 打开文件所得到对应的 文件描述符（整数）    失败： -1， 设置errno    </code></pre><p>close函数：</p><pre><code>int close(int fd);</code></pre><p>错误处理函数：        与 errno 相关。</p><pre><code>printf(&quot;xxx error: %d\n&quot;, errno);char *strerror(int errnum);    printf(&quot;xxx error: %s\n&quot;, strerror(errno));void perror(const char *s);    perror(&quot;open error&quot;);</code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;系统调用（内核提供的函数| 内核=操作系统=系统的核心代码）&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331193102</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
-    
-  </entry>
   
   <entry>
     <title>java学习路线</title>
@@ -97,19 +46,45 @@
   </entry>
   
   <entry>
-    <title>Linux系统编程Day2</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
-    <published>2023-03-30T12:52:55.000Z</published>
-    <updated>2023-03-31T10:13:28.866Z</updated>
+    <title>Linux文件IO-Day3</title>
+    <link href="https://blog.luoxiaohei.co/2023/03/31/Linux/Linux%E6%96%87%E4%BB%B6IO-Day3/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/31/Linux/Linux%E6%96%87%E4%BB%B6IO-Day3/</id>
+    <published>2023-03-31T12:52:55.000Z</published>
+    <updated>2023-03-31T12:12:05.220Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><blockquote><p>跳转到指定行：</p><pre><code> 1. 88G （命令模式） 2. :88  (末行模式)</code></pre><p>跳转文件首：</p><p>​    gg （命令模式）</p><p>跳转文件尾：</p><p>​    G（命令模式）</p><p>自动格式化程序：</p><p>​    gg=G（命令模式）</p><p>大括号对应：</p><p>​    % （命令模式）</p><p>光标移至行首：</p><p>​    0 （命令模式）执行结束，工作模式不变。</p><p>光标移至行尾：</p><p>​    $ （命令模式）执行结束，工作模式不变。</p><p>删除单个字符：</p><p>​    x （命令模式）执行结束，工作模式不变。</p><p>替换单个字符：</p><p>​    将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</p><p>删除一个单词：</p><p>​    dw（命令模式）光标置于单词的首字母进行操作。</p><p>删除光标至行尾：</p><p>​    D 或者 d$（命令模式）</p><p>删除光标至行首：</p><p>​    d0 （命令模式）</p><p>删除指定区域：</p><p>​    按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</p><p>剪切指定1行：</p><p>​    在光标所在行，按 dd （命令模式）</p><p>剪切指定N行：</p><p>​    在光标所待删除首行，按 Ndd （命令模式）</p><p>复制一行：</p><p>​    yy</p><p>粘贴：<br>    p：向后、P：向前。</p><p>查找：</p><pre><code> 1. 找 设想 内容：命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。 2. 找 看到的内容：命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </code></pre><p>单行替换：</p><p>​    将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</p><p>通篇替换：</p><p>​    末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </p><p>指定行的替换：</p><p>​    末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</p><p>​        :29,35s /printf/println/g</p><p>撤销、反撤销：</p><p>​    u、ctrl+r（命令模式）</p><p>分屏：（末行模式）<br>    sp：横屏分。 Ctrl+ww 切换。</p><p>​    vsp：竖屏分。Ctrl+ww 切换。</p><p>跳转至 man 手册：</p><p>​    将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</p><p>查看宏定义：</p><p>​    将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</p><p>在末行模式执行shell命令：</p><p>​    :!命令        :! ls -l<br>​    :! gcc hello.c -o hello100  | !./hello100</p><p>​    <strong>gcc hello.c -o hello = gcc -c hello.c -o hello.o + gcc hello.o -o a.out</strong></p><p>​    :! g++ hello.cpp | !./a.out</p></blockquote><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br><span class="line">-l: 指定动态库名</span><br><span class="line"></span><br><span class="line">-L: 指定动态库路径</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><blockquote><blockquote><p>静态库制作及使用步骤：</p><p><strong>（-o 取名）</strong></p><pre><code>1. 将 .c 生成 .o 文件​    gcc -c add.c -o add.o2. 使用 ar 工具制作静态库    ar rcs  lib库名.a  add.o sub.o div.o3. 编译静态库到可执行文件中：    gcc test.c lib库名.a -o a.out</code></pre><p>头文件守卫：<strong>防止头文件被重复包含</strong> </p><p> implicit declaration<strong>隐式声明</strong>，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。<br>解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</p><pre><code>#ifndef _HEAD_H_#define _HEAD_H_......#endif</code></pre><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>动态库制作及使用：</p></blockquote><ol><li>将 .c 生成 .o 文件， （<strong>生成与位置无关的代码 -fPIC</strong>）</li></ol><p>​    gcc -c add.c -o add.o -fPIC         （<strong>在动态库函数后生成PIC，程序运行时再链接</strong>）</p><ol><li><p>使用 gcc -shared 制作动态库</p><p> gcc -shared -o lib库名.so    add.o sub.o div.o</p></li><li><p>编译可执行程序时，指定所使用的动态库。  -l：指定库名(去掉lib前缀和.so后缀)  -L：指定库路径。</p><p> gcc test.c -o a.out -lmymath -L./lib -I./inc</p></li><li><p>运行可以执行程序 ./a.out <strong>出错</strong>！！！！ —- ldd a.out —&gt; “not found” （<strong>ldd 查看程序链接信息</strong>）</p><p> error while loading shared libraries: libxxx.so: cannot open shared object file: No such file or directory</p><p> 原因：</p><pre><code> 链接器：    工作于链接阶段， 工作时需要 -l 和 -L （**执行数据段合并和地址回填**）| </code></pre><p> ​    动态链接器：    工作于程序运行阶段，工作时需要提供动态库所在固定目录位置。</p><p> 解决方式：</p><p> ​    【1】 通过环境变量：  export LD_LIBRARY_PATH=动态库路径</p><p> ​        ./a.out 成功！！！  （临时生效， 终端重启环境变量失效）改变的是进程的环境变量</p><p> ​    【2】 永久生效： 写入 终端配置文件。  .bashrc  建议使用绝对路径。eg:/home/luo/file/dynamicLab/lib</p><p> ​                1.vi ~/.bashrc</p><p> ​                2.写入 export LD_LIBRARY_PATH=动态库路径  保存</p><p> 3）. .bashrc/  source .bashrc / 重启 终端  —-&gt; 让修改后的.bashrc生效</p><p> 4）./a.out 成功！！！ </p><p> 【3】 拷贝自定义动态库 到 /lib (标准C库所在目录位置)</p><p> 【4】 配置文件法</p> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1）sudo vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">2）写入 动态库绝对路径  保存</span><br><span class="line"></span><br><span class="line">3）sudo ldconfig -v  使配置文件生效。</span><br><span class="line"></span><br><span class="line">4）./a.out 成功！！！--- 使用 ldd  a.out 查看程序链接情况</span><br></pre></td></tr></table></figure></li></ol></blockquote><p>数据段合并</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331103821681.png" alt="数据段合并"></p><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>系统调用（内核提供的函数| 内核=操作系统=系统的核心代码）</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331193102158.png" alt="image-20230331193102158"></p></blockquote><p>open函数：</p><pre><code>int open(char *pathname, int flags)    #include &lt;unistd.h&gt;参数：    pathname: 欲打开的文件路径名    flags：文件打开方式：    #include &lt;fcntl.h&gt;        O_RDONLY|O_WRONLY|O_RDWR    O_CREAT|O_APPEND|O_TRUNC|O_EXCL|O_NONBLOCK ....返回值：    成功： 打开文件所得到对应的 文件描述符（整数）    失败： -1， 设置errno    int open(char *pathname, int flags， mode_t mode)        123  775    参数：    pathname: 欲打开的文件路径名    flags：文件打开方式：    O_RDONLY|O_WRONLY|O_RDWR    O_CREAT|O_APPEND|O_TRUNC|O_EXCL|O_NONBLOCK ....    mode: 参数3使用的前提， 参2指定了 O_CREAT。    取值8进制数，用来描述文件的 访问权限。 rwx    0664        创建文件最终权限 = mode &amp; ~umask （umask是默认文件权限取反）返回值：    成功： 打开文件所得到对应的 文件描述符（整数）    失败： -1， 设置errno    </code></pre><p>close函数：</p><pre><code>int close(int fd);</code></pre><p>错误处理函数：        与 errno 相关。</p><pre><code>printf(&quot;xxx error: %d\n&quot;, errno);char *strerror(int errnum);    printf(&quot;xxx error: %s\n&quot;, strerror(errno));void perror(const char *s);    perror(&quot;open error&quot;);</code></pre>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;Day-2&quot;&gt;&lt;a href=&quot;#Day-2&quot; class=&quot;headerlink&quot; title=&quot;Day 2&quot;&gt;&lt;/a&gt;Day 2&lt;/h1&gt;&lt;p&gt;vim的三种工作模式&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.</summary>
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;系统调用（内核提供的函数| 内核=操作系统=系统的核心代码）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331193102</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统编程Day3</title>
+    <link href="https://blog.luoxiaohei.co/2023/03/31/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/31/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay3/</id>
+    <published>2023-03-31T12:52:55.000Z</published>
+    <updated>2023-03-31T12:00:57.153Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><p>gdb调试工具：   大前提：程序是你自己写的。  —-逻辑错误</p><p>基础指令：<br>    -g：使用该参数编译可以执行文件，得到调试表。</p><pre><code>gdb ./a.outlist： list 1  列出源码。根据源码指定 行号设置断点。b：    b 20    在20行位置设置断点。run/r:    运行程序n/next: 下一条指令（会越过函数）s/step: 下一条指令（会进入函数） |  进入系统函数会找不到文件，使用until+行号回到调试点 | 或者finish结束函数调用p/print：p i  查看变量的值。continue：继续执行断点后续指令。finish：结束当前函数调用。 quit：退出gdb当前调试。</code></pre><p>其他指令：</p><pre><code>run：使用run查找段错误出现位置。set args： 设置main函数命令行参数 （在 start、run 之前）run 字串1 字串2 ...: 设置main函数命令行参数info b: 查看断点信息表b 20 if i = 5：    设置条件断点。ptype：查看变量类型。display：设置跟踪变量undisplay：取消设置跟踪变量。 使用跟踪变量的编号。</code></pre><blockquote><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bt：列出当前程序正存活着的栈帧。</span><br><span class="line"></span><br><span class="line">frame： 根据栈帧编号，切换栈帧。</span><br></pre></td></tr></table></figure><p>切换栈帧即可访问函数调用栈帧中的数据</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331112614337.png" alt="栈帧"></p></blockquote><hr><blockquote><p>makefile： 管理项目。</p><blockquote><p>命名：makefile     Makefile  —- make 命令</p><p>1 个规则：</p><p>​    目标：依赖条件<br>​    （一个tab缩进）命令</p><pre><code> 1. **目标的时间必须晚于依赖条件的时间，否则，更新目标并继续更新总目标** 2. **依赖条件如果不存在，找寻新的规则去产生依赖条件。**</code></pre><p>（make会把makefile的第一行规则作为终极目标）</p><p>ALL：指定 makefile 的终极目标。</p><p><strong>小细节</strong>：为什么要把makefile写的复杂？</p><p>例如：我修改了一个add的源码，而导致我所有的源文件都要跟着编译一遍，这是非常耗时的。如果写成如下的样式，make会根据<strong>目标的时间必须晚于依赖条件的时间，否则，更新目标并继续更新总目标</strong>原则，只执行<code>gcc -v add.c -o hello.o 和 gcc hello.o add.o sub.o div1.o -o a.out.</code></p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331164549575.png" alt="image-20230331164549575"></p><p>2 个函数：</p><p>​    src = $(wildcard ./*.c): 匹配当前工作目录下的所有.c 文件。将文件名组成列表，赋值给变量 src。  src = add.c sub.c div1.c </p><p>​    obj = $(patsubst %.c, %.o, $(src)): 将参数3中，包含参数1的部分，替换为参数2。 obj = add.o sub.o div1.o</p><p>clean:    (没有依赖)</p><pre><code>make clean -n | -n表示提示不执行-rm -rf $(obj) a.out    “-”：作用是，删除不存在文件时，不报错。顺序执行结束。</code></pre><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331172250751.png" alt="使用2个函数"></p><p>3 个自动变量：</p><p>​    $@: 在规则的<strong>命令中</strong>，表示<strong>规则中的目标</strong>。</p><p>​    $^: 在规则的<strong>命令中</strong>，表示<strong>所有依赖条件</strong>。</p><p>​    $&lt;: 在规则的<strong>命令中，</strong>表示<strong>第一个依赖条件</strong>。如果将该变量应用在<strong>模式规则</strong>中，它可将依赖条件列表中的依赖<strong>依次</strong>取出，套用模式规则。</p><p>模式规则：</p><p>​    %.o:%.c<br>​       gcc -c $&lt; -o %@</p></blockquote><p>使用这么多函数和自动变量的原因是<strong>方便扩展</strong></p><p><strong>不需要修改makefile</strong>即可扩展程序功能函数。</p><blockquote><p>静态模式规则：（指定模式规则下使用的obj）（obj可以有多个，可有obj函数的特性看出）</p><p>​    $(obj):%.o:%.c<br>​       gcc -c $&lt; -o %@    </p><p>伪目标：（不管重名与否都执行）</p><p>​    .PHONY: clean ALL</p><p>参数：<br>    -n：模拟执行make、make clean 命令。</p><p>​    -f：指定文件执行 make 命令。                make -f filename            (xxx.mk是makefile文件)</p></blockquote></blockquote><pre><code>作业：编写一个 makefile 可以将其所在目录下的所有独立 .c 文件编译生成同名可执行文件。</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Day3&quot;&gt;&lt;a href=&quot;#Day3&quot; class=&quot;headerlink&quot; title=&quot;Day3&quot;&gt;&lt;/a&gt;Day3&lt;/h1&gt;&lt;p&gt;gdb调试工具：   大前提：程序是你自己写的。  —-逻辑错误&lt;/p&gt;
+&lt;p&gt;基础指令：&lt;br&gt;    -g：使用该参数编</summary>
       
     
     
@@ -146,9 +121,34 @@
   </entry>
   
   <entry>
+    <title>Linux系统编程Day2</title>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
+    <published>2023-03-30T12:52:55.000Z</published>
+    <updated>2023-03-31T10:13:28.866Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h1><p>vim的三种工作模式</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330114045599.png" alt=""></p><p>vim的快捷键</p><blockquote><p>跳转到指定行：</p><pre><code> 1. 88G （命令模式） 2. :88  (末行模式)</code></pre><p>跳转文件首：</p><p>​    gg （命令模式）</p><p>跳转文件尾：</p><p>​    G（命令模式）</p><p>自动格式化程序：</p><p>​    gg=G（命令模式）</p><p>大括号对应：</p><p>​    % （命令模式）</p><p>光标移至行首：</p><p>​    0 （命令模式）执行结束，工作模式不变。</p><p>光标移至行尾：</p><p>​    $ （命令模式）执行结束，工作模式不变。</p><p>删除单个字符：</p><p>​    x （命令模式）执行结束，工作模式不变。</p><p>替换单个字符：</p><p>​    将待替换的字符用光标选中， r （命令模式），再按欲替换的字符</p><p>删除一个单词：</p><p>​    dw（命令模式）光标置于单词的首字母进行操作。</p><p>删除光标至行尾：</p><p>​    D 或者 d$（命令模式）</p><p>删除光标至行首：</p><p>​    d0 （命令模式）</p><p>删除指定区域：</p><p>​    按 V （命令模式）切换为 “可视模式”，使用 hjkl挪移光标来选中待删除区域。  按 d 删除该区域数据。</p><p>剪切指定1行：</p><p>​    在光标所在行，按 dd （命令模式）</p><p>剪切指定N行：</p><p>​    在光标所待删除首行，按 Ndd （命令模式）</p><p>复制一行：</p><p>​    yy</p><p>粘贴：<br>    p：向后、P：向前。</p><p>查找：</p><pre><code> 1. 找 设想 内容：命令模式下， 按 “/” 输入欲搜索关键字，回车。使用 n 检索下一个。 2. 找 看到的内容：命令模式下，将光标置于单词任意一个字符上，按 “*”/ “#” </code></pre><p>单行替换：</p><p>​    将光标置于待替换行上， 进入末行模式，输入 :s /原数据/新数据</p><p>通篇替换：</p><p>​    末行模式， :%s /原数据/新数据/g   g:不加，只替换每行首个。   </p><p>指定行的替换：</p><p>​    末行模式， :起始行号，终止行号s /原数据/新数据/g   g:不加，只替换每行首个。</p><p>​        :29,35s /printf/println/g</p><p>撤销、反撤销：</p><p>​    u、ctrl+r（命令模式）</p><p>分屏：（末行模式）<br>    sp：横屏分。 Ctrl+ww 切换。</p><p>​    vsp：竖屏分。Ctrl+ww 切换。</p><p>跳转至 man 手册：</p><p>​    将光标置于待查看函数单词上，使用 K（命令模式）跳转。 指定卷， nK</p><p>查看宏定义：</p><p>​    将光标置于待查看宏定义单词上，使用 [d 查看定义语句。（命令模式）</p><p>在末行模式执行shell命令：</p><p>​    :!命令        :! ls -l<br>​    :! gcc hello.c -o hello100  | !./hello100</p><p>​    <strong>gcc hello.c -o hello = gcc -c hello.c -o hello.o + gcc hello.o -o a.out</strong></p><p>​    :! g++ hello.cpp | !./a.out</p></blockquote><hr><p>gcc编译：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/gcc%E7%BC%96%E8%AF%914%E6%AD%A5%E9%AA%A4.png" alt="gcc编译4步骤"></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4步骤： 预处理、编译、汇编、连接。</span><br><span class="line"></span><br><span class="line">-I：指定头文件所在目录位置。</span><br><span class="line"></span><br><span class="line">-c：只做预处理、编译、汇编。得到 二进制 文件！！！</span><br><span class="line"></span><br><span class="line">-g：编译时添加调试语句。 主要支持 gdb 调试。</span><br><span class="line"></span><br><span class="line">-Wall： 显示所有警告信息。</span><br><span class="line"></span><br><span class="line">-D：向程序中“动态”注册宏定义。   ifdef ... #define NAME VALUE</span><br><span class="line"></span><br><span class="line">-l: 指定动态库名</span><br><span class="line"></span><br><span class="line">-L: 指定动态库路径</span><br><span class="line"></span><br></pre></td></tr></table></figure><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/%E5%8A%A8%E6%80%81%E5%BA%93%E5%92%8C%E9%9D%99%E6%80%81%E5%BA%93.png" alt="动态库和静态库"></p><blockquote><blockquote><p>静态库制作及使用步骤：</p><p><strong>（-o 取名）</strong></p><pre><code>1. 将 .c 生成 .o 文件​    gcc -c add.c -o add.o2. 使用 ar 工具制作静态库    ar rcs  lib库名.a  add.o sub.o div.o3. 编译静态库到可执行文件中：    gcc test.c lib库名.a -o a.out</code></pre><p>头文件守卫：<strong>防止头文件被重复包含</strong> </p><p> implicit declaration<strong>隐式声明</strong>，这是c语言自己会声明的东西，只会做int add（int ,int）之类的声明，如果库里面有类似viod就会报错。<br>解决办法：自己在源代码中声明函数，为了复用性，我们通常用下面的头文件守卫：</p><pre><code>#ifndef _HEAD_H_#define _HEAD_H_......#endif</code></pre><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">然后在.c中引入.h</span><br><span class="line">项目发布：</span><br><span class="line">gcc test.c ./lib/libmylib.a -o a.out -I ./inc</span><br></pre></td></tr></table></figure><p>动态库制作及使用：</p></blockquote><ol><li>将 .c 生成 .o 文件， （<strong>生成与位置无关的代码 -fPIC</strong>）</li></ol><p>​    gcc -c add.c -o add.o -fPIC         （<strong>在动态库函数后生成PIC，程序运行时再链接</strong>）</p><ol><li><p>使用 gcc -shared 制作动态库</p><p> gcc -shared -o lib库名.so    add.o sub.o div.o</p></li><li><p>编译可执行程序时，指定所使用的动态库。  -l：指定库名(去掉lib前缀和.so后缀)  -L：指定库路径。</p><p> gcc test.c -o a.out -lmymath -L./lib -I./inc</p></li><li><p>运行可以执行程序 ./a.out <strong>出错</strong>！！！！ —- ldd a.out —&gt; “not found” （<strong>ldd 查看程序链接信息</strong>）</p><p> error while loading shared libraries: libxxx.so: cannot open shared object file: No such file or directory</p><p> 原因：</p><pre><code> 链接器：    工作于链接阶段， 工作时需要 -l 和 -L （**执行数据段合并和地址回填**）| </code></pre><p> ​    动态链接器：    工作于程序运行阶段，工作时需要提供动态库所在固定目录位置。</p><p> 解决方式：</p><p> ​    【1】 通过环境变量：  export LD_LIBRARY_PATH=动态库路径</p><p> ​        ./a.out 成功！！！  （临时生效， 终端重启环境变量失效）改变的是进程的环境变量</p><p> ​    【2】 永久生效： 写入 终端配置文件。  .bashrc  建议使用绝对路径。eg:/home/luo/file/dynamicLab/lib</p><p> ​                1.vi ~/.bashrc</p><p> ​                2.写入 export LD_LIBRARY_PATH=动态库路径  保存</p><p> 3）. .bashrc/  source .bashrc / 重启 终端  —-&gt; 让修改后的.bashrc生效</p><p> 4）./a.out 成功！！！ </p><p> 【3】 拷贝自定义动态库 到 /lib (标准C库所在目录位置)</p><p> 【4】 配置文件法</p> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1）sudo vi /etc/ld.so.conf</span><br><span class="line"></span><br><span class="line">2）写入 动态库绝对路径  保存</span><br><span class="line"></span><br><span class="line">3）sudo ldconfig -v  使配置文件生效。</span><br><span class="line"></span><br><span class="line">4）./a.out 成功！！！--- 使用 ldd  a.out 查看程序链接情况</span><br></pre></td></tr></table></figure></li></ol></blockquote><p>数据段合并</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230331103821681.png" alt="数据段合并"></p><p>其他：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi显示readonly</span><br><span class="line">退出两个办法</span><br><span class="line">1：wq！</span><br><span class="line">2：w !sudo tee %</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Day-2&quot;&gt;&lt;a href=&quot;#Day-2&quot; class=&quot;headerlink&quot; title=&quot;Day 2&quot;&gt;&lt;/a&gt;Day 2&lt;/h1&gt;&lt;p&gt;vim的三种工作模式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu22.04 中Drag and drop is not supported问题</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/Linux/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/Linux/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
     <published>2023-03-30T12:07:03.891Z</published>
     <updated>2023-03-30T12:41:31.444Z</updated>
     
@@ -169,10 +169,10 @@
   
   <entry>
     <title>hexo：更换电脑，如何继续写博客</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/hexo/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/hexo/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
     <published>2023-03-30T08:40:50.000Z</published>
-    <updated>2023-03-30T11:02:19.487Z</updated>
+    <updated>2023-03-30T11:08:11.892Z</updated>
     
     <content type="html"><![CDATA[<h1 id="hexo：更换电脑，如何继续写博客"><a href="#hexo：更换电脑，如何继续写博客" class="headerlink" title="hexo：更换电脑，如何继续写博客"></a>hexo：更换电脑，如何继续写博客</h1><details green><summary> 哔哔 </summary>              <div class='content'>              <p>先提一句：</p><p>如果想要在百度收录，需要在百度站长验证一下，最后卡在验证环境如下：明显是访问不到外网。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330190044308.png" alt="image-20230330190044308"></p>              </div>            </details><p>1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure><p>将这些目录放到一个目录下，如：hexo／</p><p>2.在你的新电脑上首先配置hexo环境：安装Node.js<br>3.安装hexo，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure><p>4.安装好之后，进入hexo／目录<br>5.模块安装，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><p>6.部署，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -191,8 +191,8 @@
   
   <entry>
     <title>Linux系统编程Day1</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/29/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/29/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
+    <link href="https://blog.luoxiaohei.co/2023/03/29/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/29/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
     <published>2023-03-29T12:52:55.000Z</published>
     <updated>2023-03-31T11:59:44.548Z</updated>
     
@@ -217,10 +217,10 @@
   
   <entry>
     <title>git操作手册（给实验室同学）</title>
-    <link href="https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
-    <id>https://blog.luoxiaohei.co/2023/02/03/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
+    <link href="https://blog.luoxiaohei.co/2023/02/03/hexo/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
+    <id>https://blog.luoxiaohei.co/2023/02/03/hexo/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
     <published>2023-02-03T13:42:06.000Z</published>
-    <updated>2023-03-30T11:09:36.194Z</updated>
+    <updated>2023-03-30T11:12:11.916Z</updated>
     
     <content type="html"><![CDATA[<h2 id="操作手册"><a href="#操作手册" class="headerlink" title="操作手册"></a>操作手册</h2><p>1、安装GIT</p><p><a href="https://blog.csdn.net/adminsir0/article/details/126355313">(3条消息) git安装教程</a>（一直next就行）</p><p>2、注册远程仓库账号</p><p>打开<a href="https://github.com/">GitHub</a>，注册自己账号</p><p>不翻墙的话，注册<a href="https://gitee.com/">Gitee</a>（这个文档展示gitee）</p><p>3、本地创建任意文件夹，鼠标右键选择git bush</p><p>4、配置用户，命令行输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your_email@email.com&quot;</span><br></pre></td></tr></table></figure><p>5、生成SSH密钥        </p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@email.com&quot;</span><br></pre></td></tr></table></figure><p>进入C:\Users\Administrator.ssh目录下，查看生成的SSH密钥，</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181525633.jpeg" alt="img" style="zoom:50%;" /></p><p>复制id_ras.pub里面的字符串，在gitee设置中的SSH公钥中添加密钥。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181527256.png" alt="image-20221218152744139"></p><p>6、创建一个文件，在命令行中输入</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;123&quot; &gt; 1.txt</span><br></pre></td></tr></table></figure><p>7、命令行输入：git init </p><p>8、命令行输入：git add .</p><p>9、命令行输入：git commit -m “123”</p><p>10、命令行输入：git remote add origin <strong>url</strong>  |  url选择你的远程仓库，比如<strong>gitee</strong>创建完仓库后，会有这个地址，我们选择SSH链接就行。</p><p>例如：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181520074.png" alt="image-20221218152045988"></p><p>11、命令行输入：git push -u origin “master”</p><p>显示成功！</p>]]></content>
     
@@ -240,8 +240,8 @@
   
   <entry>
     <title>最小路径和</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/16/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/16/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/16/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</id>
     <published>2022-12-16T07:04:14.000Z</published>
     <updated>2022-12-16T15:09:48.884Z</updated>
     
@@ -284,8 +284,8 @@
   
   <entry>
     <title>56. 合并区间</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/11/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/11/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/11/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4/</id>
     <published>2022-12-10T19:34:20.000Z</published>
     <updated>2022-12-11T04:17:03.749Z</updated>
     
@@ -328,8 +328,8 @@
   
   <entry>
     <title>git工作流</title>
-    <link href="https://blog.luoxiaohei.co/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
-    <id>https://blog.luoxiaohei.co/2022/12/05/git%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
+    <link href="https://blog.luoxiaohei.co/2022/12/05/hexo/git%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
+    <id>https://blog.luoxiaohei.co/2022/12/05/hexo/git%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
     <published>2022-12-05T08:40:50.000Z</published>
     <updated>2022-12-10T07:18:52.362Z</updated>
     
@@ -372,8 +372,8 @@
   
   <entry>
     <title>全排列</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/30/%E5%85%A8%E6%8E%92%E5%88%97/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/30/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%E5%85%A8%E6%8E%92%E5%88%97/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/30/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%E5%85%A8%E6%8E%92%E5%88%97/</id>
     <published>2022-11-29T19:16:56.000Z</published>
     <updated>2022-11-30T03:26:36.109Z</updated>
     
@@ -417,8 +417,8 @@
   
   <entry>
     <title>组合总和</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/27/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/27/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/27/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C/</id>
     <published>2022-11-27T05:18:48.000Z</published>
     <updated>2022-11-27T13:25:22.968Z</updated>
     
@@ -439,10 +439,10 @@
   
   <entry>
     <title>在排序数组中查找元素的第一个和最后一个位置</title>
-    <link href="https://blog.luoxiaohei.co/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"/>
-    <id>https://blog.luoxiaohei.co/2022/11/26/%20%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/</id>
+    <link href="https://blog.luoxiaohei.co/2022/11/26/%E7%AE%97%E6%B3%95%E5%88%86%E6%A8%A1%E5%9D%97%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/"/>
+    <id>https://blog.luoxiaohei.co/2022/11/26/%E7%AE%97%E6%B3%95%E5%88%86%E6%A8%A1%E5%9D%97%E7%BB%83%E4%B9%A0/%E6%95%B0%E7%BB%84/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%92%8C%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E4%BD%8D%E7%BD%AE/</id>
     <published>2022-11-25T18:30:30.000Z</published>
-    <updated>2022-11-26T02:48:54.400Z</updated>
+    <updated>2023-03-31T12:55:24.743Z</updated>
     
     <content type="html"><![CDATA[<h2 id="34-在排序数组中查找元素的第一个和最后一个位置"><a href="#34-在排序数组中查找元素的第一个和最后一个位置" class="headerlink" title="34. 在排序数组中查找元素的第一个和最后一个位置"></a><a href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/">34. 在排序数组中查找元素的第一个和最后一个位置</a></h2><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个按照非递减顺序排列的整数数组 nums，和一个目标值 target。请你找出给定目标值在数组中的开始位置和结束位置。</p><p>如果数组中不存在目标值 target，返回 [-1, -1]。</p><p>你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [5,7,7,8,8,10], target = 8</span><br><span class="line">输出：[3,4]</span><br></pre></td></tr></table></figure><p><strong>示例 2：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [5,7,7,8,8,10], target = 6</span><br><span class="line">输出：[-1,-1]</span><br></pre></td></tr></table></figure><p><strong>示例 3：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [], target = 0</span><br><span class="line">输出：[-1,-1]</span><br></pre></td></tr></table></figure><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看到log（n）就能想到二分查找，但是二分查找里面怎么找到第一个重复元素呢？</p><p>答案就是在二分查找中选择<strong>nums[mid] &gt;= target</strong>,不在==target时return，最后就能退到第一个target。</p><p>还有就是||运算符 是不会全部执行的。如果我们想要判断查到的元素是否为target时，<strong>nums[mid] == target</strong>。 但是我们的mid可能越界时。我们可以先判断是否越位之后再判断是否相等，比如 <strong>if(l == nums.size()||nums[l] != target)</strong></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">searchRange</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> l = <span class="built_in">search</span>(nums,target);</span><br><span class="line">        <span class="type">int</span> r = <span class="built_in">search</span>(nums,target+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(l == nums.<span class="built_in">size</span>()||nums[l] != target) <span class="comment">// ||运算符先检查前面，后检查后面</span></span><br><span class="line">            <span class="keyword">return</span> vector&lt;<span class="type">int</span>&gt;&#123;<span class="number">-1</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">return</span> vector&lt;<span class="type">int</span>&gt;&#123;l,r<span class="number">-1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//找&gt;=target的第一个</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">search</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums,<span class="type">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> mid;</span><br><span class="line">        <span class="keyword">while</span> (l&lt;r)</span><br><span class="line">        &#123;</span><br><span class="line">            mid = (l+r)&gt;&gt;<span class="number">1</span>; <span class="comment">//，默认的除法是整数除法向下取整</span></span><br><span class="line">            <span class="keyword">if</span>(nums[mid]&gt;=target) <span class="comment">//find first target</span></span><br><span class="line">                r = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                l = mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Solution a;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; nums = &#123;<span class="number">5</span>&#125;;</span><br><span class="line">    nums = a.<span class="built_in">searchRange</span>(nums,<span class="number">5</span>);</span><br><span class="line">    cout&lt;&lt;nums[<span class="number">0</span>]&lt;&lt;nums[<span class="number">1</span>];</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>二分查找要仔细判断。</p>]]></content>
     
