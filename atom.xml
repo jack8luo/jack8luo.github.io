@@ -6,7 +6,7 @@
   <link href="https://blog.luoxiaohei.co/atom.xml" rel="self"/>
   
   <link href="https://blog.luoxiaohei.co/"/>
-  <updated>2023-04-21T09:53:55.583Z</updated>
+  <updated>2023-04-25T11:59:05.472Z</updated>
   <id>https://blog.luoxiaohei.co/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>螺旋矩阵总结</title>
+    <link href="https://blog.luoxiaohei.co/2023/04/25/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/2023-4-25-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5%E6%80%BB%E7%BB%93/"/>
+    <id>https://blog.luoxiaohei.co/2023/04/25/%E6%97%A5%E5%B8%B8%E7%AE%97%E6%B3%95%E5%88%B7%E9%A2%98/%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/2023-4-25-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5%E6%80%BB%E7%BB%93/</id>
+    <published>2023-04-24T18:44:50.000Z</published>
+    <updated>2023-04-25T11:59:05.472Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="二分查找总结"><a href="#二分查找总结" class="headerlink" title="二分查找总结"></a>二分查找总结</h1><details pink><summary> 哔哔 </summary>              <div class='content'>              <p>这类题目考察一些输入输出的技巧，通常记录上下左右的偏移位置达到想要的结果。</p><p>​        类似题目</p><ul><li>54.螺旋矩阵</li><li>剑指Offer 29.顺时针打印矩阵</li></ul>              </div>            </details><h2 id="59-螺旋矩阵II"><a href="#59-螺旋矩阵II" class="headerlink" title="59.螺旋矩阵II"></a>59.螺旋矩阵II</h2><p><a href="https://leetcode.cn/problems/spiral-matrix-ii/">力扣题目链接(opens new window)</a></p><p>给定一个正整数 n，生成一个包含 1 到 n^2 所有元素，且元素按顺时针顺序螺旋排列的正方形矩阵。</p><p>示例:</p><p>输入: 3 输出: [ [ 1, 2, 3 ], [ 8, 9, 4 ], [ 7, 6, 5 ] ]</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; generateMatrix(int n) &#123;</span><br><span class="line">        int i=0,j=0,cnt=1;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; a(n, vector&lt;int&gt;(n, 0));</span><br><span class="line">        int loop = n/2;//循环次数</span><br><span class="line">        int t = 0;</span><br><span class="line">        while(loop--)&#123;</span><br><span class="line">            for(j;j&lt;n-1-t;j++)</span><br><span class="line">                a[i][j] = cnt++;</span><br><span class="line">            for(i;i&lt;n-1-t;i++)</span><br><span class="line">                a[i][j] = cnt++;</span><br><span class="line">            for(j;j&gt;0+t;j--)</span><br><span class="line">                a[i][j] = cnt++;</span><br><span class="line">            for(i;i&gt;0+t;i--)</span><br><span class="line">                a[i][j] = cnt++;</span><br><span class="line">            //i = 0 j = 0</span><br><span class="line">            i++;j++;t++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n%2 == 1)&#123;</span><br><span class="line">            a[n/2][n/2] = cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        return a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="类似题目"><a href="#类似题目" class="headerlink" title="类似题目"></a>类似题目</h2><h4 id="剑指-Offer-29-顺时针打印矩阵"><a href="#剑指-Offer-29-顺时针打印矩阵" class="headerlink" title="剑指 Offer 29. 顺时针打印矩阵"></a><a href="https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">剑指 Offer 29. 顺时针打印矩阵</a></h4><p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。</p><p><strong>示例 1：</strong></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]</span><br><span class="line">输出：[1,2,3,6,9,8,7,4,5]</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">示例 2：</span><br><span class="line">输入：matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]</span><br><span class="line">输出：[1,2,3,4,8,12,11,10,9,5,6,7]</span><br></pre></td></tr></table></figure><h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">       vector&lt;int&gt; spiralOrder(vector&lt;vector&lt;int&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        vector &lt;int&gt; res;</span><br><span class="line">        if(matrix.empty()) return res;</span><br><span class="line">        int rl = 0, rh = matrix.size()-1; //记录待打印的矩阵上下边缘</span><br><span class="line">        int cl = 0, ch = matrix[0].size()-1; //记录待打印的矩阵左右边缘</span><br><span class="line">        while(1)&#123;</span><br><span class="line">            for(int i=cl; i&lt;=ch; i++) res.push_back(matrix[rl][i]);//从左往右</span><br><span class="line">            if(++rl &gt; rh) break; //往下走（rl++），若超出边界，退出</span><br><span class="line">            for(int i=rl; i&lt;=rh; i++) res.push_back(matrix[i][ch]);//从上往下</span><br><span class="line">            if(--ch &lt; cl) break;</span><br><span class="line">            for(int i=ch; i&gt;=cl; i--) res.push_back(matrix[rh][i]);//从右往左</span><br><span class="line">            if(--rh &lt; rl) break;</span><br><span class="line">            for(int i=rh; i&gt;=rl; i--) res.push_back(matrix[i][cl]);//从下往上</span><br><span class="line">            if(++cl &gt; ch) break;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;二分查找总结&quot;&gt;&lt;a href=&quot;#二分查找总结&quot; class=&quot;headerlink&quot; title=&quot;二分查找总结&quot;&gt;&lt;/a&gt;二分查找总结&lt;/h1&gt;&lt;details pink&gt;&lt;summary&gt; 哔哔 &lt;/summary&gt;
+              &lt;div </summary>
+      
+    
+    
+    
+    
+    <category term="算法、c++" scheme="https://blog.luoxiaohei.co/tags/%E7%AE%97%E6%B3%95%E3%80%81c/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux下epoll_BS服务器开发</title>
@@ -477,29 +500,6 @@
     
     
     <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git操作手册（给实验室同学）</title>
-    <link href="https://blog.luoxiaohei.co/2023/02/03/hexo/1%E3%80%81%E5%AE%89%E8%A3%85GIT/"/>
-    <id>https://blog.luoxiaohei.co/2023/02/03/hexo/1%E3%80%81%E5%AE%89%E8%A3%85GIT/</id>
-    <published>2023-02-03T13:42:06.000Z</published>
-    <updated>2023-03-30T11:12:11.916Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="操作手册"><a href="#操作手册" class="headerlink" title="操作手册"></a>操作手册</h2><p>1、安装GIT</p><p><a href="https://blog.csdn.net/adminsir0/article/details/126355313">(3条消息) git安装教程</a>（一直next就行）</p><p>2、注册远程仓库账号</p><p>打开<a href="https://github.com/">GitHub</a>，注册自己账号</p><p>不翻墙的话，注册<a href="https://gitee.com/">Gitee</a>（这个文档展示gitee）</p><p>3、本地创建任意文件夹，鼠标右键选择git bush</p><p>4、配置用户，命令行输入：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;your name&quot;</span><br><span class="line">git config --global user.email &quot;your_email@email.com&quot;</span><br></pre></td></tr></table></figure><p>5、生成SSH密钥        </p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your_email@email.com&quot;</span><br></pre></td></tr></table></figure><p>进入C:\Users\Administrator.ssh目录下，查看生成的SSH密钥，</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181525633.jpeg" alt="img" style="zoom:50%;" /></p><p>复制id_ras.pub里面的字符串，在gitee设置中的SSH公钥中添加密钥。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181527256.png" alt="image-20221218152744139"></p><p>6、创建一个文件，在命令行中输入</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;123&quot; &gt; 1.txt</span><br></pre></td></tr></table></figure><p>7、命令行输入：git init </p><p>8、命令行输入：git add .</p><p>9、命令行输入：git commit -m “123”</p><p>10、命令行输入：git remote add origin <strong>url</strong>  |  url选择你的远程仓库，比如<strong>gitee</strong>创建完仓库后，会有这个地址，我们选择SSH链接就行。</p><p>例如：<img src="https://raw.githubusercontent.com/jack8luo/picture/main/202212181520074.png" alt="image-20221218152045988"></p><p>11、命令行输入：git push -u origin “master”</p><p>显示成功！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;操作手册&quot;&gt;&lt;a href=&quot;#操作手册&quot; class=&quot;headerlink&quot; title=&quot;操作手册&quot;&gt;&lt;/a&gt;操作手册&lt;/h2&gt;&lt;p&gt;1、安装GIT&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/adminsir0/articl</summary>
-      
-    
-    
-    
-    
-    <category term="git" scheme="https://blog.luoxiaohei.co/tags/git/"/>
     
   </entry>
   
