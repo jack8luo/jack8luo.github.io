@@ -6,7 +6,7 @@
   <link href="https://blog.luoxiaohei.co/atom.xml" rel="self"/>
   
   <link href="https://blog.luoxiaohei.co/"/>
-  <updated>2023-04-25T11:59:05.472Z</updated>
+  <updated>2023-03-30T02:26:58.675Z</updated>
   <id>https://blog.luoxiaohei.co/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://blog.luoxiaohei.co/2023/04/27/%E6%91%84%E5%83%8F%E5%A4%B4/3.23%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/"/>
+    <id>https://blog.luoxiaohei.co/2023/04/27/%E6%91%84%E5%83%8F%E5%A4%B4/3.23%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</id>
+    <published>2023-04-27T05:24:04.572Z</published>
+    <updated>2023-03-30T02:26:58.675Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天研究了一下端口映射。</p><p>可以下载配置apache在本地搭建运行web项目的服务器，再在路由器上做一个端口映射，这样就可以在公网上访问内网中的本地服务器，例如ip：端口号。其中ip为你路由器的出口ip。映射到你本地的服务器。</p><p>期间我给本地服务齐绑定了一个固定的内网ip</p><p>今天还购买了阿里云的域名，要过几天才可以开始备案，我打算备案之后，在路由器的DDNS，动态域名解析中将域名绑定动态的公网ip，实现域名访问局域网内的服务器。</p><p>今天实验发现，外网可以访问到本地服务器，但是不能通过该网页调用内网中的摄像头。</p><p>我又把摄像头ip映射到80端口了，以后再来实验一下</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天研究了一下端口映射。&lt;/p&gt;
+&lt;p&gt;可以下载配置apache在本地搭建运行web项目的服务器，再在路由器上做一个端口映射，这样就可以在公网上访问内网中的本地服务器，例如ip：端口号。其中ip为你路由器的出口ip。映射到你本地的服务器。&lt;/p&gt;
+&lt;p&gt;期间我给本地服务齐绑</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://blog.luoxiaohei.co/2023/04/27/%E6%91%84%E5%83%8F%E5%A4%B4/%E5%A4%B4%E8%84%91%E9%A3%8E%E6%9A%B4--%E6%B5%B7%E5%BA%B7SDK/"/>
+    <id>https://blog.luoxiaohei.co/2023/04/27/%E6%91%84%E5%83%8F%E5%A4%B4/%E5%A4%B4%E8%84%91%E9%A3%8E%E6%9A%B4--%E6%B5%B7%E5%BA%B7SDK/</id>
+    <published>2023-04-27T05:19:51.992Z</published>
+    <updated>2023-04-27T05:19:51.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>头脑风暴—海康SDK</p><p>看看友商是怎么做的。最大的友商就是萤石云了，那萤石云是如何获取我们的视频数据的呢？</p><p>首先需要我们在本地配置绑定好萤石云账号，绑定我们的摄像头，比如ip和端口和密码。通过这些，萤石云可以从网络上调用到我们的摄像头数据，从而将我们的摄像头数据实时调用过去，这样还是占用我们用户网络的带宽，而且为了检测警报和回放之类的信息，萤石云平台肯定会一直调取我们的摄像头数据。这样我们用户的数据隐私都在萤石云的云存储器上了，非常不安全。</p><p>那么如何才能把数据把握在自己手中呢？</p><p>我们的任务就是把云服务器和本地服务器相结合，云服务器负责把本地服务器内网穿透（反向代理）到公网当中，使用公网ip就能访问到本地局域网内的服务器，本地服务器负责调取我们实验室的摄像头数据，通过软件或者视频流的方式，调取我们的视频数据并存储在本地，再在本地服务器上显示我们的视频。</p><p>这样数据放在本地，且只占用我们局域网内的带宽，并不占用局域网到公网的带宽。</p><p>所以海康威视SDK是我们之后开发的重点！！！</p><p>如何调取回放数据</p><p>如何实时播放数据</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;头脑风暴—海康SDK&lt;/p&gt;
+&lt;p&gt;看看友商是怎么做的。最大的友商就是萤石云了，那萤石云是如何获取我们的视频数据的呢？&lt;/p&gt;
+&lt;p&gt;首先需要我们在本地配置绑定好萤石云账号，绑定我们的摄像头，比如ip和端口和密码。通过这些，萤石云可以从网络上调用到我们的摄像头数据，从而将我</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>螺旋矩阵总结</title>
@@ -385,30 +429,6 @@
   </entry>
   
   <entry>
-    <title>Xmind激活亲测有效（23/3/30）</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/%E6%97%A5%E5%B8%B8/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/%E6%97%A5%E5%B8%B8/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</id>
-    <published>2023-03-30T12:52:55.000Z</published>
-    <updated>2023-03-30T13:43:08.867Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Xmind激活亲测有效（23-3-30）"><a href="#Xmind激活亲测有效（23-3-30）" class="headerlink" title="Xmind激活亲测有效（23/3/30）"></a>Xmind激活亲测有效（23/3/30）</h1><p>下载资源</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330095543117.png" alt="image-20230330095543117"></p><p>双击安装包，程序自动安装在C:\Program Files\XMind下</p><p>替换</p><p>C:\Program Files\XMind\resources下的app.asar,打开xmind即可激活。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Xmind激活亲测有效（23-3-30）&quot;&gt;&lt;a href=&quot;#Xmind激活亲测有效（23-3-30）&quot; class=&quot;headerlink&quot; title=&quot;Xmind激活亲测有效（23/3/30）&quot;&gt;&lt;/a&gt;Xmind激活亲测有效（23/3/30）&lt;/h1&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="XMmid" scheme="https://blog.luoxiaohei.co/categories/XMmid/"/>
-    
-    
-    <category term="XMind" scheme="https://blog.luoxiaohei.co/tags/XMind/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux系统编程Day2</title>
     <link href="https://blog.luoxiaohei.co/2023/03/30/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/"/>
     <id>https://blog.luoxiaohei.co/2023/03/30/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%202/</id>
@@ -434,6 +454,30 @@
   </entry>
   
   <entry>
+    <title>Xmind激活亲测有效（23/3/30）</title>
+    <link href="https://blog.luoxiaohei.co/2023/03/30/%E6%97%A5%E5%B8%B8/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/"/>
+    <id>https://blog.luoxiaohei.co/2023/03/30/%E6%97%A5%E5%B8%B8/Xmind%E6%BF%80%E6%B4%BB%E4%BA%B2%E6%B5%8B%E6%9C%89%E6%95%88%EF%BC%8823330%EF%BC%89/</id>
+    <published>2023-03-30T12:52:55.000Z</published>
+    <updated>2023-04-25T11:52:30.155Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Xmind激活亲测有效（23-3-30）"><a href="#Xmind激活亲测有效（23-3-30）" class="headerlink" title="Xmind激活亲测有效（23/3/30）"></a>Xmind激活亲测有效（23/3/30）</h1><p>下载资源</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330095543117.png" alt="image-20230330095543117"></p><p>双击安装包，程序自动安装在C:\Program Files\XMind下</p><p>替换</p><p>C:\Program Files\XMind\resources下的app.asar,打开xmind即可激活。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Xmind激活亲测有效（23-3-30）&quot;&gt;&lt;a href=&quot;#Xmind激活亲测有效（23-3-30）&quot; class=&quot;headerlink&quot; title=&quot;Xmind激活亲测有效（23/3/30）&quot;&gt;&lt;/a&gt;Xmind激活亲测有效（23/3/30）&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="XMmid" scheme="https://blog.luoxiaohei.co/categories/XMmid/"/>
+    
+    
+    <category term="XMind" scheme="https://blog.luoxiaohei.co/tags/XMind/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Ubuntu22.04 中Drag and drop is not supported问题</title>
     <link href="https://blog.luoxiaohei.co/2023/03/30/Linux/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/"/>
     <id>https://blog.luoxiaohei.co/2023/03/30/Linux/Ubuntu22.04%20%E4%B8%ADDrag%20and%20drop%20is%20not%20supported%E9%97%AE%E9%A2%98/</id>
@@ -452,54 +496,6 @@
     
     
     <category term="Ubuntu22.04" scheme="https://blog.luoxiaohei.co/tags/Ubuntu22-04/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo：更换电脑，如何继续写博客</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/30/hexo/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/30/hexo/hexo%EF%BC%9A%E6%9B%B4%E6%8D%A2%E7%94%B5%E8%84%91%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%A7%E7%BB%AD%E5%86%99%E5%8D%9A%E5%AE%A2/</id>
-    <published>2023-03-30T08:40:50.000Z</published>
-    <updated>2023-03-30T11:08:11.892Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="hexo：更换电脑，如何继续写博客"><a href="#hexo：更换电脑，如何继续写博客" class="headerlink" title="hexo：更换电脑，如何继续写博客"></a>hexo：更换电脑，如何继续写博客</h1><details green><summary> 哔哔 </summary>              <div class='content'>              <p>先提一句：</p><p>如果想要在百度收录，需要在百度站长验证一下，最后卡在验证环境如下：明显是访问不到外网。</p><p><img src="https://raw.githubusercontent.com/jack8luo/picture/main/image-20230330190044308.png" alt="image-20230330190044308"></p>              </div>            </details><p>1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure><p>将这些目录放到一个目录下，如：hexo／</p><p>2.在你的新电脑上首先配置hexo环境：安装Node.js<br>3.安装hexo，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure><p>4.安装好之后，进入hexo／目录<br>5.模块安装，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><p>6.部署，执行命令：</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;hexo：更换电脑，如何继续写博客&quot;&gt;&lt;a href=&quot;#hexo：更换电脑，如何继续写博客&quot; class=&quot;headerlink&quot; title=&quot;hexo：更换电脑，如何继续写博客&quot;&gt;&lt;/a&gt;hexo：更换电脑，如何继续写博客&lt;/h1&gt;&lt;details gree</summary>
-      
-    
-    
-    
-    
-    <category term="hexo" scheme="https://blog.luoxiaohei.co/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux系统编程Day1</title>
-    <link href="https://blog.luoxiaohei.co/2023/03/29/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/"/>
-    <id>https://blog.luoxiaohei.co/2023/03/29/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8BDay%201/</id>
-    <published>2023-03-29T12:52:55.000Z</published>
-    <updated>2023-03-31T11:59:44.548Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>学习了一些命令，这些命令记住常用的，备份难记的。</p><p>常用的比如</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">绝对路径中，cd ..、cd .、 cd、 cd - 的使用。</span><br><span class="line">./ 本级目录 ../上一级目录</span><br><span class="line"></span><br><span class="line">删除文件rm</span><br><span class="line">rm -rf 递归强制删除</span><br><span class="line">mv 文件重命名|移动文件</span><br><span class="line">mv和cp的区别</span><br><span class="line">1、功能上的区别</span><br><span class="line">mv：用户可以使用该命令为文件或目录重命名或将文件由一个目录移入另一个目录中（该文件从原来的文件夹中消失）。</span><br><span class="line"></span><br><span class="line">cp: 该命令的功能是将给出的文件或目录拷贝到另一文件或目录中（该文件仍保存在原文件夹中）。</span><br><span class="line"></span><br><span class="line">2、从inode角度来区分</span><br><span class="line">mv：会将存储于indoe索引节点上的文件元信息也移动到新文件中。</span><br><span class="line"></span><br><span class="line">cp : 只会复制文件数据，不会复制inode索引节点上的文件元信息。</span><br><span class="line"></span><br><span class="line">创建用户sudo adduser 新用户名--- useradd</span><br><span class="line">删除用户sudo deluser 用户名</span><br><span class="line">find找文件</span><br><span class="line">ln创建软链接和硬链接的方式和属性</span><br><span class="line">chmod修改权限的两种方式</span><br><span class="line">grep查找文件内容</span><br><span class="line">压缩文件tar、rar、zip等命令---gzip and bzip with tar:因为gzip和bzip不能打包文件夹多个文件。</span><br><span class="line">tar zcvf filename file1 file2</span><br><span class="line">z:gzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">tar jcvf filename file1 file2</span><br><span class="line">z:bzip方式、c:创建、v:显示压缩、f：名字</span><br><span class="line">解压</span><br><span class="line">tar zxvf filename</span><br><span class="line">tar jxvf filename</span><br><span class="line"></span><br><span class="line">rar a -r filename file</span><br><span class="line">unrar x filename</span><br><span class="line"></span><br><span class="line">zip -r filename file</span><br><span class="line">unzip filename</span><br><span class="line"></span><br><span class="line">安装软件卸载软件的方法。</span><br><span class="line">sudo aptitude show softname 查看软件安装信息</span><br></pre></td></tr></table></figure><p>文件类型</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">普通文件：-</span><br><span class="line">目录文件：d</span><br><span class="line">字符设备文件：c</span><br><span class="line">块设备文件：b</span><br><span class="line">软连接：l</span><br><span class="line">管道文件：p</span><br><span class="line">套接字：s</span><br><span class="line">未知文件。</span><br></pre></td></tr></table></figure><p>系统目录</p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin：存放二进制可执行文件</span><br><span class="line">boot：存放开机启动程序</span><br><span class="line">dev：存放设备文件： 字符设备、块设备</span><br><span class="line">home：存放普通用户</span><br><span class="line">etc：用户信息和系统配置文件 passwd、group</span><br><span class="line">lib：库文件：libc.so.6</span><br><span class="line">root：管理员宿主目录（家目录）</span><br><span class="line">usr：用户资源管理目录 unix software resource</span><br></pre></td></tr></table></figure><p>简单的快捷键</p><p>tab显示提示、ctrl-a、ctrl-e、ctrl-u、ctrl-Alt-t。</p><p>细节的内容还请再看一遍视频讲解和讲义。</p><hr><p>学习完后写的五子棋游戏服务器，匹配游戏，断线重连，连接mysql数据库，欢迎大家一起学习 <a href="https://github.com/ChenVv-hong/Gobang">https://github.com/ChenVv-hong/Gobang</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Day-1&quot;&gt;&lt;a href=&quot;#Day-1&quot; class=&quot;headerlink&quot; title=&quot;Day 1&quot;&gt;&lt;/a&gt;Day 1&lt;/h1&gt;&lt;p&gt;学习了一些命令，这些命令记住常用的，备份难记的。&lt;/p&gt;
-&lt;p&gt;常用的比如&lt;/p&gt;
-&lt;figure class=&quot;h</summary>
-      
-    
-    
-    
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/categories/Linux/"/>
-    
-    
-    <category term="Linux" scheme="https://blog.luoxiaohei.co/tags/Linux/"/>
     
   </entry>
   
